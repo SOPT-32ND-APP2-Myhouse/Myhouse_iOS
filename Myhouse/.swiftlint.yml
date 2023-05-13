@@ -1,0 +1,18 @@
+disabled_rules:
+- force_cast
+- line_length
+- trailing_whitespace
+- function_parameter_count
+- function_body_length
+- identifier_name
+- nesting
+- orphaned_doc_comment
+- shorthand_operator
+- legacy_constructor
+- redundant_optional_initialization
+- unused_closure_parameter
+- discouraged_direct_init
+
+excluded:
+  - Myhouse/Application/AppDelegate.swift
+  - Myhouse/Application/SceneDelegate.swift
