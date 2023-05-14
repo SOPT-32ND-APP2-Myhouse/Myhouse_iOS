@@ -38,11 +38,13 @@ private extension TabBarController {
         self.tabBar.frame = tabFrame
     }
     
-    func makeTabBar(viewController: UIViewController,
-                    title: String,
-                    tabBarImg: UIImage,
+    func makeTabBar(
+        viewController: UIViewController,
+        title: String,
+        tabBarImg: UIImage,
                     tabBarSelectedImg: UIImage,
-                    renderingMode: UIImage.RenderingMode) -> UIViewController {
+                    renderingMode: UIImage.RenderingMode
+        ) -> UIViewController {
         
         let tab = UINavigationController(rootViewController: viewController)
         tab.isNavigationBarHidden = true
