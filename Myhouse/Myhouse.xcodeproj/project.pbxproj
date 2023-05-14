@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933C3D92A0F716E00A4F163 /* AppDelegate.swift */; };
 		0933C3DC2A0F716E00A4F163 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933C3DB2A0F716E00A4F163 /* SceneDelegate.swift */; };
-		0933C3DE2A0F716E00A4F163 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933C3DD2A0F716E00A4F163 /* ViewController.swift */; };
 		0933C3E32A0F716F00A4F163 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 0933C3E22A0F716F00A4F163 /* Assets.xcassets */; };
 		0933C3E62A0F716F00A4F163 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 0933C3E42A0F716F00A4F163 /* LaunchScreen.storyboard */; };
 		0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0933C3F42A0F790100A4F163 /* DummyClass.swift */; };
@@ -27,6 +26,16 @@
 		694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D300A2A10BA9C00D84149 /* UICollectionViewRegisterable.swift */; };
 		694D300E2A10BB5700D84149 /* NSObject+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D300D2A10BB5700D84149 /* NSObject+.swift */; };
 		694D30102A10BCCB00D84149 /* UITableView+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D300F2A10BCCB00D84149 /* UITableView+.swift */; };
+		694D30182A113A1B00D84149 /* HomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30172A113A1B00D84149 /* HomeViewController.swift */; };
+		694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30192A113A2B00D84149 /* LookViewController.swift */; };
+		694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D301B2A113A3D00D84149 /* ShoppingViewController.swift */; };
+		694D301E2A113A4700D84149 /* LifeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D301D2A113A4700D84149 /* LifeViewController.swift */; };
+		694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D301F2A113A5200D84149 /* MyPageViewController.swift */; };
+		694D30222A113ADD00D84149 /* TabBarViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30212A113ADD00D84149 /* TabBarViewController.swift */; };
+		694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30232A113EBB00D84149 /* BaseViewController.swift */; };
+		694D30262A113ECA00D84149 /* BaseView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30252A113ECA00D84149 /* BaseView.swift */; };
+		694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D302B2A114BF700D84149 /* DetailViewController.swift */; };
+		694D302E2A114CB600D84149 /* SizeLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D302D2A114CB600D84149 /* SizeLiterals.swift */; };
 		699785FD2A100A33005BC69E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 699785FC2A100A33005BC69E /* .swiftlint.yml */; };
 		699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699785FE2A1011AE005BC69E /* StringLiterals.swift */; };
 		699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699786002A1011BB005BC69E /* ImageLiterals.swift */; };
@@ -41,7 +50,6 @@
 		0933C3D62A0F716E00A4F163 /* Myhouse.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Myhouse.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		0933C3D92A0F716E00A4F163 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		0933C3DB2A0F716E00A4F163 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		0933C3DD2A0F716E00A4F163 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
 		0933C3E22A0F716F00A4F163 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		0933C3E52A0F716F00A4F163 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		0933C3E72A0F716F00A4F163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -57,6 +65,16 @@
 		694D300A2A10BA9C00D84149 /* UICollectionViewRegisterable.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = UICollectionViewRegisterable.swift; sourceTree = "<group>"; };
 		694D300D2A10BB5700D84149 /* NSObject+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "NSObject+.swift"; sourceTree = "<group>"; };
 		694D300F2A10BCCB00D84149 /* UITableView+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITableView+.swift"; sourceTree = "<group>"; };
+		694D30172A113A1B00D84149 /* HomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeViewController.swift; sourceTree = "<group>"; };
+		694D30192A113A2B00D84149 /* LookViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookViewController.swift; sourceTree = "<group>"; };
+		694D301B2A113A3D00D84149 /* ShoppingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ShoppingViewController.swift; sourceTree = "<group>"; };
+		694D301D2A113A4700D84149 /* LifeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LifeViewController.swift; sourceTree = "<group>"; };
+		694D301F2A113A5200D84149 /* MyPageViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MyPageViewController.swift; sourceTree = "<group>"; };
+		694D30212A113ADD00D84149 /* TabBarViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabBarViewController.swift; sourceTree = "<group>"; };
+		694D30232A113EBB00D84149 /* BaseViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseViewController.swift; sourceTree = "<group>"; };
+		694D30252A113ECA00D84149 /* BaseView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BaseView.swift; sourceTree = "<group>"; };
+		694D302B2A114BF700D84149 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		694D302D2A114CB600D84149 /* SizeLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SizeLiterals.swift; sourceTree = "<group>"; };
 		699785FC2A100A33005BC69E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		699785FE2A1011AE005BC69E /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		699786002A1011BB005BC69E /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
@@ -123,7 +141,12 @@
 		0933C3EF2A0F77E300A4F163 /* Presentation */ = {
 			isa = PBXGroup;
 			children = (
-				0933C3DD2A0F716E00A4F163 /* ViewController.swift */,
+				694D30112A11394600D84149 /* Common */,
+				694D30122A11395400D84149 /* HomeScene */,
+				694D30142A11397600D84149 /* LookScene */,
+				694D30132A11395C00D84149 /* ShoppingScene */,
+				694D30152A11398000D84149 /* LifeScene */,
+				694D30162A11399B00D84149 /* MyPageScene */,
 			);
 			path = Presentation;
 			sourceTree = "<group>";
@@ -151,6 +174,7 @@
 				699786002A1011BB005BC69E /* ImageLiterals.swift */,
 				699786022A1011D2005BC69E /* ColorLiterals.swift */,
 				699786042A101236005BC69E /* FontLiterals.swift */,
+				694D302D2A114CB600D84149 /* SizeLiterals.swift */,
 			);
 			path = Literals;
 			sourceTree = "<group>";
@@ -182,6 +206,73 @@
 				694D300A2A10BA9C00D84149 /* UICollectionViewRegisterable.swift */,
 			);
 			path = Protocols;
+			sourceTree = "<group>";
+		};
+		694D30112A11394600D84149 /* Common */ = {
+			isa = PBXGroup;
+			children = (
+				694D30212A113ADD00D84149 /* TabBarViewController.swift */,
+				694D30232A113EBB00D84149 /* BaseViewController.swift */,
+				694D30252A113ECA00D84149 /* BaseView.swift */,
+			);
+			path = Common;
+			sourceTree = "<group>";
+		};
+		694D30122A11395400D84149 /* HomeScene */ = {
+			isa = PBXGroup;
+			children = (
+				694D30172A113A1B00D84149 /* HomeViewController.swift */,
+			);
+			path = HomeScene;
+			sourceTree = "<group>";
+		};
+		694D30132A11395C00D84149 /* ShoppingScene */ = {
+			isa = PBXGroup;
+			children = (
+				694D301B2A113A3D00D84149 /* ShoppingViewController.swift */,
+			);
+			path = ShoppingScene;
+			sourceTree = "<group>";
+		};
+		694D30142A11397600D84149 /* LookScene */ = {
+			isa = PBXGroup;
+			children = (
+				694D30282A114B2900D84149 /* LookView */,
+				694D30292A114B4E00D84149 /* DetailView */,
+			);
+			path = LookScene;
+			sourceTree = "<group>";
+		};
+		694D30152A11398000D84149 /* LifeScene */ = {
+			isa = PBXGroup;
+			children = (
+				694D301D2A113A4700D84149 /* LifeViewController.swift */,
+			);
+			path = LifeScene;
+			sourceTree = "<group>";
+		};
+		694D30162A11399B00D84149 /* MyPageScene */ = {
+			isa = PBXGroup;
+			children = (
+				694D301F2A113A5200D84149 /* MyPageViewController.swift */,
+			);
+			path = MyPageScene;
+			sourceTree = "<group>";
+		};
+		694D30282A114B2900D84149 /* LookView */ = {
+			isa = PBXGroup;
+			children = (
+				694D30192A113A2B00D84149 /* LookViewController.swift */,
+			);
+			path = LookView;
+			sourceTree = "<group>";
+		};
+		694D30292A114B4E00D84149 /* DetailView */ = {
+			isa = PBXGroup;
+			children = (
+				694D302B2A114BF700D84149 /* DetailViewController.swift */,
+			);
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		699786062A101449005BC69E /* Font */ = {
@@ -300,21 +391,30 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */,
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
 				699786032A1011D2005BC69E /* ColorLiterals.swift in Sources */,
 				694D30092A10BA8800D84149 /* UITableViewRegisterable.swift in Sources */,
 				694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */,
-				0933C3DE2A0F716E00A4F163 /* ViewController.swift in Sources */,
+				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
+				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
 				0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */,
+				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
 				694D300E2A10BB5700D84149 /* NSObject+.swift in Sources */,
+				694D301E2A113A4700D84149 /* LifeViewController.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
+				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,
+				694D30222A113ADD00D84149 /* TabBarViewController.swift in Sources */,
+				694D302E2A114CB600D84149 /* SizeLiterals.swift in Sources */,
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
+				694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */,
 				694D30022A10B8C300D84149 /* UIViewController+.swift in Sources */,
 				694D30102A10BCCB00D84149 /* UITableView+.swift in Sources */,
+				694D30182A113A1B00D84149 /* HomeViewController.swift in Sources */,
 				694D2FFA2A101A8200D84149 /* UIImage+.swift in Sources */,
 				694D30062A10B90E00D84149 /* UILabel+.swift in Sources */,
 				0933C3DC2A0F716E00A4F163 /* SceneDelegate.swift in Sources */,

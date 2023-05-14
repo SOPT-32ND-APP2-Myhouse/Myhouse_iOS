@@ -1,16 +1,18 @@
 //
-//  ViewController.swift
+//  DetailViewController.swift
 //  Myhouse
 //
-//  Created by Minjoo Kim on 2023/05/13.
+//  Created by 최영린 on 2023/05/15.
 //
 
 import UIKit
 
-class ViewController: UIViewController {
+class DetailViewController: UIViewController {
 
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
+    
 }
