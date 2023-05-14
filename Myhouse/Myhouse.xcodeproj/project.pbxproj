@@ -237,8 +237,8 @@
 		694D30142A11397600D84149 /* LookScene */ = {
 			isa = PBXGroup;
 			children = (
-				694D30282A114B2900D84149 /* Look */,
-				694D30292A114B4E00D84149 /* Detail */,
+				694D30282A114B2900D84149 /* LookView */,
+				694D30292A114B4E00D84149 /* DetailView */,
 			);
 			path = LookScene;
 			sourceTree = "<group>";
@@ -259,20 +259,20 @@
 			path = MyPageScene;
 			sourceTree = "<group>";
 		};
-		694D30282A114B2900D84149 /* Look */ = {
+		694D30282A114B2900D84149 /* LookView */ = {
 			isa = PBXGroup;
 			children = (
 				694D30192A113A2B00D84149 /* LookViewController.swift */,
 			);
-			path = Look;
+			path = LookView;
 			sourceTree = "<group>";
 		};
-		694D30292A114B4E00D84149 /* Detail */ = {
+		694D30292A114B4E00D84149 /* DetailView */ = {
 			isa = PBXGroup;
 			children = (
 				694D302B2A114BF700D84149 /* DetailViewController.swift */,
 			);
-			path = Detail;
+			path = DetailView;
 			sourceTree = "<group>";
 		};
 		699786062A101449005BC69E /* Font */ = {
