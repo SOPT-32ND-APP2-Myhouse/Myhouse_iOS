@@ -1,5 +1,5 @@
 //
-//  TodaysProductDataModel.swift
+//  todaysDataModel.swift
 //  Myhouse
 //
 //  Created by Kim Min Joo on 2023/05/16.
