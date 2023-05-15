@@ -16,8 +16,7 @@ struct I18N {
     struct HomeSection {
         static let best = "🏅이주의 인기 콘텐츠🏅"
         static let recommend1 = "곡괭님을 위한 추천 집들이"
-        static let recommend2 = "이 콘텐츠 좋아하실 것 같아요"
-        static let recommend3 = "오늘의 추천상품"
+        static let todays = "오늘의 추천상품"
         static let browse = "모던한 인테리어 콘텐츠 둘러보기"
         static let category = "카테고리별 상품 찾기"
         static let todaysDeal = "오늘의 딜"

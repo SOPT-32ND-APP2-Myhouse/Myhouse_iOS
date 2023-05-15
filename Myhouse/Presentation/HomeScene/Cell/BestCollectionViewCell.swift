@@ -1,5 +1,5 @@
 //
-//  CollectionViewCell.swift
+//  BestCollectionViewCell.swift
 //  Myhouse
 //
 //  Created by Minjoo Kim on 2023/05/15.
@@ -33,7 +33,6 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         imageView.image = ImageLiterals.Common.icn_scrapbook.withRenderingMode(.alwaysTemplate)
         imageView.tintColor = .white
         
-       
         return imageView
     }()
 

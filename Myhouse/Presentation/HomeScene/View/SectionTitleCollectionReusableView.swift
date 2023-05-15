@@ -47,7 +47,7 @@ extension SectionTitleCollectionReusableView {
 
         sectionTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalToSuperview().inset(15)
+            $0.leading.trailing.equalToSuperview()
         }
     }
 
