@@ -28,8 +28,16 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         label.textColor = .black
         return label
     }()
+    public let bookmarkImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.Common.icn_scrapbook.withRenderingMode(.alwaysTemplate)
+        imageView.tintColor = .white
+        
+       
+        return imageView
+    }()
 
-    private let rankingLabel: UILabel = {
+    private let rankingLabel: UILabel? = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .NotoMedium(size: 12)
@@ -61,7 +69,7 @@ extension BestCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel)
+        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel!, bookmarkImageView)
         
         bestImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -77,9 +85,14 @@ extension BestCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
         
-        rankingLabel.snp.makeConstraints {
+        rankingLabel?.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
             $0.width.equalTo(20)
+            $0.height.equalTo(20)
+        }
+        bookmarkImageView.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(bestImageView).inset(10)
+            $0.width.equalTo(19)
             $0.height.equalTo(20)
         }
     }
@@ -88,7 +101,7 @@ extension BestCollectionViewCell {
         bestImageView.image = bestData.image
         descriptionLabel.text = bestData.title
         descriptionLabel.text = (descriptionLabel.text ?? "") + " \(bestData.description)"
-        rankingLabel.text = "\(bestData.rank)"
+        rankingLabel?.text = "\(bestData.rank)"
         
         // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""

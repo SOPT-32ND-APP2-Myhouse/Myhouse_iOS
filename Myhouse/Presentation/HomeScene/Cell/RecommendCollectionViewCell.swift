@@ -31,12 +31,7 @@ class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegiste
         return label
     }()
     
-    private let bookmarkImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = ImageLiterals.Common.icn_scrapbook
-        imageView.tintColor = .white
-        return imageView
-    }()
+    private let bookmarkImageView = BestCollectionViewCell().bookmarkImageView
     
     // MARK: - Life Cycles
     
@@ -71,7 +66,7 @@ extension RecommendCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
         bookmarkImageView.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(recommendImageView).inset(3)
+            $0.bottom.trailing.equalTo(recommendImageView).inset(13)
             $0.width.equalTo(19)
             $0.height.equalTo(20)
         }

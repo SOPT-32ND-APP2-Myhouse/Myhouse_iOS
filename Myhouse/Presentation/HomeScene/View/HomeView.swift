@@ -63,6 +63,7 @@ final class HomeView: BaseView {
 extension HomeView {
     func registerCell() {
         SectionTitleCollectionReusableView.register(target: homeCollectionView)
+        DivisionFooterView.register(target: homeCollectionView)
         
         BestCollectionViewCell.register(target: homeCollectionView)
         RecommendCollectionViewCell.register(target: homeCollectionView)
@@ -148,7 +149,7 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        
+
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header]
@@ -187,7 +188,6 @@ extension HomeView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
-        
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
         case .best:
@@ -200,4 +200,5 @@ extension HomeView: UICollectionViewDataSource {
             return headerView
         }
     }
+
 }

@@ -19,7 +19,6 @@
 		0968C2112A11646400945F23 /* bestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0968C2102A11646400945F23 /* bestDataModel.swift */; };
 		09B7D3A62A12227E00B4B485 /* recommendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */; };
 		09DF36A12A121D1900C8BDA9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */; };
-		09FD5D3F2A1166B900976C02 /* SectionTitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD5D3E2A1166B900976C02 /* SectionTitleCollectionReusableView.swift */; };
 		09FD5D412A11676000976C02 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD5D402A11676000976C02 /* HomeView.swift */; };
 		694D2FFA2A101A8200D84149 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2FF92A101A8200D84149 /* UIImage+.swift */; };
 		694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2FFB2A10B81B00D84149 /* UIVIew+.swift */; };
@@ -50,6 +49,8 @@
 		6997860E2A10145D005BC69E /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 699786082A10145D005BC69E /* NotoSansKR-Regular.otf */; };
 		699786112A10145D005BC69E /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6997860B2A10145D005BC69E /* NotoSansKR-Bold.otf */; };
 		699786122A10145D005BC69E /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6997860C2A10145D005BC69E /* NotoSansKR-Medium.otf */; };
+		9BF93D782A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */; };
+		9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -64,7 +65,6 @@
 		0968C2102A11646400945F23 /* bestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestDataModel.swift; sourceTree = "<group>"; };
 		09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendDataModel.swift; sourceTree = "<group>"; };
 		09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
-		09FD5D3E2A1166B900976C02 /* SectionTitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleCollectionReusableView.swift; sourceTree = "<group>"; };
 		09FD5D402A11676000976C02 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
 		694D2FF92A101A8200D84149 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		694D2FFB2A10B81B00D84149 /* UIVIew+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
@@ -95,6 +95,8 @@
 		699786082A10145D005BC69E /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		6997860B2A10145D005BC69E /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		6997860C2A10145D005BC69E /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleCollectionReusableView.swift; sourceTree = "<group>"; };
+		9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -222,8 +224,9 @@
 		095B4FCE2A115A7F00618AF7 /* View */ = {
 			isa = PBXGroup;
 			children = (
-				09FD5D3E2A1166B900976C02 /* SectionTitleCollectionReusableView.swift */,
 				09FD5D402A11676000976C02 /* HomeView.swift */,
+				9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */,
+				9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -445,11 +448,11 @@
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
 				699786032A1011D2005BC69E /* ColorLiterals.swift in Sources */,
 				694D30092A10BA8800D84149 /* UITableViewRegisterable.swift in Sources */,
+				9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */,
 				694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */,
 				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
-				09FD5D3F2A1166B900976C02 /* SectionTitleCollectionReusableView.swift in Sources */,
 				0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */,
 				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
 				092543742A121451000A55D2 /* BestCollectionViewCell.swift in Sources */,
@@ -459,6 +462,7 @@
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,
+				9BF93D782A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift in Sources */,
 				694D30222A113ADD00D84149 /* TabBarViewController.swift in Sources */,
 				694D302E2A114CB600D84149 /* SizeLiterals.swift in Sources */,
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
