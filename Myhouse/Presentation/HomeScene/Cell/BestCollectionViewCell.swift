@@ -9,25 +9,48 @@ import UIKit
 
 import SnapKit
 
-class BestContentsCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
+class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     
     static var isFromNib: Bool = false
     
     // MARK: - UI Components
     
-    private let liveImageView = UIImageView()
-    private let rankLabel = UILabel()
-    private let channelLabel = UILabel()
-    private let titleLabel = UILabel()
-    private let ratingLabel = UILabel()
+    private let bestImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.tintColor = .systemGray
+        imageView.layer.cornerRadius = 4
+        return imageView
+    }()
+    private let descriptionLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .NotoMedium(size: 13)
+        label.textColor = .black
+        
+        return label
+    }()
+    
+
+    
+    private let rankingLabel: UILabel = {
+        let label = UILabel()
+        label.numberOfLines = 0
+        label.font = .NotoMedium(size: 12)
+        label.textColor = .white
+        label.textAlignment = .center
+        label.backgroundColor = .main
+        label.layer.cornerRadius = 5
+        label.layer.maskedCorners = [.layerMinXMinYCorner, .layerMaxXMaxYCorner]
+        label.layer.masksToBounds = true
+        return label
+    }()
     
     // MARK: - Life Cycles
     
     override init(frame: CGRect) {
         super.init(frame: frame)
         
-        setUI()
         setLayout()
     }
     
@@ -38,65 +61,46 @@ class BestContentsCollectionViewCell: UICollectionViewCell, UICollectionViewRegi
 
 // MARK: - Extensions
 
-extension BestContentsCollectionViewCell {
-    private func setUI() {
-        liveImageView.do {
-            $0.layer.cornerRadius = 3
-        }
-        
-        rankLabel.do {
-            $0.font = .PretendardBold(size: 19)
-        }
-        
-        channelLabel.do {
-            $0.font = .PretendardRegular(size: 10)
-        }
-        
-        titleLabel.do {
-            $0.font = .PretendardRegular(size: 10)
-        }
-        
-        ratingLabel.do {
-            $0.font = .PretendardRegular(size: 10)
-        }
-    }
+extension BestCollectionViewCell {
+
     
     private func setLayout() {
-        contentView.addSubviews(liveImageView, rankLabel, channelLabel, titleLabel, ratingLabel)
+        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel)
         
-        liveImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
-            $0.height.equalTo(80)
-            $0.width.equalTo(160)
+        bestImageView.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+            $0.width.equalTo(150)
+            $0.height.equalTo(150)
             $0.centerX.equalToSuperview()
         }
         
-        rankLabel.snp.makeConstraints {
-            $0.top.equalTo(liveImageView.snp.bottom).offset(8)
-            $0.leading.equalToSuperview().inset(6)
+        descriptionLabel.snp.makeConstraints {
+            $0.top.equalTo(bestImageView.snp.bottom).inset(-12)
+            $0.width.equalTo(bestImageView.snp.width)
+            $0.height.equalTo(44)
+            $0.centerX.equalToSuperview()
         }
         
-        channelLabel.snp.makeConstraints {
-            $0.top.equalTo(liveImageView.snp.bottom).offset(11)
-            $0.leading.equalTo(rankLabel.snp.trailing).offset(5)
+        rankingLabel.snp.makeConstraints {
+            $0.top.leading.equalToSuperview()
+            $0.width.equalTo(20)
+            $0.height.equalTo(20)
         }
-        
-        titleLabel.snp.makeConstraints {
-            $0.top.equalTo(channelLabel.snp.bottom).offset(2)
-            $0.leading.equalTo(channelLabel.snp.leading)
-        }
-        
-        ratingLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).offset(2)
-            $0.leading.equalTo(channelLabel.snp.leading)
-        }
+
     }
     
-//    func configureCell(_ livaData: LiveDataModel) {
-//        liveImageView.image = livaData.image
-//        rankLabel.text = "\(livaData.rank)"
-//        channelLabel.text = livaData.channel
-//        titleLabel.text = livaData.title
-//        ratingLabel.text = "\(livaData.rating)%"
-//    }
+    func configureCell(_ bestData: HomeDataModel) {
+        bestImageView.image = bestData.image
+        descriptionLabel.text = bestData.title
+        descriptionLabel.text = (descriptionLabel.text ?? "") + " \(bestData.description)"
+        rankingLabel.text = "\(bestData.rank)"
+        
+        // 특정 글씨만 main colour로 변경
+        let fullText = descriptionLabel.text ?? ""
+        let attribtuedString = NSMutableAttributedString(string: fullText)
+        let range = (fullText as NSString).range(of: "\(bestData.title)")
+        attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
+        descriptionLabel.attributedText = attribtuedString
+        }
+
 }
