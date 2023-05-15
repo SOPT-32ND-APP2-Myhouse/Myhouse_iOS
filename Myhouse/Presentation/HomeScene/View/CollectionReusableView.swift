@@ -50,7 +50,6 @@ extension CollectionReusableView {
         sectionTitleLabel.snp.makeConstraints {
             $0.centerY.equalToSuperview()
             $0.leading.equalToSuperview().inset(5)
-            
         }
     }
 

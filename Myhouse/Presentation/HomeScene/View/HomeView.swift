@@ -92,6 +92,7 @@ extension HomeView {
             layoutSize: groupSize,
             subitems: [item]
         )
+        
         group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -110,7 +111,6 @@ extension HomeView {
         section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         return section
     }
-    
 }
 
 extension HomeView: UICollectionViewDataSource {
@@ -133,10 +133,8 @@ extension HomeView: UICollectionViewDataSource {
             let cell = BestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(imageDummy[indexPath.item])
             return cell
-            
         }
     }
-    
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         

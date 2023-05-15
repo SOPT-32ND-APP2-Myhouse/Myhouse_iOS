@@ -86,7 +86,6 @@ extension BestCollectionViewCell {
             $0.width.equalTo(20)
             $0.height.equalTo(20)
         }
-
     }
     
     func configureCell(_ bestData: HomeDataModel) {
