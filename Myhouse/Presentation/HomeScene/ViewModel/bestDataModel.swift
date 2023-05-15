@@ -26,5 +26,4 @@ extension bestDataModel {
                               description: "뷰 맛집, 상큼하우스"),
         ]
     }
-    
 }
