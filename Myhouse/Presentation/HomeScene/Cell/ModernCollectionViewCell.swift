@@ -28,13 +28,7 @@ class ModernCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         label.textColor = .black
         return label
     }()
-    public let bookmarkImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = ImageLiterals.Common.icn_scrapbook.withRenderingMode(.alwaysTemplate)
-        imageView.tintColor = .white
-        
-        return imageView
-    }()
+    private let bookmarkImageView = BestCollectionViewCell().bookmarkImageView
     
     // MARK: - Life Cycles
     
@@ -72,9 +66,9 @@ extension ModernCollectionViewCell {
         }
 
         bookmarkImageView.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(bestImageView).inset(10)
-            $0.width.equalTo(15)
-            $0.height.equalTo(16)
+            $0.bottom.trailing.equalTo(bestImageView).inset(8)
+            $0.width.equalTo(24)
+            $0.height.equalTo(24)
         }
     }
     

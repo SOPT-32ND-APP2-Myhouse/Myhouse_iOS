@@ -66,9 +66,9 @@ extension RecommendCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
         bookmarkImageView.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(recommendImageView).inset(13)
-            $0.width.equalTo(15)
-            $0.height.equalTo(16)
+            $0.bottom.trailing.equalTo(recommendImageView).inset(8)
+            $0.width.equalTo(24)
+            $0.height.equalTo(24)
         }
     }
     
