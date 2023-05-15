@@ -48,7 +48,7 @@ private extension DivisionFooterView {
         
         division.snp.makeConstraints {
             $0.centerY.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
+            $0.leading.trailing.equalToSuperview().inset(-16)
             $0.height.equalTo(8)
         }
     }

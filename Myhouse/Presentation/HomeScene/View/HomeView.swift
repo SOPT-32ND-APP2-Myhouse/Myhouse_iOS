@@ -84,36 +84,31 @@ extension HomeView {
 
     func getLayoutBestSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1),
+            widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(150),
-            heightDimension: .absolute(205)
+            widthDimension: .fractionalWidth(0.4),
+            heightDimension: .absolute(230)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
-        
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(40)
         )
-        
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-        
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(10)
+            heightDimension: .absolute(30)
         )
         
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -121,11 +116,11 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionFooter,
             alignment: .bottom
         )
-        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [header, footer]
-        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = 8
         return section
     }
     
@@ -133,7 +128,7 @@ extension HomeView {
     func getLayoutRecommendSection() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(176),
+            widthDimension: .fractionalWidth(0.489),
             heightDimension: .fractionalHeight(1)
         )
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
@@ -141,18 +136,18 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .absolute(235)
+            heightDimension: .estimated(240)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
             subitems: [item]
         )
-        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
-        group.interItemSpacing = .fixed(10)
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        group.interItemSpacing = .fixed(8)
         
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(35)
         )
         
         let header = NSCollectionLayoutBoundarySupplementaryItem(
@@ -161,12 +156,25 @@ extension HomeView {
             alignment: .top
         )
 
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(30)
+        )
+        
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
-        section.boundarySupplementaryItems = [header]
-        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+        section.boundarySupplementaryItems = [header, footer]
+        section.contentInsets = .init(top: 0, leading: 0, bottom: 0, trailing: 0)
+        section.interGroupSpacing = 8
         return section
     }
+    
 }
 
 extension HomeView: UICollectionViewDataSource {

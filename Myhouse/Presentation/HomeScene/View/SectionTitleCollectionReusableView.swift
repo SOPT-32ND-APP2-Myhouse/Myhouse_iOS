@@ -46,8 +46,8 @@ extension SectionTitleCollectionReusableView {
         self.addSubviews(sectionTitleLabel)
 
         sectionTitleLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
-            $0.leading.equalToSuperview().inset(5)
+            $0.top.equalToSuperview()
+            $0.leading.equalToSuperview().inset(15)
         }
     }
 
