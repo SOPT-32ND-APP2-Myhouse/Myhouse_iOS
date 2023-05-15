@@ -15,7 +15,7 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best, recommend, todays
+        case best, recommend, todays, modern
     }
     
     // MARK: - UI Components
@@ -23,6 +23,7 @@ final class HomeView: BaseView {
     private let bestDummy = bestDataModel.dummy()
     private let recommendDummy = recommendDataModel.dummy()
     private let todaysDummy = todaysDataModel.dummy()
+    private let modernDummy = modernDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -69,6 +70,7 @@ extension HomeView {
         BestCollectionViewCell.register(target: homeCollectionView)
         RecommendCollectionViewCell.register(target: homeCollectionView)
         TodaysProductCollectionViewCell.register(target: homeCollectionView)
+        ModernCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -81,6 +83,8 @@ extension HomeView {
                 return self.getLayoutRecommendSection()
             case .todays:
                 return self.getLayoutTodaysSection()
+            case .modern:
+                return self.getLayoutModernSection()
             }
         }
     }
@@ -219,6 +223,7 @@ extension HomeView {
         section.interGroupSpacing = 8
         return section
     }
+    
     func getLayoutModernSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -245,7 +250,7 @@ extension HomeView {
         )
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(30)
+            heightDimension: .absolute(74)
         )
         
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -276,6 +281,8 @@ extension HomeView: UICollectionViewDataSource {
             return recommendDummy.count
         case .todays:
             return todaysDummy.count
+        case .modern:
+            return modernDummy.count
         }
     }
     
@@ -294,6 +301,10 @@ extension HomeView: UICollectionViewDataSource {
             let cell = TodaysProductCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(todaysDummy[indexPath.item])
             return cell
+        case .modern:
+            let cell = ModernCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(modernDummy[indexPath.item])
+            return cell
         }
     }
     
@@ -306,13 +317,16 @@ extension HomeView: UICollectionViewDataSource {
             case .best:
                 headerView.setSectionTitle(text: I18N.HomeSection.best)
             case .recommend:
-                headerView.setSectionTitle(text: I18N.HomeSection.recommend1)
+                headerView.setSectionTitle(text: I18N.HomeSection.recommend)
             case .todays:
                 headerView.setSectionTitle(text: I18N.HomeSection.todays)
+            case .modern:
+                headerView.setSectionTitle(text: I18N.HomeSection.modern)
             }
             return headerView
         }
         else if kind == UICollectionView.elementKindSectionFooter {
+            
             let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
 
             return footerView

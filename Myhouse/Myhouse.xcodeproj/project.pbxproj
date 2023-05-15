@@ -53,6 +53,9 @@
 		9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */; };
 		9BF93D7C2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D7B2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift */; };
 		9BF93D7E2A12997C00FE3B5B /* todaysDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D7D2A12997C00FE3B5B /* todaysDataModel.swift */; };
+		9BF93D802A12A87500FE3B5B /* ModernDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D7F2A12A87500FE3B5B /* ModernDataModel.swift */; };
+		9BF93D822A12A8B900FE3B5B /* ModernCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D812A12A8B900FE3B5B /* ModernCollectionViewCell.swift */; };
+		9BF93D842A12ABE200FE3B5B /* MoreButtonFooterView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D832A12ABE200FE3B5B /* MoreButtonFooterView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -101,6 +104,9 @@
 		9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DivisionFooterView.swift; sourceTree = "<group>"; };
 		9BF93D7B2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysProductCollectionViewCell.swift; sourceTree = "<group>"; };
 		9BF93D7D2A12997C00FE3B5B /* todaysDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaysDataModel.swift; sourceTree = "<group>"; };
+		9BF93D7F2A12A87500FE3B5B /* ModernDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernDataModel.swift; sourceTree = "<group>"; };
+		9BF93D812A12A8B900FE3B5B /* ModernCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernCollectionViewCell.swift; sourceTree = "<group>"; };
+		9BF93D832A12ABE200FE3B5B /* MoreButtonFooterView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreButtonFooterView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -231,6 +237,7 @@
 				09FD5D402A11676000976C02 /* HomeView.swift */,
 				9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */,
 				9BF93D792A12451500FE3B5B /* DivisionFooterView.swift */,
+				9BF93D832A12ABE200FE3B5B /* MoreButtonFooterView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -241,6 +248,7 @@
 				0968C2102A11646400945F23 /* bestDataModel.swift */,
 				09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */,
 				9BF93D7D2A12997C00FE3B5B /* todaysDataModel.swift */,
+				9BF93D7F2A12A87500FE3B5B /* ModernDataModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -251,6 +259,7 @@
 				092543732A121451000A55D2 /* BestCollectionViewCell.swift */,
 				9BF93D7B2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift */,
 				09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */,
+				9BF93D812A12A8B900FE3B5B /* ModernCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -460,6 +469,7 @@
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
 				0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */,
+				9BF93D842A12ABE200FE3B5B /* MoreButtonFooterView.swift in Sources */,
 				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
 				092543742A121451000A55D2 /* BestCollectionViewCell.swift in Sources */,
 				694D300E2A10BB5700D84149 /* NSObject+.swift in Sources */,
@@ -472,6 +482,7 @@
 				694D30222A113ADD00D84149 /* TabBarViewController.swift in Sources */,
 				694D302E2A114CB600D84149 /* SizeLiterals.swift in Sources */,
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
+				9BF93D802A12A87500FE3B5B /* ModernDataModel.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
 				9BF93D7E2A12997C00FE3B5B /* todaysDataModel.swift in Sources */,
@@ -481,6 +492,7 @@
 				694D30022A10B8C300D84149 /* UIViewController+.swift in Sources */,
 				694D30102A10BCCB00D84149 /* UITableView+.swift in Sources */,
 				694D30182A113A1B00D84149 /* HomeViewController.swift in Sources */,
+				9BF93D822A12A8B900FE3B5B /* ModernCollectionViewCell.swift in Sources */,
 				694D2FFA2A101A8200D84149 /* UIImage+.swift in Sources */,
 				0968C2112A11646400945F23 /* bestDataModel.swift in Sources */,
 				09DF36A12A121D1900C8BDA9 /* RecommendCollectionViewCell.swift in Sources */,
