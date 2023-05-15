@@ -111,9 +111,20 @@ extension HomeView {
             alignment: .top
         )
         
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(10)
+        )
+        
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.boundarySupplementaryItems = [header]
+        section.boundarySupplementaryItems = [header, footer]
         section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         return section
     }
@@ -189,16 +200,24 @@ extension HomeView: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
         let sectionType = SectionType.allCases[indexPath.section]
-        switch sectionType {
-        case .best:
+        
+        if kind == UICollectionView.elementKindSectionHeader {
             let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
-            headerView.setSectionTitle(text: I18N.HomeSection.best)
-            return headerView
-        case .recommend:
-            let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
-            headerView.setSectionTitle(text: I18N.HomeSection.recommend1)
+            switch sectionType {
+            case .best:
+                headerView.setSectionTitle(text: I18N.HomeSection.best)
+            case .recommend:
+                headerView.setSectionTitle(text: I18N.HomeSection.recommend1)
+            }
             return headerView
         }
+        else if kind == UICollectionView.elementKindSectionFooter {
+            let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+
+            return footerView
+        }
+        else { return UICollectionReusableView() }
+        
     }
 
 }
