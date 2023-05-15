@@ -80,9 +80,9 @@ extension RecommendCollectionViewCell {
         }
     }
     
-    func configureCell(_ recommendData: HomeDataModel) {
+    func configureCell(_ recommendData: recommendDataModel) {
         recommendImageView.image = recommendData.image
-        descriptionLabel.text = recommendData.description
+        descriptionLabel.text = recommendData.title
         
     }
 
