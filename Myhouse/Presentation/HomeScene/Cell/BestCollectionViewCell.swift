@@ -18,7 +18,6 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
     
     private let bestImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = .systemGray
         imageView.layer.cornerRadius = 4
         return imageView
     }()
@@ -27,12 +26,9 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         label.numberOfLines = 0
         label.font = .NotoMedium(size: 13)
         label.textColor = .black
-        
         return label
     }()
-    
 
-    
     private let rankingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -100,6 +96,6 @@ extension BestCollectionViewCell {
         let range = (fullText as NSString).range(of: "\(bestData.title)")
         attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
         descriptionLabel.attributedText = attribtuedString
-        }
+    }
 
 }

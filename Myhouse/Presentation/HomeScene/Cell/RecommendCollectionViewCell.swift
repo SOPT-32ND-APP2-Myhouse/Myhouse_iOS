@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class RecommendCollectionViewCell: UICollectionViewCell {
+class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     
     static var isFromNib: Bool = false
@@ -18,7 +18,6 @@ class RecommendCollectionViewCell: UICollectionViewCell {
     
     private let recommendImageView: UIImageView = {
         let imageView = UIImageView()
-        imageView.tintColor = .systemGray
         imageView.layer.cornerRadius = 4
         return imageView
     }()
@@ -28,13 +27,14 @@ class RecommendCollectionViewCell: UICollectionViewCell {
         label.numberOfLines = 0
         label.font = .NotoMedium(size: 13)
         label.textColor = .black
+        label.sizeToFit()
         return label
     }()
     
     private let bookmarkImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.Common.icn_scrapbook
-        imageView.tintColor = .systemGray
+        imageView.tintColor = .white
         return imageView
     }()
     
@@ -55,28 +55,25 @@ class RecommendCollectionViewCell: UICollectionViewCell {
 
 extension RecommendCollectionViewCell {
 
-    
     private func setLayout() {
         contentView.addSubviews(recommendImageView, descriptionLabel, bookmarkImageView)
         
         recommendImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
-            $0.width.equalTo(150)
-            $0.height.equalTo(150)
+            $0.width.equalTo(174)
+            $0.height.equalTo(174)
             $0.centerX.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(recommendImageView.snp.bottom).inset(-12)
             $0.width.equalTo(recommendImageView.snp.width)
-            $0.height.equalTo(44)
             $0.centerX.equalToSuperview()
         }
         bookmarkImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.equalTo(25)
-            $0.height.equalTo(25)
-            $0.centerX.equalToSuperview()
+            $0.bottom.trailing.equalTo(recommendImageView).inset(3)
+            $0.width.equalTo(19)
+            $0.height.equalTo(20)
         }
     }
     

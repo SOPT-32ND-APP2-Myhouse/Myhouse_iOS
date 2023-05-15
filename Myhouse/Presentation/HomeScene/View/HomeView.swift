@@ -15,12 +15,13 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best
+        case best, recommend
     }
     
     // MARK: - UI Components
     
-    private let imageDummy = HomeDataModel.dummy()
+    private let bestDummy = bestDataModel.dummy()
+    private let recommendDummy = recommendDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -61,8 +62,10 @@ final class HomeView: BaseView {
 
 extension HomeView {
     func registerCell() {
+        SectionTitleCollectionReusableView.register(target: homeCollectionView)
+        
         BestCollectionViewCell.register(target: homeCollectionView)
-        CollectionReusableView.register(target: homeCollectionView)
+        RecommendCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -71,6 +74,8 @@ extension HomeView {
             switch sectionType {
             case .best:
                 return self.getLayoutBestSection()
+            case .recommend:
+                return self.getLayoutRecommendSection()
             }
         }
     }
@@ -111,6 +116,45 @@ extension HomeView {
         section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
         return section
     }
+    
+    
+    func getLayoutRecommendSection() -> NSCollectionLayoutSection {
+        
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(176),
+            heightDimension: .fractionalHeight(1)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1),
+            heightDimension: .absolute(235)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        group.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 5, bottom: 0, trailing: 5)
+        group.interItemSpacing = .fixed(10)
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(40)
+        )
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .none
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = .init(top: 0, leading: 10, bottom: 0, trailing: 10)
+        return section
+    }
 }
 
 extension HomeView: UICollectionViewDataSource {
@@ -122,7 +166,9 @@ extension HomeView: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[section]
         switch sectionType {
         case .best:
-            return imageDummy.count
+            return bestDummy.count
+        case .recommend:
+            return recommendDummy.count
         }
     }
     
@@ -131,7 +177,11 @@ extension HomeView: UICollectionViewDataSource {
         switch sectionType {
         case .best:
             let cell = BestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(imageDummy[indexPath.item])
+            cell.configureCell(bestDummy[indexPath.item])
+            return cell
+        case .recommend:
+            let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(recommendDummy[indexPath.item])
             return cell
         }
     }
@@ -141,8 +191,12 @@ extension HomeView: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[indexPath.section]
         switch sectionType {
         case .best:
-            let headerView = CollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             headerView.setSectionTitle(text: I18N.HomeSection.best)
+            return headerView
+        case .recommend:
+            let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
+            headerView.setSectionTitle(text: I18N.HomeSection.recommend1)
             return headerView
         }
     }
