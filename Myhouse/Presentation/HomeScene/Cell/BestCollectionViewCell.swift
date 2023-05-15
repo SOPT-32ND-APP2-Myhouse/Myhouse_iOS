@@ -88,7 +88,7 @@ extension BestCollectionViewCell {
         }
     }
     
-    func configureCell(_ bestData: HomeDataModel) {
+    func configureCell(_ bestData: bestDataModel) {
         bestImageView.image = bestData.image
         descriptionLabel.text = bestData.title
         descriptionLabel.text = (descriptionLabel.text ?? "") + " \(bestData.description)"
