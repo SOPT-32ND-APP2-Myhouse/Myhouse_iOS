@@ -58,4 +58,18 @@ struct ImageLiterals {
         static var img_card14: UIImage { .load(name: "img_card14") }
         static var img_card15: UIImage { .load(name: "img_card15") }
     }
+    
+    struct Home {
+        static var icn_home01: UIImage { .load(name: "icn_home01") }
+        static var icn_home02: UIImage { .load(name: "icn_home02") }
+        static var icn_home03: UIImage { .load(name: "icn_home03") }
+        static var img_category01: UIImage { .load(name: "img_category01") }
+        static var img_category02: UIImage { .load(name: "img_category02") }
+        static var img_category03: UIImage { .load(name: "img_category03") }
+        static var img_category04: UIImage { .load(name: "img_category04") }
+        static var img_home01: UIImage { .load(name: "img_home01") }
+        static var img_home02: UIImage { .load(name: "img_home02") }
+        static var img_home03: UIImage { .load(name: "img_home03") }
+        static var img_home04: UIImage { .load(name: "img_home04") }
+    }
 }
