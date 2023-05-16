@@ -90,15 +90,10 @@ extension BestCollectionViewCell {
             $0.height.equalTo(20)
         }
         bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(bestImageView).inset(8)
+            $0.bottom.trailing.equalTo(bestImageView).inset(5)
             $0.width.equalTo(24)
             $0.height.equalTo(24)
         }
-        
-//        @objc
-//        func BookmarkButtonTapped() {
-//            bookmarkButton.setImage(ImageLiterals.Common.btn_bookMarkActived_big, for: .normal)
-//        }
     }
     
     func configureCell(_ bestData: bestDataModel) {

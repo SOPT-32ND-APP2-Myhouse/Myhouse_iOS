@@ -15,7 +15,7 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best, recommend, todays, modern, category, summer
+        case best, recommend, todays, modern, category, summer, color
     }
     
     // MARK: - UI Components
@@ -26,6 +26,7 @@ final class HomeView: BaseView {
     private let modernDummy = modernDataModel.dummy()
     private let categoryDummy = categoryDataModel.dummy()
     private let summerDummy = recommendDataModel.summer()
+    private let colorDummy = colorLightDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -75,6 +76,7 @@ extension HomeView {
         TodaysProductCollectionViewCell.register(target: homeCollectionView)
         ModernCollectionViewCell.register(target: homeCollectionView)
         CategoryCollectionViewCell.register(target: homeCollectionView)
+        ColorLightCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -93,6 +95,8 @@ extension HomeView {
                 return self.getLayoutCategorySection()
             case .summer:
                 return self.getLayoutSummerSection()
+            case .color:
+                return self.getLayoutColorLightSection()
             }
         }
     }
@@ -365,6 +369,39 @@ extension HomeView {
         return section
     }
     
+    
+    func getLayoutColorLightSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.35),
+            heightDimension: .absolute(230)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(40)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = 8
+        return section
+    }
+    
 }
 
 extension HomeView: UICollectionViewDataSource {
@@ -387,6 +424,8 @@ extension HomeView: UICollectionViewDataSource {
             return categoryDummy.count
         case .summer:
             return summerDummy.count
+        case .color:
+            return colorDummy.count
         }
     }
     
@@ -417,6 +456,10 @@ extension HomeView: UICollectionViewDataSource {
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(summerDummy[indexPath.item])
             return cell
+        case .color:
+            let cell = ColorLightCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(colorDummy[indexPath.item])
+            return cell
         }
     }
     
@@ -430,6 +473,7 @@ extension HomeView: UICollectionViewDataSource {
             case .best:
                 headerView.setSectionTitle(text: I18N.HomeSection.best)
             case .recommend:
+                headerView.sectionTitleLabel.font = .NotoBold(size: 14)
                 headerView.setSectionTitle(text: I18N.HomeSection.recommend)
             case .todays:
                 headerView.setSectionTitle(text: I18N.HomeSection.todays)
@@ -439,6 +483,13 @@ extension HomeView: UICollectionViewDataSource {
                 headerView.setSectionTitle(text: I18N.HomeSection.category)
             case .summer:
                 headerView.setSectionTitle(text: I18N.HomeSection.summerContent)
+            case .color:
+                headerView.setSectionTitle(text: I18N.HomeSection.color)
+                let fullText = headerView.sectionTitleLabel.text ?? ""
+                let attribtuedString = NSMutableAttributedString(string: fullText)
+                let range = (fullText as NSString).range(of: "#컬러/레터링조명")
+                attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
+                headerView.sectionTitleLabel.attributedText = attribtuedString
             }
             return headerView
         }
@@ -450,6 +501,8 @@ extension HomeView: UICollectionViewDataSource {
             case .modern, .summer:
                 let footerView = MoreButtonFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
                 return footerView
+            default:
+                return UICollectionReusableView()
             }
         }
         return UICollectionReusableView()

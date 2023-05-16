@@ -17,10 +17,10 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
 
     // MARK: - UI Components
 
-    private let sectionTitleLabel: UILabel = {
+    let sectionTitleLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .NotoBold(size: 15)
+        label.font = .NotoBold(size: 16)
         return label
     }()
 
