@@ -24,10 +24,10 @@ extension todaysDataModel {
         ]
     }
     static func colorBest() -> [todaysDataModel] {
-        return [todaysDataModel(image: ImageLiterals.Card.img_card07, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
-                todaysDataModel(image: ImageLiterals.Card.img_card07, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
-                todaysDataModel(image: ImageLiterals.Card.img_card07, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
-                todaysDataModel(image: ImageLiterals.Card.img_card07, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
+        return [todaysDataModel(image: ImageLiterals.Card.img_card11, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
+                todaysDataModel(image: ImageLiterals.Card.img_card11, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
+                todaysDataModel(image: ImageLiterals.Card.img_card11, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
+                todaysDataModel(image: ImageLiterals.Card.img_card11, store: "헬로우슬립", title: "LED 오로라 블루투스 스피커 무드등 인기상품임...", sale: "56%", price: "34,900"),
         ]
     }
 }

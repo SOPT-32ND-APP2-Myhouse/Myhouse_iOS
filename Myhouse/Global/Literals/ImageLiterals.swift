@@ -72,5 +72,6 @@ struct ImageLiterals {
         static var img_home02: UIImage { .load(name: "img_home02") }
         static var img_home03: UIImage { .load(name: "img_home03") }
         static var img_home04: UIImage { .load(name: "img_home04") }
+        static var icn_rank: UIImage { .load(name: "icn_rank") }
     }
 }

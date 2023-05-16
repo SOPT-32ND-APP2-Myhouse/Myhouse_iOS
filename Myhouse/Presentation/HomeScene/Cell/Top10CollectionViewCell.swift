@@ -1,15 +1,15 @@
 //
-//  ColorLightCollectionViewCell.swift
+//  Top10CollectionViewCell.swift
 //  Myhouse
 //
-//  Created by Minjoo Kim on 2023/05/16.
+//  Created by Kim Min Joo on 2023/05/16.
 //
 
 import UIKit
 
 import SnapKit
 
-class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
+class Top10CollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     
     static var isFromNib: Bool = false
@@ -29,7 +29,18 @@ class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
         label.textColor = .white
         return label
     }()
-
+    private let rankView: UIImageView? = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.Home.icn_rank
+        return imageView
+    }()
+    private let rankLabel: UILabel? = {
+        let label = UILabel()
+        label.textColor = .white
+        label.font = .NotoBold(size: 12)
+        label.textAlignment = .center
+        return label
+    }()
     private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
@@ -47,11 +58,11 @@ class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
 
 // MARK: - Extensions
 
-extension ColorLightCollectionViewCell {
+extension Top10CollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(colorLightImageView, userLabel, bookmarkButton)
+        contentView.addSubviews(colorLightImageView, userLabel, bookmarkButton, rankView!, rankLabel!)
         
         colorLightImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -72,11 +83,24 @@ extension ColorLightCollectionViewCell {
             $0.width.equalTo(24)
             $0.height.equalTo(24)
         }
+        rankView?.snp.makeConstraints {
+            $0.top.equalTo(colorLightImageView.snp.top)
+            $0.leading.equalToSuperview().inset(10)
+            $0.width.equalTo(23)
+            $0.height.equalTo(26)
+        }
+        rankLabel?.snp.makeConstraints {
+            $0.top.equalToSuperview()
+            $0.centerX.equalTo(rankView?.snp.centerX ?? userLabel.snp.centerX)
+            $0.width.equalTo(20)
+            $0.height.equalTo(20)
+        }
     }
     
     func configureCell(_ colorLightDummy: colorLightDataModel) {
         colorLightImageView.image = colorLightDummy.image
         userLabel.text = colorLightDummy.user
+        rankLabel!.text = "\(colorLightDummy.rank ?? 0)"
         
     }
 

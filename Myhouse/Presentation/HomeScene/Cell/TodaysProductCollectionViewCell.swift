@@ -70,7 +70,7 @@ extension TodaysProductCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel, bookmarkButton)
+        contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel)
         
         todaysImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -102,12 +102,6 @@ extension TodaysProductCollectionViewCell {
             $0.width.equalTo(60)
             $0.height.equalTo(18)
             $0.leading.equalTo(saleLabel.snp.trailing).inset(-3)
-        }
-
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(todaysImageView).inset(8)
-            $0.width.equalTo(24)
-            $0.height.equalTo(24)
         }
     }
     

@@ -23,6 +23,13 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
         label.font = .NotoBold(size: 16)
         return label
     }()
+    
+    let sectionDescription: UILabel? = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .NotoRegular(size: 14)
+        return label
+    }()
 
 
     // MARK: - Life Cycles
@@ -43,16 +50,23 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
 extension SectionTitleCollectionReusableView {
 
     private func setLayout() {
-        self.addSubviews(sectionTitleLabel)
+        self.addSubviews(sectionTitleLabel, sectionDescription!)
 
         sectionTitleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
+        }
+        sectionDescription?.snp.makeConstraints {
+            $0.top.equalTo(sectionTitleLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
     }
 
     func setSectionTitle(text: String?) {
         self.sectionTitleLabel.text = text
+    }
+    func setSectionDescription(text: String?) {
+        self.sectionDescription?.text = text
     }
 }
 
