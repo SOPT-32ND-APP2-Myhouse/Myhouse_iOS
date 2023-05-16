@@ -28,10 +28,11 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         label.textColor = .black
         return label
     }()
-    public let bookmarkImageView: UIImageView = {
-        let imageView = UIImageView()
-        imageView.image = ImageLiterals.Common.btn_bookMarkUnactived_big
-        
+    public lazy var bookmarkButton: UIButton = {
+        let imageView = UIButton()
+        imageView.setImage(ImageLiterals.Common.btn_bookMarkUnactived_big, for: .normal)
+//        imageView.addTarget(self, action: #selector(BookmarkButtonTapped),
+//                            for: .touchUpInside)
         return imageView
     }()
 
@@ -67,7 +68,7 @@ extension BestCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel!, bookmarkImageView)
+        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel!, bookmarkButton)
         
         bestImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -88,11 +89,16 @@ extension BestCollectionViewCell {
             $0.width.equalTo(20)
             $0.height.equalTo(20)
         }
-        bookmarkImageView.snp.makeConstraints {
+        bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(bestImageView).inset(8)
             $0.width.equalTo(24)
             $0.height.equalTo(24)
         }
+        
+//        @objc
+//        func BookmarkButtonTapped() {
+//            bookmarkButton.setImage(ImageLiterals.Common.btn_bookMarkActived_big, for: .normal)
+//        }
     }
     
     func configureCell(_ bestData: bestDataModel) {

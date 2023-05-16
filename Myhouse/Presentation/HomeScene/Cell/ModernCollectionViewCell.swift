@@ -28,7 +28,7 @@ class ModernCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         label.textColor = .black
         return label
     }()
-    private let bookmarkImageView = BestCollectionViewCell().bookmarkImageView
+    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
     
@@ -49,7 +49,7 @@ extension ModernCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(bestImageView, descriptionLabel, bookmarkImageView)
+        contentView.addSubviews(bestImageView, descriptionLabel, bookmarkButton)
         
         bestImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -65,7 +65,7 @@ extension ModernCollectionViewCell {
             $0.centerX.equalToSuperview()
         }
 
-        bookmarkImageView.snp.makeConstraints {
+        bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(bestImageView).inset(8)
             $0.width.equalTo(24)
             $0.height.equalTo(24)

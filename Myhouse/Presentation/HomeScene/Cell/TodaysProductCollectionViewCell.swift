@@ -49,7 +49,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         label.textColor = .black
         return label
     }()
-    private let bookmarkImageView = BestCollectionViewCell().bookmarkImageView
+    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
     
@@ -70,7 +70,7 @@ extension TodaysProductCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel, bookmarkImageView)
+        contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel, bookmarkButton)
         
         todaysImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -88,7 +88,7 @@ extension TodaysProductCollectionViewCell {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(storeLabel.snp.bottom)
             $0.width.equalTo(todaysImageView.snp.width)
-            $0.height.equalTo(30)
+            $0.height.equalTo(40)
             $0.centerX.equalToSuperview()
         }
         saleLabel.snp.makeConstraints {
@@ -104,7 +104,7 @@ extension TodaysProductCollectionViewCell {
             $0.leading.equalTo(saleLabel.snp.trailing).inset(-3)
         }
 
-        bookmarkImageView.snp.makeConstraints {
+        bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(todaysImageView).inset(8)
             $0.width.equalTo(24)
             $0.height.equalTo(24)

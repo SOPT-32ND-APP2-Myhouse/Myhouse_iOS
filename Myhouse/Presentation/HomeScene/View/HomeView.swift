@@ -66,6 +66,7 @@ extension HomeView {
     func registerCell() {
         SectionTitleCollectionReusableView.register(target: homeCollectionView)
         DivisionFooterView.register(target: homeCollectionView)
+        MoreButtonFooterView.register(target: homeCollectionView)
         
         BestCollectionViewCell.register(target: homeCollectionView)
         RecommendCollectionViewCell.register(target: homeCollectionView)
@@ -232,8 +233,8 @@ extension HomeView {
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.45),
-            heightDimension: .absolute(230)
+            widthDimension: .fractionalWidth(0.44),
+            heightDimension: .absolute(180)
         )
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
@@ -250,7 +251,7 @@ extension HomeView {
         )
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(74)
+            heightDimension: .absolute(100)
         )
         
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -309,6 +310,7 @@ extension HomeView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
+        
         let sectionType = SectionType.allCases[indexPath.section]
         
         if kind == UICollectionView.elementKindSectionHeader {
@@ -326,13 +328,16 @@ extension HomeView: UICollectionViewDataSource {
             return headerView
         }
         else if kind == UICollectionView.elementKindSectionFooter {
-            
-            let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
-
-            return footerView
+            switch sectionType {
+            case .best, .recommend, .todays:
+                let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+                return footerView
+            case .modern:
+                let footerView = MoreButtonFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+                return footerView
+            }
         }
-        else { return UICollectionReusableView() }
-        
+        return UICollectionReusableView()
     }
 
 }

@@ -31,7 +31,7 @@ class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegiste
         return label
     }()
     
-    private let bookmarkImageView = BestCollectionViewCell().bookmarkImageView
+    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
     
@@ -51,7 +51,7 @@ class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegiste
 extension RecommendCollectionViewCell {
 
     private func setLayout() {
-        contentView.addSubviews(recommendImageView, descriptionLabel, bookmarkImageView)
+        contentView.addSubviews(recommendImageView, descriptionLabel, bookmarkButton)
         
         recommendImageView.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
@@ -65,7 +65,7 @@ extension RecommendCollectionViewCell {
             $0.width.equalTo(recommendImageView.snp.width)
             $0.centerX.equalToSuperview()
         }
-        bookmarkImageView.snp.makeConstraints {
+        bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(recommendImageView).inset(8)
             $0.width.equalTo(24)
             $0.height.equalTo(24)

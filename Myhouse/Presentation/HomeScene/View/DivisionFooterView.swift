@@ -5,7 +5,6 @@
 //  Created by Kim Min Joo on 2023/05/15.
 //
 
-
 import UIKit
 
 import SnapKit
@@ -16,11 +15,9 @@ final class DivisionFooterView: UICollectionReusableView, UICollectionFooterView
     
     static var isFromNib = false
     
-    static let reuseIdentifier = "division-footer"
-    
     // MARK: - UI Components
 
-    private let division: UIView = {
+    public let division: UIView = {
         let division = UIView()
         division.backgroundColor = .gray_20
         return division
@@ -47,7 +44,7 @@ private extension DivisionFooterView {
         addSubviews(division)
         
         division.snp.makeConstraints {
-            $0.bottom.equalToSuperview()
+            $0.centerY.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(-16)
             $0.height.equalTo(8)
         }
