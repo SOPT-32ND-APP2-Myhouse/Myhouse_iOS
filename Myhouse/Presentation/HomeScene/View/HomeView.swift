@@ -127,7 +127,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(37)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -219,7 +219,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(37)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -261,7 +261,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(37)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -302,7 +302,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(37)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -395,7 +395,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(37)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -405,7 +405,7 @@ extension HomeView {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
         section.boundarySupplementaryItems = [header]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 20, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 10, trailing: 16)
         section.interGroupSpacing = 8
         return section
     }
@@ -429,7 +429,7 @@ extension HomeView {
         )
         let headerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(40)
+            heightDimension: .absolute(30)
         )
         let header = NSCollectionLayoutBoundarySupplementaryItem(
             layoutSize: headerSize,
@@ -574,19 +574,24 @@ extension HomeView: UICollectionViewDataSource {
         let sectionType = SectionType.allCases[indexPath.section]
         
         if kind == UICollectionView.elementKindSectionHeader {
+//            let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: <#T##String#>, withReuseIdentifier: <#T##String#>, for: <#T##IndexPath#>)
             let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             switch sectionType {
             case .best:
                 headerView.setSectionTitle(text: I18N.HomeSection.best)
+//                headerView.setSectionDescription(text: nil)
             case .recommend:
-                headerView.sectionTitleLabel.font = .NotoBold(size: 14)
                 headerView.setSectionTitle(text: I18N.HomeSection.recommend)
+                    headerView.sectionTitleLabel.font = .NotoBold(size: 14)
+//                headerView.setSectionDescription(text: nil)
             case .todays:
                 headerView.setSectionTitle(text: I18N.HomeSection.todays)
             case .modern:
+//                headerView.sectionTitleLabel.font = .NotoBold(size: 16)
                 headerView.setSectionTitle(text: I18N.HomeSection.modern)
             case .category:
                 headerView.setSectionTitle(text: I18N.HomeSection.category)
+//                headerView.setSectionDescription(text: nil)
             case .summer:
                 headerView.setSectionTitle(text: I18N.HomeSection.summerContent)
             case .color:

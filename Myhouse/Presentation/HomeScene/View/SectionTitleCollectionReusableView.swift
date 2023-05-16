@@ -17,12 +17,7 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
 
     // MARK: - UI Components
 
-    let sectionTitleLabel: UILabel = {
-        let label = UILabel()
-        label.textColor = .black
-        label.font = .NotoBold(size: 16)
-        return label
-    }()
+    let sectionTitleLabel = UILabel()
     
     let sectionDescription: UILabel? = {
         let label = UILabel()
@@ -42,6 +37,12 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
 
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        sectionTitleLabel.text = nil
+        sectionDescription?.text = nil
     }
 }
 
@@ -64,6 +65,8 @@ extension SectionTitleCollectionReusableView {
 
     func setSectionTitle(text: String?) {
         self.sectionTitleLabel.text = text
+        self.sectionTitleLabel.textColor = .black
+        self.sectionTitleLabel.font = .NotoBold(size: 16)
     }
     func setSectionDescription(text: String?) {
         self.sectionDescription?.text = text

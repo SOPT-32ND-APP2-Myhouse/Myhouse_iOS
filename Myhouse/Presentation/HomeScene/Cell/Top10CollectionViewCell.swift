@@ -25,7 +25,7 @@ class Top10CollectionViewCell: UICollectionViewCell, UICollectionViewRegisterabl
     private let userLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
-        label.font = .NotoRegular(size: 12)
+        label.font = .NotoBold(size: 12)
         label.textColor = .white
         return label
     }()

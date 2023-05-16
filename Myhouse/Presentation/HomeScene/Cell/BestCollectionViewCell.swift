@@ -30,9 +30,7 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
     }()
     public lazy var bookmarkButton: UIButton = {
         let imageView = UIButton()
-        imageView.setImage(ImageLiterals.Common.btn_bookMarkUnactived_big, for: .normal)
-//        imageView.addTarget(self, action: #selector(BookmarkButtonTapped),
-//                            for: .touchUpInside)
+        imageView.setImage(ImageLiterals.Common.btn_bookMarkUnactived_small, for: .normal)
         return imageView
     }()
 
