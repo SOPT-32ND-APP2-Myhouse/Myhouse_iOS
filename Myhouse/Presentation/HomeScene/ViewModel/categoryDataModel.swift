@@ -14,12 +14,12 @@ struct categoryDataModel {
 
 extension categoryDataModel {
     static func dummy() -> [categoryDataModel] {
-        return [categoryDataModel(image: ImageLiterals.Card.img_card07, title: "조명"),
-                categoryDataModel(image: ImageLiterals.Card.img_card07, title: "데코 식물"),
-                categoryDataModel(image: ImageLiterals.Card.img_card07, title: "가구"),
-                categoryDataModel(image: ImageLiterals.Card.img_card07, title: "주방용품"),
-                categoryDataModel(image: ImageLiterals.Card.img_card07, title: "조명"),
-                categoryDataModel(image: ImageLiterals.Card.img_card07, title: "데코 식물")
+        return [categoryDataModel(image: ImageLiterals.Home.img_category01, title: "조명"),
+                categoryDataModel(image: ImageLiterals.Home.img_category02, title: "데코 식물"),
+                categoryDataModel(image: ImageLiterals.Home.img_category03, title: "가구"),
+                categoryDataModel(image: ImageLiterals.Home.img_category04, title: "주방용품"),
+                categoryDataModel(image: ImageLiterals.Home.img_category01, title: "조명"),
+                categoryDataModel(image: ImageLiterals.Home.img_category02, title: "데코 식물")
         ]
     }
 }

@@ -15,7 +15,7 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best, recommend, todays, modern
+        case best, recommend, todays, modern, category
     }
     
     // MARK: - UI Components
@@ -24,6 +24,7 @@ final class HomeView: BaseView {
     private let recommendDummy = recommendDataModel.dummy()
     private let todaysDummy = todaysDataModel.dummy()
     private let modernDummy = modernDataModel.dummy()
+    private let categoryDummy = categoryDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -72,6 +73,7 @@ extension HomeView {
         RecommendCollectionViewCell.register(target: homeCollectionView)
         TodaysProductCollectionViewCell.register(target: homeCollectionView)
         ModernCollectionViewCell.register(target: homeCollectionView)
+        CategoryCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -86,6 +88,8 @@ extension HomeView {
                 return self.getLayoutTodaysSection()
             case .modern:
                 return self.getLayoutModernSection()
+            case .category:
+                return self.getLayoutCategorySection()
             }
         }
     }
@@ -251,7 +255,48 @@ extension HomeView {
         )
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(80)
+        )
+        
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header, footer]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = 8
+        return section
+    }
+    func getLayoutCategorySection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .absolute(74),
             heightDimension: .absolute(100)
+        )
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(40)
+        )
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(30)
         )
         
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -284,6 +329,8 @@ extension HomeView: UICollectionViewDataSource {
             return todaysDummy.count
         case .modern:
             return modernDummy.count
+        case .category:
+            return categoryDummy.count
         }
     }
     
@@ -306,6 +353,10 @@ extension HomeView: UICollectionViewDataSource {
             let cell = ModernCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(modernDummy[indexPath.item])
             return cell
+        case .category:
+            let cell = CategoryCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(categoryDummy[indexPath.item])
+            return cell
         }
     }
     
@@ -324,12 +375,14 @@ extension HomeView: UICollectionViewDataSource {
                 headerView.setSectionTitle(text: I18N.HomeSection.todays)
             case .modern:
                 headerView.setSectionTitle(text: I18N.HomeSection.modern)
+            case .category:
+                headerView.setSectionTitle(text: I18N.HomeSection.category)
             }
             return headerView
         }
         else if kind == UICollectionView.elementKindSectionFooter {
             switch sectionType {
-            case .best, .recommend, .todays:
+            case .best, .recommend, .todays, .category:
                 let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
                 return footerView
             case .modern:
