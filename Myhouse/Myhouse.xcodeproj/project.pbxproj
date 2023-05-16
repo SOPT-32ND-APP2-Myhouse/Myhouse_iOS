@@ -19,6 +19,8 @@
 		0951B69B2A13376A00134B6A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69A2A13376A00134B6A /* CategoryCollectionViewCell.swift */; };
 		0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69C2A135E6D00134B6A /* ColorLightCollectionViewCell.swift */; };
 		0951B69F2A13600500134B6A /* colorLightDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69E2A13600500134B6A /* colorLightDataModel.swift */; };
+		0951B6A12A138AEF00134B6A /* ColorBestCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B6A02A138AEF00134B6A /* ColorBestCollectionVIewCell.swift */; };
+		0951B6A32A138B3E00134B6A /* colorBestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B6A22A138B3E00134B6A /* colorBestDataModel.swift */; };
 		0968C2112A11646400945F23 /* bestDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0968C2102A11646400945F23 /* bestDataModel.swift */; };
 		09B7D3A62A12227E00B4B485 /* recommendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */; };
 		09DF36A12A121D1900C8BDA9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */; };
@@ -74,6 +76,8 @@
 		0951B69A2A13376A00134B6A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0951B69C2A135E6D00134B6A /* ColorLightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightCollectionViewCell.swift; sourceTree = "<group>"; };
 		0951B69E2A13600500134B6A /* colorLightDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorLightDataModel.swift; sourceTree = "<group>"; };
+		0951B6A02A138AEF00134B6A /* ColorBestCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorBestCollectionVIewCell.swift; sourceTree = "<group>"; };
+		0951B6A22A138B3E00134B6A /* colorBestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorBestDataModel.swift; sourceTree = "<group>"; };
 		0968C2102A11646400945F23 /* bestDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = bestDataModel.swift; sourceTree = "<group>"; };
 		09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = recommendDataModel.swift; sourceTree = "<group>"; };
 		09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
@@ -256,6 +260,7 @@
 				0968C2102A11646400945F23 /* bestDataModel.swift */,
 				9BF93D8B2A12AF0600FE3B5B /* todaysDataModel.swift */,
 				09B7D3A52A12227E00B4B485 /* recommendDataModel.swift */,
+				0951B6A22A138B3E00134B6A /* colorBestDataModel.swift */,
 				9BF93D7F2A12A87500FE3B5B /* modernDataModel.swift */,
 				9B2A30192A12B13D0036ECB8 /* categoryDataModel.swift */,
 				0951B69E2A13600500134B6A /* colorLightDataModel.swift */,
@@ -271,6 +276,7 @@
 				09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */,
 				9BF93D812A12A8B900FE3B5B /* ModernCollectionViewCell.swift */,
 				0951B69A2A13376A00134B6A /* CategoryCollectionViewCell.swift */,
+				0951B6A02A138AEF00134B6A /* ColorBestCollectionVIewCell.swift */,
 				0951B69C2A135E6D00134B6A /* ColorLightCollectionViewCell.swift */,
 			);
 			path = Cell;
@@ -481,6 +487,7 @@
 				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
+				0951B6A12A138AEF00134B6A /* ColorBestCollectionVIewCell.swift in Sources */,
 				0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */,
 				9BF93D842A12ABE200FE3B5B /* MoreButtonFooterView.swift in Sources */,
 				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
@@ -499,6 +506,7 @@
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
 				0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */,
 				9BF93D802A12A87500FE3B5B /* modernDataModel.swift in Sources */,
+				0951B6A32A138B3E00134B6A /* colorBestDataModel.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
 				694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */,
