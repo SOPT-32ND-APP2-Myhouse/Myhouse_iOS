@@ -74,7 +74,17 @@ extension RecommendCollectionViewCell {
     
     func configureCell(_ recommendData: recommendDataModel) {
         recommendImageView.image = recommendData.image
-        descriptionLabel.text = recommendData.title
+        descriptionLabel.text = recommendData.highlight
+        descriptionLabel.text = (descriptionLabel.text ?? "") + "\(recommendData.title)"
+        
+        let fullText = descriptionLabel.text ?? ""
+        let attribtuedString = NSMutableAttributedString(string: fullText)
+        guard let highlightText = recommendData.highlight else { return }
+        if !highlightText.isEmpty {
+            let range = (fullText as NSString).range(of: "\(highlightText)")
+            attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
+            descriptionLabel.attributedText = attribtuedString
+        }
         
     }
 

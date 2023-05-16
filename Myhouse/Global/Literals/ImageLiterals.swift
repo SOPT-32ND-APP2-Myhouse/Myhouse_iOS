@@ -57,6 +57,7 @@ struct ImageLiterals {
         static var img_card13: UIImage { .load(name: "img_card13") }
         static var img_card14: UIImage { .load(name: "img_card14") }
         static var img_card15: UIImage { .load(name: "img_card15") }
+        static var img_card16: UIImage { .load(name: "img_card16") }
     }
     
     struct Home {
