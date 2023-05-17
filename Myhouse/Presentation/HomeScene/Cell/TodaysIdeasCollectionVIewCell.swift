@@ -27,7 +27,7 @@ class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         let label = UILabel()
         label.numberOfLines = 1
         label.font = .NotoMedium(size: 14)
-        label.textColor = .black
+        label.textColor = .darkGray
         return label
     }()
     private let descriptionLabel: UILabel = {
@@ -72,18 +72,15 @@ extension TodaysIdeasCollectionViewCell {
         }
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
-            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
         }
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).inset(-8)
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
-            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
         }
         productsLabel.snp.makeConstraints {
             $0.top.equalTo(descriptionLabel.snp.bottom).inset(-5)
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
-            $0.trailing.equalToSuperview()
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
         }
     }
     
