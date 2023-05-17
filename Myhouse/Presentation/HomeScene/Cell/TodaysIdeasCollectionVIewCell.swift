@@ -71,15 +71,19 @@ extension TodaysIdeasCollectionViewCell {
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(ideasImageView.snp.bottom).inset(-8)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
+            $0.trailing.equalToSuperview()
         }
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).inset(-6)
-            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(titleLabel.snp.bottom).inset(-8)
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
+            $0.trailing.equalToSuperview()
         }
         productsLabel.snp.makeConstraints {
-            $0.leading.trailing.equalToSuperview()
+            $0.top.equalTo(descriptionLabel.snp.bottom).inset(-5)
+            $0.leading.equalTo(ideasImageView.snp.trailing).inset(10)
+            $0.trailing.equalToSuperview()
         }
     }
     
