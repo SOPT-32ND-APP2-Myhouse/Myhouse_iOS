@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -23,6 +22,7 @@ class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         imageView.clipsToBounds = true
         return imageView
     }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -30,6 +30,7 @@ class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         label.textColor = .black
         return label
     }()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
@@ -59,23 +60,28 @@ class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
 extension ReviewCollectionViewCell {
 
     private func setLayout() {
-        contentView.addSubviews(reviewImageView, titleLabel, descriptionLabel, bookmarkButton)
+        contentView.addSubviews(reviewImageView,
+                                titleLabel,
+                                descriptionLabel,
+                                bookmarkButton)
         
         reviewImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
+        
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(reviewImageView.snp.bottom).inset(-8)
+            $0.top.equalTo(reviewImageView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
         }
+        
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).inset(-6)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(6)
             $0.leading.trailing.equalToSuperview()
         }
+        
         bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(reviewImageView).inset(8)
-            $0.width.equalTo(24)
-            $0.height.equalTo(24)
+            $0.size.equalTo(24)
         }
     }
     
@@ -84,5 +90,4 @@ extension ReviewCollectionViewCell {
         titleLabel.text = reviewData.highlight
         descriptionLabel.text = reviewData.title
     }
-
 }

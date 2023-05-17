@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class CategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class CategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -23,6 +22,7 @@ class CategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRegister
 //        imageView.clipsToBounds = true
         return imageView
     }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.font = .NotoRegular(size: 12)
@@ -53,13 +53,12 @@ extension CategoryCollectionViewCell {
         contentView.addSubviews(categoryImageView, titleLabel)
         
         categoryImageView.snp.makeConstraints {
-            $0.top.equalToSuperview()
+            $0.top.bottom.equalToSuperview()
             $0.centerX.equalToSuperview()
-            $0.height.equalTo(self.categoryImageView.snp.width)
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(categoryImageView.snp.bottom).inset(-8)
+            $0.top.equalTo(categoryImageView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
         }
     }
@@ -68,5 +67,4 @@ extension CategoryCollectionViewCell {
         categoryImageView.image = categoryData.image
         titleLabel.text = categoryData.title
     }
-
 }

@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -23,6 +22,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         imageView.clipsToBounds = true
         return imageView
     }()
+    
     private let storeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -30,6 +30,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         label.textColor = .darkGray
         return label
     }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -37,6 +38,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         label.textColor = .black
         return label
     }()
+    
     private let saleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -44,6 +46,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         label.textColor = .main
         return label
     }()
+    
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -51,6 +54,7 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
         label.textColor = .black
         return label
     }()
+    
     private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
@@ -72,14 +76,18 @@ extension TodaysProductCollectionViewCell {
 
     
     private func setLayout() {
-        contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel)
+        contentView.addSubviews(todaysImageView,
+                                storeLabel,
+                                titleLabel,
+                                saleLabel,
+                                priceLabel)
         
         todaysImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         storeLabel.snp.makeConstraints {
-            $0.top.equalTo(todaysImageView.snp.bottom).inset(-8)
+            $0.top.equalTo(todaysImageView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview()
         }
         
@@ -87,15 +95,17 @@ extension TodaysProductCollectionViewCell {
             $0.top.equalTo(storeLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(36)
             $0.leading.equalToSuperview()
         }
+        
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(60)
-            $0.leading.equalTo(saleLabel.snp.trailing).inset(-3)
+            $0.leading.equalTo(saleLabel.snp.trailing).offset(3)
         }
     }
     
@@ -105,7 +115,5 @@ extension TodaysProductCollectionViewCell {
         titleLabel.text = todaysDummy.title
         saleLabel.text = todaysDummy.sale
         priceLabel.text = todaysDummy.price
-        
     }
-
 }

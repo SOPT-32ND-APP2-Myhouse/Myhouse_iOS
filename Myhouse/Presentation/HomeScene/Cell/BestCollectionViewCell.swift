@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class BestCollectionViewCell: UICollectionViewCell {
     
     static var isFromNib: Bool = false
     
@@ -23,6 +22,7 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         imageView.clipsToBounds = true
         return imageView
     }()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
@@ -30,13 +30,14 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
         label.textColor = .black
         return label
     }()
+    
     public lazy var bookmarkButton: UIButton = {
         let imageView = UIButton()
         imageView.setImage(ImageLiterals.Common.btn_bookMarkUnactived_small, for: .normal)
         return imageView
     }()
 
-    private let rankingLabel: UILabel? = {
+    private let rankingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
         label.font = .NotoMedium(size: 12)
@@ -65,37 +66,38 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
 // MARK: - Extensions
 
 extension BestCollectionViewCell {
-
     
     private func setLayout() {
-        contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel!, bookmarkButton)
+        contentView.addSubviews(bestImageView,
+                                descriptionLabel,
+                                rankingLabel,
+                                bookmarkButton)
         
         bestImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(bestImageView.snp.bottom).inset(-12)
+            $0.top.equalTo(bestImageView.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview()
         }
         
-        rankingLabel?.snp.makeConstraints {
+        rankingLabel.snp.makeConstraints {
             $0.top.leading.equalToSuperview()
-            $0.width.equalTo(20)
-            $0.height.equalTo(20)
+            $0.size.equalTo(20)
         }
+        
         bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(bestImageView).inset(5)
-            $0.width.equalTo(24)
-            $0.height.equalTo(24)
+            $0.size.equalTo(24)
         }
     }
     
     func configureCell(_ bestData: bestDataModel) {
         bestImageView.image = bestData.image
         descriptionLabel.text = bestData.title
-        descriptionLabel.text = (descriptionLabel.text ?? "") + " \(bestData.description)"
-        rankingLabel?.text = "\(bestData.rank)"
+        descriptionLabel.text = "\(descriptionLabel.text!) " + "\(bestData.description)"
+        rankingLabel.text = "\(bestData.rank)"
         
         // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""
@@ -104,5 +106,8 @@ extension BestCollectionViewCell {
         attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
         descriptionLabel.attributedText = attribtuedString
     }
+}
 
+extension BestCollectionViewCell: UICollectionViewRegisterable {
+    
 }

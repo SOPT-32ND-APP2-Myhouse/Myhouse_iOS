@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -50,33 +49,30 @@ class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
 // MARK: - Extensions
 
 extension ColorLightCollectionViewCell {
-
     
     private func setLayout() {
-        contentView.addSubviews(colorLightImageView, userLabel, bookmarkButton)
+        contentView.addSubviews(colorLightImageView,
+                                userLabel,
+                                bookmarkButton)
         
         colorLightImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         userLabel.snp.makeConstraints {
             $0.leading.equalTo(colorLightImageView.snp.leading).inset(10)
             $0.bottom.equalTo(colorLightImageView.snp.bottom).inset(10)
             $0.width.equalTo(colorLightImageView.snp.width)
-            $0.height.equalTo(18)
         }
 
         bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(colorLightImageView).inset(8)
-            $0.width.equalTo(24)
-            $0.height.equalTo(24)
+            $0.size.equalTo(24)
         }
     }
     
     func configureCell(_ colorLightDummy: colorLightDataModel) {
         colorLightImageView.image = colorLightDummy.image
         userLabel.text = colorLightDummy.user
-        
     }
-
 }

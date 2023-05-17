@@ -11,9 +11,6 @@ struct I18N {
     
     struct Home {
         static let searchPlaceholder = "오늘의 집 통합검색"
-        
-    }
-    struct HomeSection {
         static let best = "🏅이주의 인기 콘텐츠🏅"
         static let recommend = "곡괭님을 위한 추천 집들이"
         static let todays = "오늘의 추천상품"
@@ -28,12 +25,5 @@ struct I18N {
         static let review = "서울특별시 동작구 주변 시공 리뷰"
         static let todaysIdeas = "오늘의 기획전"
         static let bestSellers = "베스트"
-        
-        
     }
-    struct HomeLabel {
-        static let label = "간결해진 삶에 행복을 더하는!"
-        static let label1 = "뷰 맛집, 상큼 하우스"
-    }
-    
 }

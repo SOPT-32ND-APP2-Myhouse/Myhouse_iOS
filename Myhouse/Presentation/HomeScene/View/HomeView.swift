@@ -15,7 +15,7 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best, recommend, todays, modern, category, summer, color, colorBest, top10, review, ideas, icon
+        case best, recommend, todays, modern, category, summer, color, colorBest, top10, review, ideas
     }
     
     // MARK: - UI Components
@@ -31,7 +31,6 @@ final class HomeView: BaseView {
     private let top10Dummy = colorLightDataModel.top10()
     private let reviewDumy = recommendDataModel.review()
     private let ideasDummy = ideaDataModel.dummy()
-    private let iconDummy = iconDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -87,7 +86,6 @@ extension HomeView {
         Top10CollectionViewCell.register(target: homeCollectionView)
         ReviewCollectionViewCell.register(target: homeCollectionView)
         TodaysIdeasCollectionViewCell.register(target: homeCollectionView)
-        IconCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -116,8 +114,6 @@ extension HomeView {
                 return self.getLayoutReviewSection()
             case .ideas:
                 return self.getLayoutIdeasSection()
-            case .icon:
-                return self.getLayoutIconSection()
             }
         }
     }
@@ -328,7 +324,7 @@ extension HomeView {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.2),
@@ -660,37 +656,6 @@ extension HomeView {
         section.interGroupSpacing = 12
         return section
     }
-
-    func getLayoutIconSection() -> NSCollectionLayoutSection {
-        let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.33),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        let itemSize2 = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.5),
-            heightDimension: .fractionalHeight(1.0)
-        )
-        
-        let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 16, trailing: 16)
-        let item2 = NSCollectionLayoutItem(layoutSize: itemSize2)
-        item2.contentInsets = NSDirectionalEdgeInsets(top: 20, leading: 16, bottom: 16, trailing: 16)
-        
-        let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.2)
-        )
-        
-        let group = NSCollectionLayoutGroup.vertical(
-            layoutSize: groupSize,
-            subitems: [item, item2]
-        )
-        let section = NSCollectionLayoutSection(group: group)
-//        section.orthogonalScrollingBehavior = .none
-        section.interGroupSpacing = 12
-        return section
-    }
-    
 }
 
 extension HomeView: UICollectionViewDataSource {
@@ -723,8 +688,6 @@ extension HomeView: UICollectionViewDataSource {
             return reviewDumy.count
         case .ideas:
             return ideasDummy.count
-        case .icon:
-            return iconDummy.count
         }
     }
     
@@ -775,10 +738,6 @@ extension HomeView: UICollectionViewDataSource {
             let cell = TodaysIdeasCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(ideasDummy[indexPath.item])
             return cell
-        case .icon:
-            let cell = IconCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(iconDummy[indexPath.item])
-            return cell
         }
     }
     
@@ -790,48 +749,46 @@ extension HomeView: UICollectionViewDataSource {
             let headerView = SectionTitleCollectionReusableView.dequeueReusableHeaderView(collectionView: collectionView, indexPath: indexPath)
             switch sectionType {
             case .best:
-                headerView.setSectionTitle(text: I18N.HomeSection.best)
+                headerView.setSectionTitle(text: I18N.Home.best)
             case .recommend:
-                headerView.setSectionTitle(text: I18N.HomeSection.recommend)
+                headerView.setSectionTitle(text: I18N.Home.recommend)
                     headerView.sectionTitleLabel.font = .NotoBold(size: 14)
             case .todays:
-                headerView.setSectionTitle(text: I18N.HomeSection.todays)
+                headerView.setSectionTitle(text: I18N.Home.todays)
             case .modern:
-                headerView.setSectionTitle(text: I18N.HomeSection.modern)
+                headerView.setSectionTitle(text: I18N.Home.modern)
             case .category:
-                headerView.setSectionTitle(text: I18N.HomeSection.category)
+                headerView.setSectionTitle(text: I18N.Home.category)
             case .summer:
-                headerView.setSectionTitle(text: I18N.HomeSection.summerContent)
+                headerView.setSectionTitle(text: I18N.Home.summerContent)
             case .color:
-                headerView.setSectionTitle(text: I18N.HomeSection.color)
+                headerView.setSectionTitle(text: I18N.Home.color)
                 let fullText = headerView.sectionTitleLabel.text ?? ""
                 let attribtuedString = NSMutableAttributedString(string: fullText)
                 let range = (fullText as NSString).range(of: "#컬러/레터링조명")
                 attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
                 headerView.sectionTitleLabel.attributedText = attribtuedString
             case .colorBest:
-                headerView.setSectionTitle(text: I18N.HomeSection.colorBest)
+                headerView.setSectionTitle(text: I18N.Home.colorBest)
                 let fullText = headerView.sectionTitleLabel.text ?? ""
                 let attribtuedString = NSMutableAttributedString(string: fullText)
                 let range = (fullText as NSString).range(of: "#컬러/레터링조명")
                 attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
                 headerView.sectionTitleLabel.attributedText = attribtuedString
             case .top10:
-                headerView.setSectionTitle(text: I18N.HomeSection.top10)
-                headerView.setSectionDescription(text: I18N.HomeSection.top10Description)
+                headerView.setSectionTitle(text: I18N.Home.top10)
+                headerView.setSectionDescription(text: I18N.Home.top10Description)
             case .review:
-                headerView.setSectionTitle(text: I18N.HomeSection.review)
+                headerView.setSectionTitle(text: I18N.Home.review)
             case .ideas:
-                headerView.setSectionTitle(text: I18N.HomeSection.todaysIdeas)
-            case .icon:
-                headerView.setSectionTitle(text: I18N.HomeSection.todaysIdeas)
+                headerView.setSectionTitle(text: I18N.Home.todaysIdeas)
             }
             return headerView
         }
         
         else if kind == UICollectionView.elementKindSectionFooter {
             switch sectionType {
-            case .best, .recommend, .todays, .category, .colorBest, .top10, .review, .icon:
+            case .best, .recommend, .todays, .category, .colorBest, .top10, .review:
                 let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
                 return footerView
             case .modern, .summer, .ideas:

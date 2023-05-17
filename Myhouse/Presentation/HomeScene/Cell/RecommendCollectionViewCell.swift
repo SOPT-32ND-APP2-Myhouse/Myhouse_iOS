@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -53,20 +52,22 @@ class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegiste
 extension RecommendCollectionViewCell {
 
     private func setLayout() {
-        contentView.addSubviews(recommendImageView, descriptionLabel, bookmarkButton)
+        contentView.addSubviews(recommendImageView,
+                                descriptionLabel,
+                                bookmarkButton)
         
         recommendImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(recommendImageView.snp.bottom).inset(-12)
+            $0.top.equalTo(recommendImageView.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview()
         }
+        
         bookmarkButton.snp.makeConstraints {
             $0.bottom.trailing.equalTo(recommendImageView).inset(8)
-            $0.width.equalTo(24)
-            $0.height.equalTo(24)
+            $0.size.equalTo(24)
         }
     }
     
@@ -83,7 +84,5 @@ extension RecommendCollectionViewCell {
             attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
             descriptionLabel.attributedText = attribtuedString
         }
-        
     }
-
 }

@@ -9,8 +9,7 @@ import UIKit
 
 import SnapKit
 
-class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
-    
+final class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -23,6 +22,7 @@ class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         imageView.clipsToBounds = true
         return imageView
     }()
+    
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 1
@@ -30,6 +30,7 @@ class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         label.textColor = .darkGray
         return label
     }()
+    
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
@@ -38,6 +39,7 @@ class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         label.sizeToFit()
         return label
     }()
+    
     private let productsLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
@@ -65,22 +67,28 @@ class TodaysIdeasCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
 extension TodaysIdeasCollectionViewCell {
 
     private func setLayout() {
-        contentView.addSubviews(ideasImageView, titleLabel, descriptionLabel, productsLabel)
+        contentView.addSubviews(ideasImageView,
+                                titleLabel,
+                                descriptionLabel,
+                                productsLabel)
         
         ideasImageView.snp.makeConstraints {
-            $0.top.leading.trailing.bottom.equalToSuperview()
+            $0.edges.equalToSuperview()
         }
+        
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
+            $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
         }
+        
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).inset(-8)
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
+            $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
         }
+        
         productsLabel.snp.makeConstraints {
-            $0.top.equalTo(descriptionLabel.snp.bottom).inset(-5)
-            $0.leading.equalTo(ideasImageView.snp.trailing).inset(-10)
+            $0.top.equalTo(descriptionLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
         }
     }
     
@@ -90,5 +98,4 @@ extension TodaysIdeasCollectionViewCell {
         descriptionLabel.text = ideaData.description
         productsLabel.text = ideaData.products
     }
-
 }
