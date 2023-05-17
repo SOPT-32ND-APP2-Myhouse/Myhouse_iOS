@@ -366,7 +366,6 @@ extension HomeView {
         return section
     }
     
-    
     func getLayoutSummerSection() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(
@@ -418,7 +417,6 @@ extension HomeView {
         return section
     }
     
-    
     func getLayoutColorLightSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -456,7 +454,6 @@ extension HomeView {
         section.interGroupSpacing = 8
         return section
     }
-    
     
     func getLayoutColorBestSection() -> NSCollectionLayoutSection {
         
@@ -606,7 +603,6 @@ extension HomeView {
         section.interGroupSpacing = 8
         return section
     }
-    
     
     func getLayoutIdeasSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
@@ -783,6 +779,7 @@ extension HomeView: UICollectionViewDataSource {
             case .ideas:
                 headerView.setSectionTitle(text: I18N.Home.todaysIdeas)
             }
+            
             return headerView
         }
         
@@ -801,5 +798,5 @@ extension HomeView: UICollectionViewDataSource {
         
         return UICollectionReusableView()
     }
-
+    
 }
