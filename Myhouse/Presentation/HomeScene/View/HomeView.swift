@@ -110,7 +110,6 @@ extension HomeView {
         }
     }
     
-
     func getLayoutBestSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
@@ -164,15 +163,15 @@ extension HomeView {
         
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.489),
-            heightDimension: .fractionalHeight(1)
+            heightDimension: .fractionalHeight(0.978)
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 60, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .estimated(240)
+            heightDimension: .fractionalHeight(0.3)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -208,7 +207,7 @@ extension HomeView {
         section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header, footer]
         section.contentInsets = .init(top: 0, leading: 16, bottom: 0, trailing: 16)
-        section.interGroupSpacing = 8
+//        section.interGroupSpacing = 60
         return section
     }
     
