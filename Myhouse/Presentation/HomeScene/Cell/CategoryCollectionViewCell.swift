@@ -63,7 +63,7 @@ extension CategoryCollectionViewCell {
         }
     }
     
-    func configureCell(_ categoryData: categoryDataModel) {
+    func configureCell(_ categoryData: CategoryDataModel) {
         categoryImageView.image = categoryData.image
         titleLabel.text = categoryData.title
     }

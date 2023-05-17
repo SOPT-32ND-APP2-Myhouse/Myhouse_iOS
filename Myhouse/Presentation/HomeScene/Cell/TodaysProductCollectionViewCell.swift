@@ -109,7 +109,7 @@ extension TodaysProductCollectionViewCell {
         }
     }
     
-    func configureCell(_ todaysDummy: todaysDataModel) {
+    func configureCell(_ todaysDummy: TodaysDataModel) {
         todaysImageView.image = todaysDummy.image
         storeLabel.text = todaysDummy.store
         titleLabel.text = todaysDummy.title

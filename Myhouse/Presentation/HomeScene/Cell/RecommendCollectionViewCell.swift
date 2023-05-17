@@ -71,7 +71,7 @@ extension RecommendCollectionViewCell {
         }
     }
     
-    func configureCell(_ recommendData: recommendDataModel) {
+    func configureCell(_ recommendData: RecommendDataModel) {
         recommendImageView.image = recommendData.image
         descriptionLabel.text = recommendData.highlight
         descriptionLabel.text = (descriptionLabel.text ?? "") + "\(recommendData.title)"

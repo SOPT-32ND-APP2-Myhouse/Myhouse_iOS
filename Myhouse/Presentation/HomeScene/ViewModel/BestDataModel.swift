@@ -7,31 +7,31 @@
 
 import UIKit
 
-struct bestDataModel {
+struct BestDataModel {
     let image: UIImage
     let rank: Int
     let title: String
     let description: String
 }
 
-extension bestDataModel {
-    static func dummy() -> [bestDataModel] {
-        return [bestDataModel(image: ImageLiterals.Card.img_card09,
+extension BestDataModel {
+    static func dummy() -> [BestDataModel] {
+        return [BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 1,
                               title: "간결해진 삶에 행복을 더하는!",
                               description: "뷰 맛집, 상큼하우스"),
-                bestDataModel(image: ImageLiterals.Card.img_card09,
+                BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 2,
                               title: "간결해진 삶에 행복을 더하는!",
                               description: "뷰 맛집, 상큼하우스"),
-                bestDataModel(image: ImageLiterals.Card.img_card09,
+                BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 3,
                               title: "간결해진 삶에 행복을 더하는!",
                               description: "뷰 맛집, 상큼하우스"),
-                bestDataModel(image: ImageLiterals.Card.img_card09,
+                BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 4,
                               title: "간결해진 삶에 행복을 더하는!",
-                              description: "뷰 맛집, 상큼하우스"),
+                              description: "뷰 맛집, 상큼하우스")
         ]
     }
 }

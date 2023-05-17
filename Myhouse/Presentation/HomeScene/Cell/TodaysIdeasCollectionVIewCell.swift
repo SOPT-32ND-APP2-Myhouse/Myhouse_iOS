@@ -92,7 +92,7 @@ extension TodaysIdeasCollectionViewCell {
         }
     }
     
-    func configureCell(_ ideaData: ideaDataModel) {
+    func configureCell(_ ideaData: IdeaDataModel) {
         ideasImageView.image = ideaData.image
         titleLabel.text = ideaData.title
         descriptionLabel.text = ideaData.description
