@@ -16,6 +16,8 @@ struct ImageLiterals {
         static var btn_more: UIImage { .load(name: "btn_more") }
         static var btn_noti: UIImage { .load(name: "btn_noti") }
         static var btn_share: UIImage { .load(name: "btn_share") }
+        static var btn_delete: UIImage { .load(name: "btn_delete") }
+        static var btn_plus: UIImage { .load(name: "btn_plus") }
         static var icn_cart: UIImage { .load(name: "img_card13") }
         static var icn_scrapbook: UIImage { .load(name: "icn_scrapbook") }
         static var icn_ad: UIImage { .load(name: "icn_ad") }
@@ -61,8 +63,6 @@ struct ImageLiterals {
         static var img_card17: UIImage { .load(name: "img_card17") }
         static var img_card18: UIImage { .load(name: "img_card18") }
         static var img_card19: UIImage { .load(name: "img_card19") }
-
-        
     }
     
     struct Home {
