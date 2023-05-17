@@ -25,14 +25,14 @@ class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
     }()
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 1
         label.font = .NotoBold(size: 12)
         label.textColor = .black
         return label
     }()
     private let descriptionLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 0
+        label.numberOfLines = 3
         label.font = .NotoMedium(size: 14)
         label.textColor = .black
         label.sizeToFit()
@@ -69,7 +69,7 @@ extension ReviewCollectionViewCell {
             $0.leading.trailing.equalToSuperview()
         }
         descriptionLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom).inset(-8)
+            $0.top.equalTo(titleLabel.snp.bottom).inset(-6)
             $0.leading.trailing.equalToSuperview()
         }
         bookmarkButton.snp.makeConstraints {

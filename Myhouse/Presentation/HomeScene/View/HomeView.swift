@@ -15,7 +15,7 @@ final class HomeView: BaseView {
     
     @frozen
     private enum AboutSection: CaseIterable {
-        case best, recommend, todays, modern, category, summer, color, colorBest, top10
+        case best, recommend, todays, modern, category, summer, color, colorBest, top10, review
     }
     
     // MARK: - UI Components
@@ -29,6 +29,7 @@ final class HomeView: BaseView {
     private let colorDummy = colorLightDataModel.dummy()
     private let colorBestDummy = todaysDataModel.colorBest()
     private let top10Dummy = colorLightDataModel.top10()
+    private let reviewDumy = recommendDataModel.review()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -82,6 +83,7 @@ extension HomeView {
         ColorLightCollectionViewCell.register(target: homeCollectionView)
         ColorBestCollectionViewCell.register(target: homeCollectionView)
         Top10CollectionViewCell.register(target: homeCollectionView)
+        ReviewCollectionViewCell.register(target: homeCollectionView)
     }
     
     func getLayout() -> UICollectionViewLayout {
@@ -106,6 +108,8 @@ extension HomeView {
                 return self.getLayoutColorBestSection()
             case .top10:
                 return self.getLayoutTop10Section()
+            case .review:
+                return self.getLayoutReviewSection()
             }
         }
     }
@@ -549,6 +553,56 @@ extension HomeView {
         section.interGroupSpacing = 8
         return section
     }
+    
+    func getLayoutReviewSection() -> NSCollectionLayoutSection {
+        let itemSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .fractionalHeight(1.0)
+        )
+        
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0)
+        
+        let groupSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(0.35),
+            heightDimension: .fractionalHeight(0.32)
+        )
+        
+        let group = NSCollectionLayoutGroup.horizontal(
+            layoutSize: groupSize,
+            subitems: [item]
+        )
+        
+        let headerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(37)
+        )
+        
+        let header = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: headerSize,
+            elementKind: UICollectionView.elementKindSectionHeader,
+            alignment: .top
+        )
+        
+        let footerSize = NSCollectionLayoutSize(
+            widthDimension: .fractionalWidth(1.0),
+            heightDimension: .absolute(30)
+        )
+        
+        let footer = NSCollectionLayoutBoundarySupplementaryItem(
+            layoutSize: footerSize,
+            elementKind: UICollectionView.elementKindSectionFooter,
+            alignment: .bottom
+        )
+        
+        let section = NSCollectionLayoutSection(group: group)
+        section.orthogonalScrollingBehavior = .continuous
+        section.boundarySupplementaryItems = [header, footer]
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
+        section.interGroupSpacing = 8
+        return section
+    }
+    
 }
 
 extension HomeView: UICollectionViewDataSource {
@@ -577,6 +631,8 @@ extension HomeView: UICollectionViewDataSource {
             return colorBestDummy.count
         case .top10:
             return top10Dummy.count
+        case .review:
+            return reviewDumy.count
         }
     }
     
@@ -619,6 +675,10 @@ extension HomeView: UICollectionViewDataSource {
             let cell = Top10CollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(top10Dummy[indexPath.item])
             return cell
+        case .review:
+            let cell = ReviewCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(reviewDumy[indexPath.item])
+            return cell
         }
     }
     
@@ -659,13 +719,15 @@ extension HomeView: UICollectionViewDataSource {
             case .top10:
                 headerView.setSectionTitle(text: I18N.HomeSection.top10)
                 headerView.setSectionDescription(text: I18N.HomeSection.top10Description)
+            case .review:
+                headerView.setSectionTitle(text: I18N.HomeSection.review)
             }
             return headerView
         }
         
         else if kind == UICollectionView.elementKindSectionFooter {
             switch sectionType {
-            case .best, .recommend, .todays, .category, .colorBest, .top10:
+            case .best, .recommend, .todays, .category, .colorBest, .top10, .review:
                 let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
                 return footerView
             case .modern, .summer:
