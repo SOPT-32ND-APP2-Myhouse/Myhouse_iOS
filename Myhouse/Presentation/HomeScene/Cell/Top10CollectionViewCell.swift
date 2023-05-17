@@ -102,7 +102,7 @@ extension Top10CollectionViewCell {
     func configureCell(_ colorLightDummy: colorLightDataModel) {
         colorLightImageView.image = colorLightDummy.image
         userLabel.text = colorLightDummy.user
-        rankLabel.text = "\(colorLightDummy.rank!)"
+        rankLabel.text = "\(colorLightDummy.rank ?? 0)"
         
     }
 }
