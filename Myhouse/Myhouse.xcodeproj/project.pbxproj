@@ -17,6 +17,8 @@
 		0933C4002A0F7A7000A4F163 /* Alamofire in Frameworks */ = {isa = PBXBuildFile; productRef = 0933C3FF2A0F7A7000A4F163 /* Alamofire */; };
 		0933C4032A0F7A8D00A4F163 /* Kingfisher in Frameworks */ = {isa = PBXBuildFile; productRef = 0933C4022A0F7A8D00A4F163 /* Kingfisher */; };
 		094373FA2A14A9F7003C8AFD /* ReviewCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094373F92A14A9F7003C8AFD /* ReviewCollectionViewCell.swift */; };
+		094373FC2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094373FB2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift */; };
+		094373FE2A14B20C003C8AFD /* todaysIdeasDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 094373FD2A14B20C003C8AFD /* todaysIdeasDataModel.swift */; };
 		0951B69B2A13376A00134B6A /* CategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69A2A13376A00134B6A /* CategoryCollectionViewCell.swift */; };
 		0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69C2A135E6D00134B6A /* ColorLightCollectionViewCell.swift */; };
 		0951B69F2A13600500134B6A /* colorLightDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0951B69E2A13600500134B6A /* colorLightDataModel.swift */; };
@@ -75,6 +77,8 @@
 		0933C3E72A0F716F00A4F163 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		0933C3F42A0F790100A4F163 /* DummyClass.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DummyClass.swift; sourceTree = "<group>"; };
 		094373F92A14A9F7003C8AFD /* ReviewCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewCollectionViewCell.swift; sourceTree = "<group>"; };
+		094373FB2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysIdeasCollectionVIewCell.swift; sourceTree = "<group>"; };
+		094373FD2A14B20C003C8AFD /* todaysIdeasDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = todaysIdeasDataModel.swift; sourceTree = "<group>"; };
 		0951B69A2A13376A00134B6A /* CategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryCollectionViewCell.swift; sourceTree = "<group>"; };
 		0951B69C2A135E6D00134B6A /* ColorLightCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightCollectionViewCell.swift; sourceTree = "<group>"; };
 		0951B69E2A13600500134B6A /* colorLightDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = colorLightDataModel.swift; sourceTree = "<group>"; };
@@ -265,6 +269,7 @@
 				9B2A301D2A13CC8D0036ECB8 /* modernDataModel.swift */,
 				9B2A30192A12B13D0036ECB8 /* categoryDataModel.swift */,
 				0951B69E2A13600500134B6A /* colorLightDataModel.swift */,
+				094373FD2A14B20C003C8AFD /* todaysIdeasDataModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -281,6 +286,7 @@
 				0951B6A02A138AEF00134B6A /* ColorBestCollectionVIewCell.swift */,
 				9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */,
 				094373F92A14A9F7003C8AFD /* ReviewCollectionViewCell.swift */,
+				094373FB2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -482,11 +488,13 @@
 			files = (
 				694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */,
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
+				094373FE2A14B20C003C8AFD /* todaysIdeasDataModel.swift in Sources */,
 				699786032A1011D2005BC69E /* ColorLiterals.swift in Sources */,
 				694D30092A10BA8800D84149 /* UITableViewRegisterable.swift in Sources */,
 				9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */,
 				9BF93D8C2A12AF0600FE3B5B /* todaysDataModel.swift in Sources */,
 				694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */,
+				094373FC2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift in Sources */,
 				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				9B2A301E2A13CC8D0036ECB8 /* modernDataModel.swift in Sources */,
