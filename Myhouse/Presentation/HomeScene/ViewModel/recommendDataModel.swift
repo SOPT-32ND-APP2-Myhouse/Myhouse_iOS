@@ -29,4 +29,11 @@ extension recommendDataModel {
                 recommendDataModel(image: ImageLiterals.Card.img_card16, highlight: "간결해진 삶에 행복을 더하는! ", title: "뷰 맛집, 상큼 하우스"),
         ]
     }
+    static func review() -> [recommendDataModel] {
+        return [recommendDataModel(image: ImageLiterals.Card.img_card14, highlight: "#하대원동 아튼빌 #30평대", title: "전체 인테리어를 해야겠다 생각해서 5군데 견적을 비교했습니다. 일정이 촉박하..."),
+                recommendDataModel(image: ImageLiterals.Card.img_card14, highlight: "간결해진 삶에 행복을 더하는! ", title: "전체 인테리어를 해야겠다 생각해서 5군데 견적을 비교했습니다. 일정이 촉박하..."),
+                recommendDataModel(image: ImageLiterals.Card.img_card14, highlight: "간결해진 삶에 행복을 더하는! ", title: "전체 인테리어를 해야겠다 생각해서 5군데 견적을 비교했습니다. 일정이 촉박하..."),
+                recommendDataModel(image: ImageLiterals.Card.img_card14, highlight: "간결해진 삶에 행복을 더하는! ", title: "전체 인테리어를 해야겠다 생각해서 5군데 견적을 비교했습니다. 일정이 촉박하..."),
+        ]
+    }
 }
