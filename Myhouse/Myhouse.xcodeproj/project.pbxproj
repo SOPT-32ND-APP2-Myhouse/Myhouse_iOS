@@ -51,7 +51,9 @@
 		694D30342A115BED00D84149 /* ScrapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30332A115BED00D84149 /* ScrapCollectionViewCell.swift */; };
 		694D30362A115D3500D84149 /* ScarpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30352A115D3500D84149 /* ScarpViewController.swift */; };
 		694D30382A115D5D00D84149 /* ScrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30372A115D5D00D84149 /* ScrapView.swift */; };
-		694D303B2A144B4800D84149 /* ScrapDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D303A2A144B4800D84149 /* ScrapDataModel.swift */; };
+		69956BB22A1557750044F489 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB12A1557750044F489 /* FolderTableViewCell.swift */; };
+		69956BB62A155E110044F489 /* ScrapDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB52A155E110044F489 /* ScrapDataModel.swift */; };
+		69956BB82A155F090044F489 /* FolderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB72A155F090044F489 /* FolderHeaderView.swift */; };
 		699785FD2A100A33005BC69E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 699785FC2A100A33005BC69E /* .swiftlint.yml */; };
 		699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699785FE2A1011AE005BC69E /* StringLiterals.swift */; };
 		699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699786002A1011BB005BC69E /* ImageLiterals.swift */; };
@@ -60,6 +62,8 @@
 		6997860E2A10145D005BC69E /* NotoSansKR-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = 699786082A10145D005BC69E /* NotoSansKR-Regular.otf */; };
 		699786112A10145D005BC69E /* NotoSansKR-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6997860B2A10145D005BC69E /* NotoSansKR-Bold.otf */; };
 		699786122A10145D005BC69E /* NotoSansKR-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = 6997860C2A10145D005BC69E /* NotoSansKR-Medium.otf */; };
+		69A199712A153DFD00D4574B /* FolderBottomSheetView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A199702A153DFD00D4574B /* FolderBottomSheetView.swift */; };
+		69A199732A154BB500D4574B /* FolderBottomSheetViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69A199722A154BB500D4574B /* FolderBottomSheetViewController.swift */; };
 		9B2A301A2A12B13D0036ECB8 /* categoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A30192A12B13D0036ECB8 /* categoryDataModel.swift */; };
 		9B2A301C2A13C04A0036ECB8 /* Top10CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */; };
 		9B2A301E2A13CC8D0036ECB8 /* ModernDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */; };
@@ -115,7 +119,9 @@
 		694D30332A115BED00D84149 /* ScrapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapCollectionViewCell.swift; sourceTree = "<group>"; };
 		694D30352A115D3500D84149 /* ScarpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarpViewController.swift; sourceTree = "<group>"; };
 		694D30372A115D5D00D84149 /* ScrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapView.swift; sourceTree = "<group>"; };
-		694D303A2A144B4800D84149 /* ScrapDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapDataModel.swift; sourceTree = "<group>"; };
+		69956BB12A1557750044F489 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
+		69956BB52A155E110044F489 /* ScrapDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapDataModel.swift; sourceTree = "<group>"; };
+		69956BB72A155F090044F489 /* FolderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHeaderView.swift; sourceTree = "<group>"; };
 		699785FC2A100A33005BC69E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		699785FE2A1011AE005BC69E /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		699786002A1011BB005BC69E /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
@@ -124,6 +130,8 @@
 		699786082A10145D005BC69E /* NotoSansKR-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Regular.otf"; sourceTree = "<group>"; };
 		6997860B2A10145D005BC69E /* NotoSansKR-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Bold.otf"; sourceTree = "<group>"; };
 		6997860C2A10145D005BC69E /* NotoSansKR-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "NotoSansKR-Medium.otf"; sourceTree = "<group>"; };
+		69A199702A153DFD00D4574B /* FolderBottomSheetView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderBottomSheetView.swift; sourceTree = "<group>"; };
+		69A199722A154BB500D4574B /* FolderBottomSheetViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderBottomSheetViewController.swift; sourceTree = "<group>"; };
 		9B2A30192A12B13D0036ECB8 /* categoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = categoryDataModel.swift; sourceTree = "<group>"; };
 		9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10CollectionViewCell.swift; sourceTree = "<group>"; };
 		9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernDataModel.swift; sourceTree = "<group>"; };
@@ -311,6 +319,7 @@
 		694D30112A11394600D84149 /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				69A1996F2A153DB500D4574B /* Scrap */,
 				694D30212A113ADD00D84149 /* TabBarViewController.swift */,
 				694D30232A113EBB00D84149 /* BaseViewController.swift */,
 				694D30252A113ECA00D84149 /* BaseView.swift */,
@@ -417,7 +426,7 @@
 		694D30392A144B3400D84149 /* ViewModel */ = {
 			isa = PBXGroup;
 			children = (
-				694D303A2A144B4800D84149 /* ScrapDataModel.swift */,
+				69956BB52A155E110044F489 /* ScrapDataModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -430,6 +439,17 @@
 				699786082A10145D005BC69E /* NotoSansKR-Regular.otf */,
 			);
 			path = Font;
+			sourceTree = "<group>";
+		};
+		69A1996F2A153DB500D4574B /* Scrap */ = {
+			isa = PBXGroup;
+			children = (
+				69A199702A153DFD00D4574B /* FolderBottomSheetView.swift */,
+				69A199722A154BB500D4574B /* FolderBottomSheetViewController.swift */,
+				69956BB12A1557750044F489 /* FolderTableViewCell.swift */,
+				69956BB72A155F090044F489 /* FolderHeaderView.swift */,
+			);
+			path = Scrap;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -541,10 +561,12 @@
 				694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */,
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
 				094373FE2A14B20C003C8AFD /* todaysIdeasDataModel.swift in Sources */,
+				69956BB82A155F090044F489 /* FolderHeaderView.swift in Sources */,
 				699786032A1011D2005BC69E /* ColorLiterals.swift in Sources */,
 				694D30092A10BA8800D84149 /* UITableViewRegisterable.swift in Sources */,
 				9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */,
 				9BF93D8C2A12AF0600FE3B5B /* TodaysDataModel.swift in Sources */,
+				69A199732A154BB500D4574B /* FolderBottomSheetViewController.swift in Sources */,
 				694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */,
 				094373FC2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift in Sources */,
 				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
@@ -556,6 +578,7 @@
 				694D30342A115BED00D84149 /* ScrapCollectionViewCell.swift in Sources */,
 				9BF93D842A12ABE200FE3B5B /* MoreButtonFooterView.swift in Sources */,
 				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
+				69956BB22A1557750044F489 /* FolderTableViewCell.swift in Sources */,
 				092543742A121451000A55D2 /* BestCollectionViewCell.swift in Sources */,
 				9B2A301A2A12B13D0036ECB8 /* categoryDataModel.swift in Sources */,
 				694D300E2A10BB5700D84149 /* NSObject+.swift in Sources */,
@@ -571,11 +594,11 @@
 				694D30362A115D3500D84149 /* ScarpViewController.swift in Sources */,
 				694D30382A115D5D00D84149 /* ScrapView.swift in Sources */,
 				9B2A301C2A13C04A0036ECB8 /* Top10CollectionViewCell.swift in Sources */,
+				69956BB62A155E110044F489 /* ScrapDataModel.swift in Sources */,
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
 				0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
-				694D303B2A144B4800D84149 /* ScrapDataModel.swift in Sources */,
 				694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */,
 				9BF93D7C2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift in Sources */,
 				09B7D3A62A12227E00B4B485 /* RecommendDataModel.swift in Sources */,
@@ -590,6 +613,7 @@
 				694D30062A10B90E00D84149 /* UILabel+.swift in Sources */,
 				0933C3DC2A0F716E00A4F163 /* SceneDelegate.swift in Sources */,
 				0951B69B2A13376A00134B6A /* CategoryCollectionViewCell.swift in Sources */,
+				69A199712A153DFD00D4574B /* FolderBottomSheetView.swift in Sources */,
 				699786052A101236005BC69E /* FontLiterals.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
