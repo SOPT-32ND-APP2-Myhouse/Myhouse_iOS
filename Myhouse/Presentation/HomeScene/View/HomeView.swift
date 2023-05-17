@@ -515,8 +515,8 @@ extension HomeView {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 10, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.44),
-            heightDimension: .fractionalHeight(0.3)
+            widthDimension: .fractionalWidth(0.36),
+            heightDimension: .fractionalHeight(0.28)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -564,8 +564,8 @@ extension HomeView {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.35),
-            heightDimension: .fractionalHeight(0.32)
+            widthDimension: .fractionalWidth(0.42),
+            heightDimension: .fractionalHeight(0.34)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
