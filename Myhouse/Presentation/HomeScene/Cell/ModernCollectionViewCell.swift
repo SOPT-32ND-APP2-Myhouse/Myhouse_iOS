@@ -70,7 +70,7 @@ extension ModernCollectionViewCell {
         }
     }
     
-    func configureCell(_ modernData: modernDataModel) {
+    func configureCell(_ modernData: ModernDataModel) {
         bestImageView.image = modernData.image
         descriptionLabel.text = modernData.title
         descriptionLabel.text = (descriptionLabel.text ?? "") + " \(modernData.description)"

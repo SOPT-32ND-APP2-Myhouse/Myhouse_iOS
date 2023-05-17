@@ -85,7 +85,7 @@ extension ReviewCollectionViewCell {
         }
     }
     
-    func configureCell(_ reviewData: recommendDataModel) {
+    func configureCell(_ reviewData: RecommendDataModel) {
         reviewImageView.image = reviewData.image
         titleLabel.text = reviewData.highlight
         descriptionLabel.text = reviewData.title

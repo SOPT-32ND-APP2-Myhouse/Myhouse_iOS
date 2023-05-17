@@ -20,17 +20,17 @@ final class HomeView: BaseView {
     
     // MARK: - UI Components
     
-    private let bestDummy = bestDataModel.dummy()
-    private let recommendDummy = recommendDataModel.dummy()
-    private let todaysDummy = todaysDataModel.dummy()
-    private let modernDummy = modernDataModel.dummy()
-    private let categoryDummy = categoryDataModel.dummy()
-    private let summerDummy = recommendDataModel.summer()
-    private let colorDummy = colorLightDataModel.dummy()
-    private let colorBestDummy = todaysDataModel.colorBest()
-    private let top10Dummy = colorLightDataModel.top10()
-    private let reviewDumy = recommendDataModel.review()
-    private let ideasDummy = ideaDataModel.dummy()
+    private let bestDummy = BestDataModel.dummy()
+    private let recommendDummy = RecommendDataModel.dummy()
+    private let todaysDummy = TodaysDataModel.dummy()
+    private let modernDummy = ModernDataModel.dummy()
+    private let categoryDummy = CategoryDataModel.dummy()
+    private let summerDummy = RecommendDataModel.summer()
+    private let colorDummy = ColorLightDataModel.dummy()
+    private let colorBestDummy = TodaysDataModel.colorBest()
+    private let top10Dummy = ColorLightDataModel.top10()
+    private let reviewDumy = RecommendDataModel.review()
+    private let ideasDummy = IdeaDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
