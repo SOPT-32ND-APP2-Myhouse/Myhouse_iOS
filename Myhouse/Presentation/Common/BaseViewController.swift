@@ -43,8 +43,7 @@ class BaseViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.barTintColor = .white
-        self.navigationController?.navigationBar.isTranslucent = false
+        setNavigationStyle()
     }
     
     // MARK: UI
@@ -54,4 +53,14 @@ class BaseViewController: UIViewController {
     }
     
     func setLayout() {}
+    
+    func setNavigationStyle() {
+        let navigationBarAppearance = UINavigationBarAppearance()
+        navigationBarAppearance.backgroundColor = .white
+        navigationBarAppearance.shadowColor = .clear
+        self.navigationController?.navigationBar.standardAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.scrollEdgeAppearance = navigationBarAppearance
+        self.navigationController?.navigationBar.tintColor = .black
+        self.navigationController?.navigationBar.isTranslucent = false
+    }
 }
