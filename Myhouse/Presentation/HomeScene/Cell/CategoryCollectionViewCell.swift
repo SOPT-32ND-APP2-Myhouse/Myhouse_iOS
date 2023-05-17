@@ -19,6 +19,8 @@ class CategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRegister
     private let categoryImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 4
+        imageView.contentMode = .scaleAspectFill
+//        imageView.clipsToBounds = true
         return imageView
     }()
     private let titleLabel: UILabel = {
@@ -51,16 +53,14 @@ extension CategoryCollectionViewCell {
         contentView.addSubviews(categoryImageView, titleLabel)
         
         categoryImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.height.equalTo(74)
+            $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
+            $0.height.equalTo(self.categoryImageView.snp.width)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(categoryImageView.snp.bottom).inset(-8)
-            $0.width.equalTo(categoryImageView.snp.width)
-            $0.height.equalTo(17)
-            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
     }
     

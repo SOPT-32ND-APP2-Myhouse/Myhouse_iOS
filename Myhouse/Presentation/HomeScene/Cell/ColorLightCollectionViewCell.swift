@@ -19,6 +19,8 @@ class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
     private let colorLightImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 4
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
 
@@ -54,10 +56,7 @@ extension ColorLightCollectionViewCell {
         contentView.addSubviews(colorLightImageView, userLabel, bookmarkButton)
         
         colorLightImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.equalToSuperview()
-            $0.height.equalTo(163)
-            $0.centerX.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
         userLabel.snp.makeConstraints {

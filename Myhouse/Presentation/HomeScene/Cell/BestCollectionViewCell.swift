@@ -19,6 +19,8 @@ class BestCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable
     private let bestImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 4
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     private let descriptionLabel: UILabel = {
@@ -69,17 +71,12 @@ extension BestCollectionViewCell {
         contentView.addSubviews(bestImageView, descriptionLabel, rankingLabel!, bookmarkButton)
         
         bestImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.equalToSuperview()
-            $0.height.equalTo(self.bestImageView.snp.width)
-            $0.centerX.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(bestImageView.snp.bottom).inset(-12)
-            $0.width.equalTo(bestImageView.snp.width)
-            $0.height.equalTo(44)
-            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
         
         rankingLabel?.snp.makeConstraints {

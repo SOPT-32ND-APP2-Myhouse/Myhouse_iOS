@@ -56,7 +56,6 @@ extension RecommendCollectionViewCell {
         contentView.addSubviews(recommendImageView, descriptionLabel, bookmarkButton)
         
         recommendImageView.snp.makeConstraints {
-            
             $0.top.leading.trailing.bottom.equalToSuperview()
         }
         

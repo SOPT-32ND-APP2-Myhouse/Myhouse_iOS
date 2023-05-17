@@ -19,6 +19,8 @@ class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionViewReg
     private let todaysImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 4
+        imageView.contentMode = .scaleAspectFill
+        imageView.clipsToBounds = true
         return imageView
     }()
     private let storeLabel: UILabel = {
@@ -73,34 +75,26 @@ extension TodaysProductCollectionViewCell {
         contentView.addSubviews(todaysImageView, storeLabel, titleLabel, saleLabel, priceLabel)
         
         todaysImageView.snp.makeConstraints {
-            $0.top.leading.equalToSuperview()
-            $0.width.equalToSuperview()
-            $0.height.equalTo(self.todaysImageView.snp.width)
-            $0.centerX.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalToSuperview()
         }
         
         storeLabel.snp.makeConstraints {
             $0.top.equalTo(todaysImageView.snp.bottom).inset(-8)
-            $0.width.equalToSuperview()
-            $0.height.equalTo(10)
+            $0.leading.trailing.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(storeLabel.snp.bottom)
-            $0.width.equalTo(todaysImageView.snp.width)
-            $0.height.equalTo(40)
-            $0.centerX.equalToSuperview()
+            $0.leading.trailing.equalToSuperview()
         }
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(36)
-            $0.height.equalTo(18)
             $0.leading.equalToSuperview()
         }
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(60)
-            $0.height.equalTo(18)
             $0.leading.equalTo(saleLabel.snp.trailing).inset(-3)
         }
     }
