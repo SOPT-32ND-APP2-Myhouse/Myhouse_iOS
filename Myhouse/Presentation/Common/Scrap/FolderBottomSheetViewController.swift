@@ -28,7 +28,13 @@ final class FolderBottomSheetViewController: BaseViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         
-        self.navigationController?.navigationBar.isHidden = true
+        setNavigationUI()
     }
 
+}
+
+private extension FolderBottomSheetViewController {
+    func setNavigationUI() {
+        self.navigationController?.navigationBar.isHidden = true
+    }
 }
