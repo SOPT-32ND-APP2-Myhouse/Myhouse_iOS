@@ -26,4 +26,9 @@ struct I18N {
         static let todaysIdeas = "오늘의 기획전"
         static let bestSellers = "베스트"
     }
+    
+    struct Scrap {
+        static let newFolderTitle = "새로운 폴더 추가하기"
+        static let best = "🏅이주의 인기 콘텐츠🏅"
+    }
 }

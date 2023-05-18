@@ -1,8 +1,8 @@
 //
-//  FolderDataModel.swift
+//  ScrapDataModel.swift
 //  Myhouse
 //
-//  Created by 최영린 on 2023/05/17.
+//  Created by 최영린 on 2023/05/18.
 //
 
 import UIKit
