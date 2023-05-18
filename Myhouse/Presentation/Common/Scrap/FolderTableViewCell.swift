@@ -26,7 +26,6 @@ final class FolderTableViewCell: UITableViewCell, UITableViewRegisterable {
     
     private let folderTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "내 취향 인테리어"
         label.textColor = .black
         label.font = .NotoMedium(size: 14)
         return label

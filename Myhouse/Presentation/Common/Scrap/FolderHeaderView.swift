@@ -28,7 +28,7 @@ final class FolderHeaderView: UITableViewHeaderFooterView, UITableViewHeaderFoot
     
     private let folderTitleLabel: UILabel = {
         let label = UILabel()
-        label.text = "새로운 폴더 추가하기"
+        label.text = I18N.Scrap.newFolderTitle
         label.textColor = .black
         label.font = .NotoMedium(size: 14)
         return label
@@ -51,7 +51,7 @@ final class FolderHeaderView: UITableViewHeaderFooterView, UITableViewHeaderFoot
 
 extension FolderHeaderView {
     private func setLayout() {
-        contentView.addSubviews(newFolderButton,folderTitleLabel)
+        contentView.addSubviews(newFolderButton, folderTitleLabel)
         
         newFolderButton.snp.makeConstraints {
             $0.leading.equalToSuperview().offset(16)
