@@ -24,5 +24,11 @@ final class FolderBottomSheetViewController: BaseViewController {
         
         self.view.backgroundColor = .black // 삭제 예정
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.navigationBar.isHidden = true
+    }
 
 }
