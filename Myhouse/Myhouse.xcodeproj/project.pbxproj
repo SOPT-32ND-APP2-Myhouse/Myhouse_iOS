@@ -54,6 +54,11 @@
 		69956BB22A1557750044F489 /* FolderTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB12A1557750044F489 /* FolderTableViewCell.swift */; };
 		69956BB62A155E110044F489 /* ScrapDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB52A155E110044F489 /* ScrapDataModel.swift */; };
 		69956BB82A155F090044F489 /* FolderHeaderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BB72A155F090044F489 /* FolderHeaderView.swift */; };
+		69956BDA2A1799A10044F489 /* LookDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BD92A1799A10044F489 /* LookDataModel.swift */; };
+		69956BDC2A179A3D0044F489 /* LookCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BDB2A179A3D0044F489 /* LookCollectionView.swift */; };
+		69956BDE2A179A660044F489 /* FeedCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BDD2A179A660044F489 /* FeedCollectionViewCell.swift */; };
+		69956BE02A179A9D0044F489 /* TagCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BDF2A179A9D0044F489 /* TagCollectionViewCell.swift */; };
+		69956BE22A179AEA0044F489 /* ScrapButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69956BE12A179AEA0044F489 /* ScrapButton.swift */; };
 		699785FD2A100A33005BC69E /* .swiftlint.yml in Resources */ = {isa = PBXBuildFile; fileRef = 699785FC2A100A33005BC69E /* .swiftlint.yml */; };
 		699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699785FE2A1011AE005BC69E /* StringLiterals.swift */; };
 		699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */ = {isa = PBXBuildFile; fileRef = 699786002A1011BB005BC69E /* ImageLiterals.swift */; };
@@ -122,6 +127,11 @@
 		69956BB12A1557750044F489 /* FolderTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderTableViewCell.swift; sourceTree = "<group>"; };
 		69956BB52A155E110044F489 /* ScrapDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapDataModel.swift; sourceTree = "<group>"; };
 		69956BB72A155F090044F489 /* FolderHeaderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FolderHeaderView.swift; sourceTree = "<group>"; };
+		69956BD92A1799A10044F489 /* LookDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookDataModel.swift; sourceTree = "<group>"; };
+		69956BDB2A179A3D0044F489 /* LookCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookCollectionView.swift; sourceTree = "<group>"; };
+		69956BDD2A179A660044F489 /* FeedCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FeedCollectionViewCell.swift; sourceTree = "<group>"; };
+		69956BDF2A179A9D0044F489 /* TagCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TagCollectionViewCell.swift; sourceTree = "<group>"; };
+		69956BE12A179AEA0044F489 /* ScrapButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapButton.swift; sourceTree = "<group>"; };
 		699785FC2A100A33005BC69E /* .swiftlint.yml */ = {isa = PBXFileReference; lastKnownFileType = text.yaml; path = .swiftlint.yml; sourceTree = "<group>"; };
 		699785FE2A1011AE005BC69E /* StringLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StringLiterals.swift; sourceTree = "<group>"; };
 		699786002A1011BB005BC69E /* ImageLiterals.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ImageLiterals.swift; sourceTree = "<group>"; };
@@ -375,7 +385,10 @@
 		694D30282A114B2900D84149 /* LookView */ = {
 			isa = PBXGroup;
 			children = (
-				694D30192A113A2B00D84149 /* LookViewController.swift */,
+				69956BD82A1799910044F489 /* ViewModel */,
+				69956BD72A1799860044F489 /* ViewController */,
+				69956BD52A17996B0044F489 /* View */,
+				69956BD62A1799750044F489 /* Cell */,
 			);
 			path = LookView;
 			sourceTree = "<group>";
@@ -431,6 +444,39 @@
 			path = ViewModel;
 			sourceTree = "<group>";
 		};
+		69956BD52A17996B0044F489 /* View */ = {
+			isa = PBXGroup;
+			children = (
+				69956BDB2A179A3D0044F489 /* LookCollectionView.swift */,
+			);
+			path = View;
+			sourceTree = "<group>";
+		};
+		69956BD62A1799750044F489 /* Cell */ = {
+			isa = PBXGroup;
+			children = (
+				69956BDD2A179A660044F489 /* FeedCollectionViewCell.swift */,
+				69956BDF2A179A9D0044F489 /* TagCollectionViewCell.swift */,
+			);
+			path = Cell;
+			sourceTree = "<group>";
+		};
+		69956BD72A1799860044F489 /* ViewController */ = {
+			isa = PBXGroup;
+			children = (
+				694D30192A113A2B00D84149 /* LookViewController.swift */,
+			);
+			path = ViewController;
+			sourceTree = "<group>";
+		};
+		69956BD82A1799910044F489 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				69956BD92A1799A10044F489 /* LookDataModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		699786062A101449005BC69E /* Font */ = {
 			isa = PBXGroup;
 			children = (
@@ -448,6 +494,7 @@
 				69A199722A154BB500D4574B /* FolderBottomSheetViewController.swift */,
 				69956BB12A1557750044F489 /* FolderTableViewCell.swift */,
 				69956BB72A155F090044F489 /* FolderHeaderView.swift */,
+				69956BE12A179AEA0044F489 /* ScrapButton.swift */,
 			);
 			path = Scrap;
 			sourceTree = "<group>";
@@ -560,6 +607,7 @@
 			files = (
 				694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */,
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
+				69956BDE2A179A660044F489 /* FeedCollectionViewCell.swift in Sources */,
 				094373FE2A14B20C003C8AFD /* todaysIdeasDataModel.swift in Sources */,
 				69956BB82A155F090044F489 /* FolderHeaderView.swift in Sources */,
 				699786032A1011D2005BC69E /* ColorLiterals.swift in Sources */,
@@ -578,12 +626,15 @@
 				694D30342A115BED00D84149 /* ScrapCollectionViewCell.swift in Sources */,
 				9BF93D842A12ABE200FE3B5B /* MoreButtonFooterView.swift in Sources */,
 				694D302C2A114BF700D84149 /* DetailViewController.swift in Sources */,
+				69956BE02A179A9D0044F489 /* TagCollectionViewCell.swift in Sources */,
 				69956BB22A1557750044F489 /* FolderTableViewCell.swift in Sources */,
 				092543742A121451000A55D2 /* BestCollectionViewCell.swift in Sources */,
+				69956BDA2A1799A10044F489 /* LookDataModel.swift in Sources */,
 				9B2A301A2A12B13D0036ECB8 /* categoryDataModel.swift in Sources */,
 				694D300E2A10BB5700D84149 /* NSObject+.swift in Sources */,
 				694D301E2A113A4700D84149 /* LifeViewController.swift in Sources */,
 				09FD5D412A11676000976C02 /* HomeView.swift in Sources */,
+				69956BE22A179AEA0044F489 /* ScrapButton.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,
@@ -599,6 +650,7 @@
 				0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
+				69956BDC2A179A3D0044F489 /* LookCollectionView.swift in Sources */,
 				694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */,
 				9BF93D7C2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift in Sources */,
 				09B7D3A62A12227E00B4B485 /* RecommendDataModel.swift in Sources */,
