@@ -1,17 +1,17 @@
 {
   "images" : [
     {
-      "filename" : "생활, style=Enabled@1x.png",
+      "filename" : "icn_life@1x.png",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
-      "filename" : "생활, style=Enabled@2x.png",
+      "filename" : "icn_life@2x.png",
       "idiom" : "universal",
       "scale" : "2x"
     },
     {
-      "filename" : "생활, style=Enabled@3x.png",
+      "filename" : "icn_life@3x.png",
       "idiom" : "universal",
       "scale" : "3x"
     }
@@ -19,8 +19,5 @@
   "info" : {
     "author" : "xcode",
     "version" : 1
-  },
-  "properties" : {
-    "template-rendering-intent" : "original"
   }
 }
