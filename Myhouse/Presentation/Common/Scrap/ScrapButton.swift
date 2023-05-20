@@ -8,8 +8,14 @@
 import UIKit
 
 final class ScrapButton: UIButton {
-
-    // MARK: - Life Cycles
+    
+    var handler: (() -> (Void))?
+    
+    var isTapped: Bool = false {
+        didSet {
+            updateButton()
+        }
+    }
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -25,14 +31,16 @@ final class ScrapButton: UIButton {
 extension ScrapButton {
     private func setUI() {
         self.setImage(ImageLiterals.Common.btn_bookMarkUnactived_small, for: .normal)
-        self.setImage(ImageLiterals.Common.btn_bookMarkActived_small, for: .selected)
-        self.addTarget(self, action: #selector(scrapButtonTapped(_:)), for: .touchUpInside)
+        self.addTarget(self, action: #selector(scrapButtonTapped), for: .touchUpInside)
     }
     
-    @objc func scrapButtonTapped(_ sender: UIButton) {
-        if !(sender.isSelected) {
-            print("스크랩 스낵바 올라올 예정 ~ ")
-        }
-        sender.isSelected.toggle()
+    func updateButton() {
+        let image = isTapped ? ImageLiterals.Common.btn_bookMarkActived_small : ImageLiterals.Common.btn_bookMarkUnactived_small
+        self.setImage(image, for: .normal)
+    }
+
+    @objc func scrapButtonTapped() {
+        print("스크랩 스낵바 올라올 예정 ~ ")
+        handler?()
     }
 }
