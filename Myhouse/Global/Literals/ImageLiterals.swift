@@ -18,7 +18,8 @@ struct ImageLiterals {
         static var btn_share: UIImage { .load(name: "btn_share") }
         static var btn_delete: UIImage { .load(name: "btn_delete") }
         static var btn_plus: UIImage { .load(name: "btn_plus") }
-        static var icn_cart: UIImage { .load(name: "img_card13") }
+        static var icn_cart: UIImage { .load(name: "img_cart") }
+        static var icn_several: UIImage { .load(name: "icn_several") }
         static var icn_scrapbook: UIImage { .load(name: "icn_scrapbook") }
         static var icn_ad: UIImage { .load(name: "icn_ad") }
         static var btn_bookMarkActived_big: UIImage { .load(name: "btn_bookMarkActived_big") }
@@ -43,6 +44,7 @@ struct ImageLiterals {
     }
     
     struct Card {
+        static var img_card01: UIImage { .load(name: "img_card01") }
         static var img_card01_short: UIImage { .load(name: "img_card01_short") }
         static var img_card01_long: UIImage { .load(name: "img_card01_long") }
         static var img_card02: UIImage { .load(name: "img_card02") }

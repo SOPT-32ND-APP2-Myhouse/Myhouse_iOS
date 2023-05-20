@@ -31,4 +31,8 @@ struct I18N {
         static let newFolderTitle = "새로운 폴더 추가하기"
         static let best = "🏅이주의 인기 콘텐츠🏅"
     }
+    
+    struct Look {
+        static let tagData = ["모던한", "화려한", "레트로감성", "우드", "화이트톤", "심플한"]
+    }
 }
