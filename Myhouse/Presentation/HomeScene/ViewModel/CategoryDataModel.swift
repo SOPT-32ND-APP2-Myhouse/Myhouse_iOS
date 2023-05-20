@@ -1,8 +1,8 @@
 //
-//  categoryDataModel.swift
+//  CategoryDataModel.swift
 //  Myhouse
 //
-//  Created by Kim Min Joo on 2023/05/16.
+//  Created by 최영린 on 2023/05/20.
 //
 
 import UIKit

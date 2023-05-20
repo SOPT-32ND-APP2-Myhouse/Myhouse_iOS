@@ -1,8 +1,8 @@
 //
-//  todaysIdeasDataModel.swift
+//  IdeaDataModel.swift
 //  Myhouse
 //
-//  Created by Minjoo Kim on 2023/05/17.
+//  Created by 최영린 on 2023/05/20.
 //
 
 import UIKit
