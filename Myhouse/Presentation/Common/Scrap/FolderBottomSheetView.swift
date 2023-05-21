@@ -9,10 +9,15 @@ import UIKit
 
 import SnapKit
 
+protocol FolderDelegate: AnyObject {
+    func cancelTapped()
+}
+
 final class FolderBottomSheetView: BaseView {
     
     // MARK: - Properties
-
+    
+    weak var delegate: FolderDelegate?
     private var ScarpDummy = ScrapDataModel.dummy()
     
     // MARK: - UI Components
@@ -34,7 +39,7 @@ final class FolderBottomSheetView: BaseView {
         return label
     }()
     
-    private let cancelButton: UIButton = {
+    private lazy var cancelButton: UIButton = {
         let button = UIButton()
         button.setImage(ImageLiterals.Common.btn_delete, for: .normal)
         button.addTarget(self,
@@ -109,7 +114,7 @@ private extension FolderBottomSheetView {
     }
     
     @objc func cancelButtonTapped() {
-        print("dismiss 구현 예정입니다")
+        delegate?.cancelTapped()
     }
 }
 
@@ -127,11 +132,16 @@ extension FolderBottomSheetView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FolderTableViewCell.dequeueReusableCell(tableView: tableView, indexPath: indexPath)
         cell.configureCell(ScarpDummy[indexPath.item + 1])
+        cell.selectionStyle = .none
         return cell
     }
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let newFolderView = FolderHeaderView.dequeueReusableHeaderFooterView(tableView: tableView)
         return newFolderView
+    }
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        print("'\(ScarpDummy[indexPath.row + 1].title)' 폴더로 이동했습니다")
     }
 }

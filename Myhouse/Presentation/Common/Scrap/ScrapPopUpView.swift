@@ -7,7 +7,17 @@
 
 import UIKit
 
+// MARK: - Protocols
+
+protocol ScrapPopUpDelegate: AnyObject {
+    func scrapBookButtonTapped()
+    func folderButtonTapped()
+}
+
 final class ScrapPopUpView: BaseView {
+    
+    // MARK: - Properties
+    weak var delegate: ScrapPopUpDelegate?
     
     // MARK: - UI Components
     
@@ -91,11 +101,10 @@ final class ScrapPopUpView: BaseView {
 
 private extension ScrapPopUpView {
     @objc func scrapBookButtonTapped() {
-        print("스크랩북으로 이동")
+        delegate?.scrapBookButtonTapped()
     }
     
     @objc func folderButtonTapped() {
-        print("폴더 선택")
+        delegate?.folderButtonTapped()
     }
 }
-

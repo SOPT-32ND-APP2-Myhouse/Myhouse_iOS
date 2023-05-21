@@ -49,6 +49,7 @@
 		694D30342A115BED00D84149 /* ScrapCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30332A115BED00D84149 /* ScrapCollectionViewCell.swift */; };
 		694D30362A115D3500D84149 /* ScarpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30352A115D3500D84149 /* ScarpViewController.swift */; };
 		694D30382A115D5D00D84149 /* ScrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30372A115D5D00D84149 /* ScrapView.swift */; };
+		69871FE62A18D28D00261CBC /* ScrapPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FE52A18D28D00261CBC /* ScrapPopUpView.swift */; };
 		698A502E2A18A200006A7903 /* CategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A502D2A18A200006A7903 /* CategoryDataModel.swift */; };
 		698A50302A18A22B006A7903 /* ColorLightDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A502F2A18A22B006A7903 /* ColorLightDataModel.swift */; };
 		698A50322A18A250006A7903 /* IdeaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A50312A18A250006A7903 /* IdeaDataModel.swift */; };
@@ -122,6 +123,7 @@
 		694D30332A115BED00D84149 /* ScrapCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapCollectionViewCell.swift; sourceTree = "<group>"; };
 		694D30352A115D3500D84149 /* ScarpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarpViewController.swift; sourceTree = "<group>"; };
 		694D30372A115D5D00D84149 /* ScrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapView.swift; sourceTree = "<group>"; };
+		69871FE52A18D28D00261CBC /* ScrapPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPopUpView.swift; sourceTree = "<group>"; };
 		698A502D2A18A200006A7903 /* CategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataModel.swift; sourceTree = "<group>"; };
 		698A502F2A18A22B006A7903 /* ColorLightDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDataModel.swift; sourceTree = "<group>"; };
 		698A50312A18A250006A7903 /* IdeaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDataModel.swift; sourceTree = "<group>"; };
@@ -495,6 +497,7 @@
 				69956BB12A1557750044F489 /* FolderTableViewCell.swift */,
 				69956BB72A155F090044F489 /* FolderHeaderView.swift */,
 				69956BE12A179AEA0044F489 /* ScrapButton.swift */,
+				69871FE52A18D28D00261CBC /* ScrapPopUpView.swift */,
 			);
 			path = Scrap;
 			sourceTree = "<group>";
@@ -634,6 +637,7 @@
 				694D301E2A113A4700D84149 /* LifeViewController.swift in Sources */,
 				09FD5D412A11676000976C02 /* HomeView.swift in Sources */,
 				69956BE22A179AEA0044F489 /* ScrapButton.swift in Sources */,
+				69871FE62A18D28D00261CBC /* ScrapPopUpView.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,

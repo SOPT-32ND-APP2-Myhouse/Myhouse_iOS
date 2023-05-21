@@ -65,6 +65,7 @@ private extension TabBarController {
     func setDelegate() {
         guard let lookViewController = self.lookViewController as? LookViewController else { return }
         lookViewController.scrapButtonTapped = { self.scrapCVCButtonTapped() }
+        scrapPopUpView.delegate = self
     }
     
     func setTabBar() {
@@ -119,5 +120,19 @@ extension TabBarController: ScrapCVCDelegate {
                 }
             })
         }
+    }
+}
+
+extension TabBarController: ScrapPopUpDelegate {
+    func scrapBookButtonTapped() {
+        let scrapViewController = ScarpViewController()
+        self.navigationController?.pushViewController(scrapViewController, animated: false)
+    }
+    
+    func folderButtonTapped() {
+        let folderViewController = FolderBottomSheetViewController()
+        folderViewController.modalTransitionStyle = .coverVertical
+        folderViewController.modalPresentationStyle = .overFullScreen
+        self.present(folderViewController, animated: false)
     }
 }
