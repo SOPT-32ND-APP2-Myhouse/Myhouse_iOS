@@ -7,15 +7,26 @@
 
 import UIKit
 
+// MARK: - Protocols
+
+protocol ScrapCVCDelegate: AnyObject {
+    func scrapCVCButtonTapped()
+}
+
 final class ScrapButton: UIButton {
     
-    var handler: (() -> (Void))?
+    // MARK: - Properties
+    
+    var handler: (() -> Void)?
+    weak var delegate: ScrapCVCDelegate?
     
     var isTapped: Bool = false {
         didSet {
             updateButton()
         }
     }
+    
+    // MARK: - Life Cycles
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -26,7 +37,10 @@ final class ScrapButton: UIButton {
     @available(*, unavailable)
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
-    }}
+    }
+}
+
+// MARK: - Extensions
 
 extension ScrapButton {
     private func setUI() {
@@ -35,12 +49,14 @@ extension ScrapButton {
     }
     
     func updateButton() {
-        let image = isTapped ? ImageLiterals.Common.btn_bookMarkActived_small : ImageLiterals.Common.btn_bookMarkUnactived_small
+        let image = isTapped ? ImageLiterals.Common.btn_bookMarkActived_small :                 ImageLiterals.Common.btn_bookMarkUnactived_small
         self.setImage(image, for: .normal)
     }
-
+    
     @objc func scrapButtonTapped() {
-        print("스크랩 스낵바 올라올 예정 ~ ")
+        if !(isTapped) {
+            delegate?.scrapCVCButtonTapped()
+        }
         handler?()
     }
 }

@@ -11,6 +11,8 @@ final class LookCollectionView: BaseView {
     
     // MARK: - Properties
     
+    var scrapButtonTapped: (() -> Void)?
+    
     private var lookData = LookDataModel.dummy() {
         didSet {
             self.lookCollectionView.reloadData()
@@ -152,11 +154,18 @@ extension LookCollectionView: UICollectionViewDataSource {
         case .feed:
             let cell = FeedCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(lookData[indexPath.item])
+            cell.scrapButton.delegate = self
             cell.scrapButton.handler = { [weak self] in
                 guard let self else { return }
                 self.lookData[indexPath.item].isScrap.toggle()
             }
             return cell
         }
+    }
+}
+
+extension LookCollectionView: ScrapCVCDelegate {
+    func scrapCVCButtonTapped() {
+        scrapButtonTapped?()
     }
 }
