@@ -31,6 +31,12 @@ final class TabBarController: UITabBarController {
         setDelegate()
         setLayout()
     }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        self.navigationController?.isNavigationBarHidden = true
+    }
 }
 
 // MARK: - Extensions
@@ -55,7 +61,6 @@ private extension TabBarController {
         ) -> UIViewController {
         
         let tab = UINavigationController(rootViewController: viewController)
-        tab.isNavigationBarHidden = true
         tab.tabBarItem = UITabBarItem(title: title,
                                       image: tabBarImg.withRenderingMode(renderingMode),
                                       selectedImage: tabBarSelectedImg.withRenderingMode(renderingMode))
