@@ -8,6 +8,8 @@
 import UIKit
 
 final class LookViewController: BaseViewController {
+    
+    var scrapButtonTapped: (() -> Void)?
 
     // MARK: - UI Components
     
@@ -22,6 +24,16 @@ final class LookViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        scrapTapped()
     }
-    
+}
+
+// MARK: - Extensions
+
+extension LookViewController {
+    func scrapTapped() {
+        lookView.scrapButtonTapped = {
+            self.scrapButtonTapped?()
+        }
+    }
 }

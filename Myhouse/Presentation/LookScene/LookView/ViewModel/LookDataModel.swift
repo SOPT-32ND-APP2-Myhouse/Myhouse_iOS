@@ -10,24 +10,47 @@ import UIKit
 struct LookDataModel {
     let image: UIImage
     let title: String
+    var isScrap: Bool
 }
 
 extension LookDataModel {
     static func dummy() -> [LookDataModel] {
         return [LookDataModel(image: ImageLiterals.Card.img_card01,
-                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신"),
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
                 LookDataModel(image: ImageLiterals.Card.img_card01,
-                                      title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신")
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
+                LookDataModel(image: ImageLiterals.Card.img_card01,
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
+                LookDataModel(image: ImageLiterals.Card.img_card01,
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
+                LookDataModel(image: ImageLiterals.Card.img_card01,
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
+                LookDataModel(image: ImageLiterals.Card.img_card01,
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false),
+                LookDataModel(image: ImageLiterals.Card.img_card01,
+                              title: "좁은 세탁실, 딱 세 가지로 깔끔한 수납공간으로 대변신",
+                              isScrap: false)
         ]
     }
 }

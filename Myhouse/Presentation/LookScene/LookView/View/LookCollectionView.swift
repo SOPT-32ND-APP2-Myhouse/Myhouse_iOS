@@ -11,7 +11,13 @@ final class LookCollectionView: BaseView {
     
     // MARK: - Properties
     
-    private let lookData = LookDataModel.dummy()
+    var scrapButtonTapped: (() -> Void)?
+    
+    private var lookData = LookDataModel.dummy() {
+        didSet {
+            self.lookCollectionView.reloadData()
+        }
+    }
     
     private typealias SectionType = AboutSection
     
@@ -83,7 +89,7 @@ extension LookCollectionView {
         item.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 0, bottom: 5, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .absolute(800),
+            widthDimension: .absolute(500),
             heightDimension: .absolute(40)
         )
         
@@ -148,7 +154,18 @@ extension LookCollectionView: UICollectionViewDataSource {
         case .feed:
             let cell = FeedCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(lookData[indexPath.item])
+            cell.scrapButton.delegate = self
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.lookData[indexPath.item].isScrap.toggle()
+            }
             return cell
         }
+    }
+}
+
+extension LookCollectionView: ScrapCVCDelegate {
+    func scrapCVCButtonTapped() {
+        scrapButtonTapped?()
     }
 }
