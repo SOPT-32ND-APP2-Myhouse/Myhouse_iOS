@@ -131,6 +131,7 @@ extension TabBarController: ScrapCVCDelegate {
 extension TabBarController: ScrapPopUpDelegate {
     func scrapBookButtonTapped() {
         let scrapViewController = ScarpViewController()
+        self.navigationController?.isNavigationBarHidden = false
         self.navigationController?.pushViewController(scrapViewController, animated: false)
     }
     
