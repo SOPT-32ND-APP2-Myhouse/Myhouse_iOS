@@ -47,7 +47,6 @@ final class CategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRe
 // MARK: - Extensions
 
 extension CategoryCollectionViewCell {
-
     
     private func setLayout() {
         contentView.addSubviews(categoryImageView, titleLabel)

@@ -74,7 +74,6 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
 
 extension TodaysProductCollectionViewCell {
 
-    
     private func setLayout() {
         contentView.addSubviews(todaysImageView,
                                 storeLabel,

@@ -42,9 +42,9 @@ private extension TabBarController {
         viewController: UIViewController,
         title: String,
         tabBarImg: UIImage,
-                    tabBarSelectedImg: UIImage,
-                    renderingMode: UIImage.RenderingMode
-        ) -> UIViewController {
+        tabBarSelectedImg: UIImage,
+        renderingMode: UIImage.RenderingMode
+    ) -> UIViewController {
         
         let tab = UINavigationController(rootViewController: viewController)
         tab.isNavigationBarHidden = true

@@ -31,13 +31,13 @@ final class Top10CollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         return label
     }()
     
-    private let rankView: UIImageView = {
+    public let rankView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = ImageLiterals.Home.icn_rank
         return imageView
     }()
     
-    private let rankLabel: UILabel = {
+    public let rankLabel: UILabel = {
         let label = UILabel()
         label.textColor = .white
         label.font = .NotoBold(size: 12)

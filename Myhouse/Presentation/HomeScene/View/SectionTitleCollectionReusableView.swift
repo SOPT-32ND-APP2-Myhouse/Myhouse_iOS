@@ -26,7 +26,6 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
         return label
     }()
 
-
     // MARK: - Life Cycles
 
     override init(frame: CGRect) {
@@ -72,4 +71,3 @@ extension SectionTitleCollectionReusableView {
         self.sectionDescription?.text = text
     }
 }
-

@@ -25,7 +25,6 @@ class CollectionReusableView: UICollectionReusableView, UICollectionHeaderViewRe
         
     }()
 
-
     // MARK: - Life Cycles
 
     override init(frame: CGRect) {
@@ -43,7 +42,6 @@ class CollectionReusableView: UICollectionReusableView, UICollectionHeaderViewRe
 
 extension CollectionReusableView {
 
-
     private func setLayout() {
         self.addSubviews(sectionTitleLabel)
 
@@ -57,4 +55,3 @@ extension CollectionReusableView {
         self.sectionTitleLabel.text = text
     }
 }
-
