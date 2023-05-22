@@ -29,7 +29,9 @@ struct I18N {
     
     struct Scrap {
         static let newFolderTitle = "새로운 폴더 추가하기"
-        static let best = "🏅이주의 인기 콘텐츠🏅"
+        static let scarpDescription = "스크랩했습니다."
+        static let scrapButtonTitle = "스크랩북 보기"
+        static let folderButtonTitle = "폴더에 담기"
     }
     
     struct Look {

@@ -28,7 +28,7 @@ final class FeedCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
         return imageView
     }()
     
-    private lazy var scrapButton = ScrapButton()
+    lazy var scrapButton = ScrapButton()
     
     private let titleLabel: UILabel = {
         let label = UILabel()
@@ -87,5 +87,6 @@ extension FeedCollectionViewCell {
     func configureCell(_ lookData: LookDataModel) {
         lookImageView.image = lookData.image
         titleLabel.text = lookData.title
+        scrapButton.isTapped = lookData.isScrap
     }
 }
