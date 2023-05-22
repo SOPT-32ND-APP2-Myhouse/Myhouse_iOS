@@ -48,10 +48,10 @@ final class DetailTableBottomView: BaseView {
         return button
     }()
     
-    let photoCollectionView: UICollectionView = {
-        let collectView = UICollectionView()
-        collectView.backgroundColor = .red
-        return collectView
+    let photoCollectionView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
     }()
     
     let lineView1: UIView = {
@@ -219,10 +219,10 @@ final class DetailTableBottomView: BaseView {
         return label
     }()
     
-    let recommendTableView: UITableView = {
-        let tableView = UITableView()
-        tableView.backgroundColor = .red
-        return tableView
+    let recommendTableView: UIView = {
+        let view = UIView()
+        view.backgroundColor = .red
+        return view
     }()
     
     let lineView5: UIView = {
@@ -267,6 +267,7 @@ final class DetailTableBottomView: BaseView {
             watchedCountLabel,
             lineView2,
             commentDetailLabel,
+            commentUserProfileImage,
             commentUserNameLabel,
             commentLabel,
             commentDetailDate,

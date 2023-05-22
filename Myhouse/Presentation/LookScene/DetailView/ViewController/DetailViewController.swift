@@ -9,4 +9,9 @@ import UIKit
 
 final class DetailViewController: BaseViewController {
     
+    let tableView = DetailTableView()
+    
+    override func setLayout() {
+        view = tableView
+    }
 }
