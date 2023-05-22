@@ -42,7 +42,7 @@ class PagingView: UIView {
         self.categoryTitleList = categoryTitleList
         self.pagingTabBarView = pagingTabBarView
         super.init(frame: .zero)
-        setupLayout()
+        setLayout()
         self.setCollectionViewConfig()
         pagingTabBarView.delegate = self
     }
@@ -92,7 +92,7 @@ extension PagingView: PagingDelegate {
 }
 
 private extension PagingView {
-    func setupLayout() {
+    func setLayout() {
         addSubview(collectionView)
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()

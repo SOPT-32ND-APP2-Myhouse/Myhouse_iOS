@@ -29,6 +29,7 @@ final class HomeFooterCollectionViewCell: UICollectionViewCell, UICollectionView
         label.textAlignment = .center
         return label
     }()
+    
     public let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2

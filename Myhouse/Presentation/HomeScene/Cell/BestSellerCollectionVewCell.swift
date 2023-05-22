@@ -30,6 +30,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
     private let categoryTitleList = [ "전체", "가구", "패브릭", "가전 • 디지털", "주방용품", "식품" ]
     
     private lazy var pagingTabBarView = PagingTabBarView(categoryTitleList: categoryTitleList)
+    
     private lazy var pagingView = PagingView(categoryTitleList: categoryTitleList, pagingTabBarView: pagingTabBarView)
     
     override init(frame: CGRect) {
@@ -73,7 +74,6 @@ private extension BestSellerCollectionViewCell {
         pagingView.snp.makeConstraints {
             $0.top.equalTo(line2.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview()
-//            $0.height.equalTo(200)
             $0.bottom.equalToSuperview()
         }
     }

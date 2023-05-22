@@ -76,6 +76,7 @@ final class HomeFooterView: UICollectionReusableView, UICollectionFooterViewRegi
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
     func setDataSource() {
         footerCollectionView.dataSource = self
     }
@@ -131,6 +132,7 @@ private extension HomeFooterView {
             count: 2
             
         )
+        
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)

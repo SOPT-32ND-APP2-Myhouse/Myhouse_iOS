@@ -65,6 +65,7 @@ final class TodaysDealCollectionViewCell: UICollectionViewCell, UICollectionView
         label.textColor = .point
         return label
     }()
+    
     private let percentLabel: UILabel = {
         let label = UILabel()
         label.text = "%"
@@ -136,8 +137,8 @@ extension TodaysDealCollectionViewCell {
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.leading.equalTo(imageView.snp.trailing).offset(10)
-//            $0.height.equalTo(52)
         }
+        
         percentLabel.snp.makeConstraints {
             $0.bottom.equalTo(saleLabel.snp.bottom).inset(8)
             $0.leading.equalTo(saleLabel.snp.trailing)
@@ -148,11 +149,4 @@ extension TodaysDealCollectionViewCell {
             $0.leading.equalTo(imageView.snp.trailing).offset(10)
         }
     }
-    
-//    func configureCell(_ ideaData: IdeaDataModel) {
-//        imageView.image = ideaData.image
-//        titleLabel.text = ideaData.title
-//        saleLabel.text = ideaData.description
-//        moreLabel.text = ideaData.products
-//    }
 }

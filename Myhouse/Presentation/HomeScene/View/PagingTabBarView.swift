@@ -23,10 +23,7 @@ class PagingTabBarView: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1*2.0)/5.0, height: cellHeight)
-        layout.sectionInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
-        layout.minimumLineSpacing = 0.0
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1 * 2.0) / 5.0, height: cellHeight)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
@@ -42,7 +39,7 @@ class PagingTabBarView: UIView {
     init(categoryTitleList: [String]) {
         self.categoryTitleList = categoryTitleList
         super.init(frame: .zero)
-        setupLayout()
+        setLayout()
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
     }
     
@@ -83,8 +80,9 @@ extension PagingTabBarView: UICollectionViewDataSource {
 }
 
 private extension PagingTabBarView {
-    func setupLayout() {
+    func setLayout() {
         addSubview(collectionView)
+        
         collectionView.snp.makeConstraints {
             $0.edges.equalToSuperview()
         }

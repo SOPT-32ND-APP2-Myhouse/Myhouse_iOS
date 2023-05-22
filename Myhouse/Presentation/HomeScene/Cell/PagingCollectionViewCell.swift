@@ -101,7 +101,6 @@ extension PagingCollectionViewCell {
         group.interItemSpacing = .fixed(8)
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         section.interGroupSpacing = 4
         return section
     }

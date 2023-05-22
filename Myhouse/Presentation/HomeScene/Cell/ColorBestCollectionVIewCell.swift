@@ -94,11 +94,13 @@ extension ColorBestCollectionViewCell {
             $0.top.equalTo(storeLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(27)
             $0.leading.equalToSuperview()
         }
+        
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(50)

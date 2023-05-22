@@ -76,14 +76,17 @@ extension SectionTitleCollectionReusableView {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
         }
+        
         sectionDescription.snp.makeConstraints {
             $0.top.equalTo(sectionTitleLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
         ADImageView.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
+        
         moreLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview()
