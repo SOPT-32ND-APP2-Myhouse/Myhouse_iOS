@@ -9,11 +9,9 @@ import UIKit
 
 final class LookViewController: BaseViewController {
     
-    var scrapButtonTapped: (() -> Void)?
-
     // MARK: - UI Components
     
-    private let lookView = LookCollectionView()
+    private let lookView = LookView()
     
     // MARK: - Life Cycles
     
@@ -25,7 +23,6 @@ final class LookViewController: BaseViewController {
         super.viewDidLoad()
         
         setNavigationUI()
-        scrapTapped()
     }
 }
 
@@ -56,11 +53,5 @@ extension LookViewController {
     @objc func scrapNaviItemTapped() {
         let scrapViewController = ScarpViewController()
         self.navigationController?.pushViewController(scrapViewController, animated: false)
-    }
-    
-    func scrapTapped() {
-        lookView.scrapButtonTapped = {
-            self.scrapButtonTapped?()
-        }
     }
 }

@@ -28,6 +28,7 @@ final class TabBarController: UITabBarController {
         super.viewDidLoad()
         
         setTabBar()
+        setNotificationCenter()
         setDelegate()
         setLayout()
     }
@@ -36,6 +37,10 @@ final class TabBarController: UITabBarController {
         super.viewWillAppear(animated)
         
         self.navigationController?.isNavigationBarHidden = true
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
@@ -67,9 +72,11 @@ private extension TabBarController {
         return tab
     }
     
+    func setNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(scrapButtonTapped), name: Notification.Name("ScrapButtonTappedNotification"), object: nil)
+    }
+    
     func setDelegate() {
-        guard let lookViewController = self.lookViewController as? LookViewController else { return }
-        lookViewController.scrapButtonTapped = { self.scrapCVCButtonTapped() }
         scrapPopUpView.delegate = self
     }
     
@@ -110,10 +117,8 @@ private extension TabBarController {
         tabBar.backgroundColor = .white
         tabBar.isTranslucent = false
     }
-}
-
-extension TabBarController: ScrapCVCDelegate {
-    func scrapCVCButtonTapped() {
+    
+    @objc func scrapButtonTapped() {
         self.scrapPopUpView.snp.updateConstraints { $0.bottom.equalToSuperview() }
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
