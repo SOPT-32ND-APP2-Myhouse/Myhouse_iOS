@@ -53,13 +53,13 @@ private extension BestSellerCollectionViewCell {
         ].forEach { contentView.addSubview($0) }
         
         line.snp.makeConstraints {
-            $0.top.equalTo(contentView.safeAreaLayoutGuide)
+            $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
         
         line2.snp.makeConstraints {
-            $0.top.equalTo(pagingTabBarView.snp.bottom)
+            $0.top.equalTo(pagingTabBarView.snp.bottom).offset(14)
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(1)
         }
@@ -73,6 +73,7 @@ private extension BestSellerCollectionViewCell {
         pagingView.snp.makeConstraints {
             $0.top.equalTo(line2.snp.bottom).offset(26)
             $0.leading.trailing.equalToSuperview()
+//            $0.height.equalTo(200)
             $0.bottom.equalToSuperview()
         }
     }

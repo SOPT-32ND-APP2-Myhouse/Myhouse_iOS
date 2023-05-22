@@ -26,7 +26,7 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 2
-        label.font = .NotoMedium(size: 13)
+        label.font = .NotoRegular(size: 10)
         label.textColor = .black
         return label
     }()
@@ -34,7 +34,7 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
     private let saleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 13)
+        label.font = .NotoBold(size: 10)
         label.textColor = .main
         return label
     }()
@@ -42,7 +42,7 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 13)
+        label.font = .NotoBold(size: 10)
         label.textColor = .black
         return label
     }()
@@ -50,6 +50,28 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
     private let rankView = Top10CollectionViewCell().rankView
     
     private let rankLabel = Top10CollectionViewCell().rankLabel
+    
+    private let starImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.Home.img_star
+        return imageView
+    }()
+    
+    public let starLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .black
+        label.font = .NotoBold(size: 10)
+        label.sizeToFit()
+        return label
+    }()
+    
+    public let reviewLabel: UILabel = {
+        let label = UILabel()
+        label.textColor = .darkGray
+        label.font = .NotoBold(size: 10)
+        label.sizeToFit()
+        return label
+    }()
     
     // MARK: - Life Cycles
     
@@ -69,7 +91,15 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
 extension ContentCell {
     
     private func setLayout() {
-        contentView.addSubviews(bestSellerImageView, titleLabel, saleLabel, priceLabel, rankView, rankLabel)
+        contentView.addSubviews(bestSellerImageView,
+                                titleLabel,
+                                saleLabel,
+                                priceLabel,
+                                starImageView,
+                                starLabel,
+                                reviewLabel,
+                                rankView,
+                                rankLabel)
         
         bestSellerImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -81,14 +111,29 @@ extension ContentCell {
         }
         
         saleLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
             $0.leading.equalToSuperview()
             $0.width.equalTo(30)
         }
         
         priceLabel.snp.makeConstraints {
-            $0.top.equalTo(titleLabel.snp.bottom)
+            $0.top.equalTo(titleLabel.snp.bottom).offset(8)
             $0.leading.equalTo(saleLabel.snp.trailing)
+        }
+        
+        starImageView.snp.makeConstraints {
+            $0.top.equalTo(priceLabel.snp.bottom).offset(8)
+            $0.leading.equalToSuperview()
+        }
+        
+        starLabel.snp.makeConstraints {
+            $0.top.equalTo(priceLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(starImageView.snp.trailing).offset(2)
+        }
+        
+        reviewLabel.snp.makeConstraints {
+            $0.top.equalTo(priceLabel.snp.bottom).offset(5)
+            $0.leading.equalTo(starLabel.snp.trailing).offset(4)
         }
         
         rankView.snp.makeConstraints {
@@ -105,11 +150,14 @@ extension ContentCell {
         }
     }
     
-    func configureCell(_ bestData: BestSellerDataModel) {
-        bestSellerImageView.image = bestData.image
-        rankLabel.text = "\(bestData.rank)"
-        titleLabel.text = bestData.title
-        saleLabel.text = bestData.sale
-        priceLabel.text = bestData.price
+    func configureCell(_ bestSellerData: BestSellerDataModel) {
+        bestSellerImageView.image = bestSellerData.image
+        rankLabel.text = "\(bestSellerData.rank)"
+        titleLabel.text = bestSellerData.title
+        saleLabel.text = bestSellerData.sale
+        priceLabel.text = bestSellerData.price
+        starLabel.text = bestSellerData.star
+        reviewLabel.text = "리뷰 \(bestSellerData.review)"
+        
     }
 }

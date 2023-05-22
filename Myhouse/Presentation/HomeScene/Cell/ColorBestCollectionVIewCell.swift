@@ -26,7 +26,7 @@ final class ColorBestCollectionViewCell: UICollectionViewCell, UICollectionViewR
     private let storeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 10)
+        label.font = .NotoRegular(size: 10)
         label.textColor = .darkGray
         return label
     }()

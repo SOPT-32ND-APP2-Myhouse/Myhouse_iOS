@@ -81,12 +81,12 @@ extension PagingCollectionViewCell {
     
     func getLayoutBestSection() -> NSCollectionLayoutSection {
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.31),
+            widthDimension: .fractionalWidth(1/3),
             heightDimension: .fractionalHeight(1.0)
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 100, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 96, trailing: 0)
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -94,7 +94,8 @@ extension PagingCollectionViewCell {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 3
         )
         
         group.interItemSpacing = .fixed(8)

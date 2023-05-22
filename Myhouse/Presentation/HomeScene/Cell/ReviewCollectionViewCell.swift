@@ -34,7 +34,7 @@ final class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegi
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
-        label.font = .NotoMedium(size: 14)
+        label.font = .NotoRegular(size: 14)
         label.textColor = .black
         label.sizeToFit()
         return label

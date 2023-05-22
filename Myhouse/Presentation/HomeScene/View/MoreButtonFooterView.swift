@@ -17,18 +17,24 @@ final class MoreButtonFooterView: UICollectionReusableView, UICollectionFooterVi
     
     // MARK: - UI Components
 
-    private let moreButton: UIButton = {
+    public let moreButton: UIButton = {
         let button = UIButton()
-        button.setTitle("더보기 >", for: .normal)
+        button.setTitle("더보기 ", for: .normal)
         button.setTitleColor(.black, for: .normal)
-        button.titleLabel?.font = .NotoBold(size: 13)
+        button.titleLabel?.font = .NotoBold(size: 12)
         button.layer.borderWidth = 1
         button.layer.borderColor = UIColor.gray.cgColor
         button.layer.cornerRadius = 4
         return button
     }()
     
-    private let division: UIView = DivisionFooterView().division
+    public let moreImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = ImageLiterals.Home.img_more
+        return imageView
+    }()
+    
+    public let division: UIView = DivisionFooterView().division
     
     // MARK: - Life Cycles
     
@@ -48,13 +54,19 @@ final class MoreButtonFooterView: UICollectionReusableView, UICollectionFooterVi
 private extension MoreButtonFooterView {
 
     func setLayout() {
-        addSubviews(moreButton, division)
+        addSubviews(moreButton, division, moreImageView)
         
         moreButton.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(44)
         }
+        
+        moreImageView.snp.makeConstraints {
+            $0.leading.equalTo(moreButton.titleLabel!.snp.trailing)
+            $0.centerY.equalTo(moreButton.snp.centerY)
+        }
+        
         division.snp.makeConstraints {
             $0.top.equalTo(moreButton.snp.bottom).inset(-18)
             $0.leading.trailing.equalToSuperview().inset(-16)

@@ -34,7 +34,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoRegular(size: 13)
+        label.font = .NotoRegular(size: 12)
         label.textColor = .black
         return label
     }()
@@ -42,7 +42,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let saleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 15)
+        label.font = .NotoBold(size: 16)
         label.textColor = .main
         return label
     }()
@@ -50,7 +50,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 15)
+        label.font = .NotoBold(size: 16)
         label.textColor = .black
         return label
     }()

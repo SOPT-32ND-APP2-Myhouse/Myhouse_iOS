@@ -76,6 +76,7 @@ extension HomeView {
         SectionTitleCollectionReusableView.register(target: homeCollectionView)
         DivisionFooterView.register(target: homeCollectionView)
         MoreButtonFooterView.register(target: homeCollectionView)
+        HomeFooterView.register(target: homeCollectionView)
         
         BannerCollectionViewCell.register(target: homeCollectionView)
         TopCategoryCollectionViewCell.register(target: homeCollectionView)
@@ -146,7 +147,8 @@ extension HomeView {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 1
         )
         
         let section = NSCollectionLayoutSection(group: group)
@@ -246,7 +248,7 @@ extension HomeView {
     func getLayoutRecommendSection() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.488),
+            widthDimension: .fractionalWidth(0.5),
             heightDimension: .fractionalHeight(1.0)
         )
         
@@ -260,7 +262,8 @@ extension HomeView {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 2
         )
         
         group.interItemSpacing = .fixed(8)
@@ -354,7 +357,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.44),
-            heightDimension: .fractionalHeight(0.3)
+            heightDimension: .fractionalHeight(0.2)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -490,11 +493,10 @@ extension HomeView {
         return section
     }
     
-    
     func getLayoutSummerSection() -> NSCollectionLayoutSection {
         
         let itemSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.488),
+            widthDimension: .fractionalWidth(0.5),
             heightDimension: .fractionalHeight(0.978)
         )
         
@@ -508,7 +510,8 @@ extension HomeView {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 2
         )
         
         group.interItemSpacing = .fixed(8)
@@ -581,7 +584,6 @@ extension HomeView {
     }
     
     func getLayoutColorBestSection() -> NSCollectionLayoutSection {
-        
         let itemSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .fractionalHeight(1.0)
@@ -736,16 +738,17 @@ extension HomeView {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 200)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.9),
+            widthDimension: .fractionalWidth(0.35),
             heightDimension: .fractionalHeight(0.105)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 1
         )
         
         let headerSize = NSCollectionLayoutSize(
@@ -794,7 +797,8 @@ extension HomeView {
         
         let group = NSCollectionLayoutGroup.horizontal(
             layoutSize: groupSize,
-            subitems: [item]
+            repeatingSubitem: item,
+            count: 1
         )
         
         let headerSize = NSCollectionLayoutSize(
@@ -810,7 +814,7 @@ extension HomeView {
         
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .absolute(80)
+            heightDimension: .absolute(589)
         )
         
         let footer = NSCollectionLayoutBoundarySupplementaryItem(
@@ -822,7 +826,7 @@ extension HomeView {
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header, footer]
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 16, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 0, trailing: 16)
         return section
     }
 }
@@ -904,6 +908,7 @@ extension HomeView: UICollectionViewDataSource {
         case .summer:
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(summerDummy[indexPath.item])
+            cell.descriptionLabel.font = .NotoBold(size: 12)
             return cell
         case .color:
             let cell = ColorLightCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -942,15 +947,16 @@ extension HomeView: UICollectionViewDataSource {
                 headerView.setSectionTitle(text: I18N.Home.best)
             case .recommend:
                 headerView.setSectionTitle(text: I18N.Home.recommend)
-                    headerView.sectionTitleLabel.font = .NotoBold(size: 14)
             case .todays:
                 headerView.setSectionTitle(text: I18N.Home.todays)
+                headerView.ADImageView.isHidden = false
             case .modern:
                 headerView.setSectionTitle(text: I18N.Home.modern)
             case .category:
                 headerView.setSectionTitle(text: I18N.Home.category)
             case .todaysDeal:
                 headerView.setSectionTitle(text: I18N.Home.todaysDeal)
+                headerView.moreLabel.isHidden = false
             case .summer:
                 headerView.setSectionTitle(text: I18N.Home.summerContent)
             case .color:
@@ -970,14 +976,18 @@ extension HomeView: UICollectionViewDataSource {
             case .top10:
                 headerView.setSectionTitle(text: I18N.Home.top10)
                 headerView.setSectionDescription(text: I18N.Home.top10Description)
+                headerView.moreLabel.isHidden = false
             case .review:
                 headerView.setSectionTitle(text: I18N.Home.review)
+                headerView.moreLabel.text = "업체찾기"
+                headerView.moreLabel.isHidden = false
             case .ideas:
                 headerView.setSectionTitle(text: I18N.Home.todaysIdeas)
+                headerView.moreLabel.isHidden = false
             case .bestSeller:
                 headerView.setSectionTitle(text: I18N.Home.bestSellers)
+                headerView.moreLabel.isHidden = false
             }
-            
             return headerView
         }
         
@@ -986,14 +996,21 @@ extension HomeView: UICollectionViewDataSource {
             case .topCategory, .best, .recommend, .todays, .category, .todaysDeal, .colorBest, .top10, .review:
                 let footerView = DivisionFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
                 return footerView
-            case .modern, .summer, .ideas, .bestSeller:
+            case .modern, .summer:
                 let footerView = MoreButtonFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+                return footerView
+            case .ideas:
+                let footerView = MoreButtonFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+                footerView.moreButton.setTitle("기획전 더보기 ", for: .normal)
+                return footerView
+            case .bestSeller:
+                let footerView = HomeFooterView.dequeueReusableFooterView(collectionView: collectionView, indexPath: indexPath)
+                footerView.moreButton.setTitle("베스트셀러 더보기 ", for: .normal)
                 return footerView
             default:
                 return UICollectionReusableView()
             }
         }
-        
         return UICollectionReusableView()
     }
 }

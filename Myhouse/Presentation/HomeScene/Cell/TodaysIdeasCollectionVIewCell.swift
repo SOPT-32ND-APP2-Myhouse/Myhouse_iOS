@@ -79,16 +79,19 @@ extension TodaysIdeasCollectionViewCell {
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
+            $0.width.equalTo(UIScreen.main.bounds.width * 0.573)
         }
         
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(8)
             $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
+            $0.width.equalTo(UIScreen.main.bounds.width * 0.573)
         }
         
         productsLabel.snp.makeConstraints {
             $0.top.equalTo(descriptionLabel.snp.bottom).offset(5)
             $0.leading.equalTo(ideasImageView.snp.trailing).offset(10)
+            $0.width.equalTo(UIScreen.main.bounds.width * 0.573)
         }
     }
     

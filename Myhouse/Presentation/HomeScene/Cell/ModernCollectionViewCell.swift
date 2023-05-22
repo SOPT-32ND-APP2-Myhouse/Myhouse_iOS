@@ -26,7 +26,7 @@ final class ModernCollectionViewCell: UICollectionViewCell, UICollectionViewRegi
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 13)
+        label.font = .NotoMedium(size: 12)
         label.textColor = .black
         return label
     }()

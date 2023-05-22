@@ -19,7 +19,6 @@ final class TodaysDealCollectionViewCell: UICollectionViewCell, UICollectionView
         let imageView = UIImageView()
         imageView.image = ImageLiterals.Home.img_home11
         imageView.contentMode = .scaleAspectFill
-        imageView.clipsToBounds = true
         return imageView
     }()
     
@@ -69,7 +68,7 @@ final class TodaysDealCollectionViewCell: UICollectionViewCell, UICollectionView
     private let percentLabel: UILabel = {
         let label = UILabel()
         label.text = "%"
-        label.font = .NotoMedium(size: 16)
+        label.font = .NotoBold(size: 16)
         label.textColor = .point
         label.sizeToFit()
         return label
@@ -79,7 +78,7 @@ final class TodaysDealCollectionViewCell: UICollectionViewCell, UICollectionView
         let label = UILabel()
         label.numberOfLines = 3
         label.text = "특가 832개 더보기 >"
-        label.font = .NotoMedium(size: 12)
+        label.font = .NotoBold(size: 12)
         label.textColor = .point
         label.sizeToFit()
         return label
@@ -131,7 +130,7 @@ extension TodaysDealCollectionViewCell {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(timerLabel.snp.bottom).offset(10)
             $0.leading.equalTo(imageView.snp.trailing).offset(10)
-            $0.width.equalTo(UIScreen.main.bounds.size.width * 0.434)
+            $0.width.equalTo(UIScreen.main.bounds.size.width * 0.4)
         }
         
         saleLabel.snp.makeConstraints {

@@ -18,7 +18,6 @@ final class TopCategoryCollectionViewCell: UICollectionViewCell, UICollectionVie
         let imageView = UIImageView()
         imageView.layer.cornerRadius = 4
         imageView.contentMode = .scaleAspectFill
-        //        imageView.clipsToBounds = true
         return imageView
     }()
     

@@ -14,7 +14,7 @@ protocol PagingDelegate: AnyObject {
 
 class PagingTabBarView: UIView {
     
-    var cellHeight: CGFloat { 30 }
+    var cellHeight: CGFloat { 20 }
     
     private var categoryTitleList: [String]
     
@@ -85,8 +85,8 @@ extension PagingTabBarView: UICollectionViewDataSource {
 private extension PagingTabBarView {
     func setupLayout() {
         addSubview(collectionView)
-        collectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }
