@@ -88,5 +88,7 @@ struct ImageLiterals {
         static var img_home09: UIImage { .load(name: "img_home09") }
         static var img_home10: UIImage { .load(name: "img_home10") }
         static var img_home11: UIImage { .load(name: "img_home11") }
+        static var img_star: UIImage { .load(name: "img_star") }
+        static var img_more: UIImage { .load(name: "img_more") }
     }
 }
