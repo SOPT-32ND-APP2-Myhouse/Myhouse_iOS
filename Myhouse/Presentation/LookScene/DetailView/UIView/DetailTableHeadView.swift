@@ -13,7 +13,7 @@ final class DetailTableHeadView: BaseView {
     
     let profileImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.image = ImageLiterals.User.userIcon
         return imageView
     }()
     

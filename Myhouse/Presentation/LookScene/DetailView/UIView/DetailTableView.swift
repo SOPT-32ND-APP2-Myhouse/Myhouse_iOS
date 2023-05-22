@@ -11,7 +11,7 @@ import SnapKit
 
 final class DetailTableView: UITableView {
     override init(frame: CGRect, style: UITableView.Style) {
-        super.init(frame: frame, style: style)
+        super.init(frame: frame, style: .plain)
         setupTableView()
     }
     
@@ -22,14 +22,12 @@ final class DetailTableView: UITableView {
     private func setupTableView() {
         register(DetailTableViewCell.self, forCellReuseIdentifier: DetailTableViewCell.identifier)
         self.rowHeight = 486
-        showsVerticalScrollIndicator = true
+        showsVerticalScrollIndicator = false
         
         let screenWidth = UIScreen.main.bounds.width
-        
         let headerView = DetailTableHeadView()
         headerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 84)
         self.tableHeaderView = headerView
-
         let footerView = DetailTableBottomView()
         footerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 1498)
         self.tableFooterView = footerView

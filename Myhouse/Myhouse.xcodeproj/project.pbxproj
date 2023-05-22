@@ -75,6 +75,8 @@
 		91D049382A1B90DE00ADC02F /* DetailTableBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D049372A1B90DE00ADC02F /* DetailTableBottomView.swift */; };
 		91D0493A2A1BA26700ADC02F /* DetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D049392A1BA26700ADC02F /* DetailTableView.swift */; };
 		91D0493C2A1BA35C00ADC02F /* DetailTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0493B2A1BA35C00ADC02F /* DetailTableViewCell.swift */; };
+		91D0493E2A1BDEF000ADC02F /* DetailTableFirstSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0493D2A1BDEF000ADC02F /* DetailTableFirstSectionView.swift */; };
+		91D049402A1BE68D00ADC02F /* DetailTableSecondSectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D0493F2A1BE68D00ADC02F /* DetailTableSecondSectionView.swift */; };
 		9B2A301C2A13C04A0036ECB8 /* Top10CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */; };
 		9B2A301E2A13CC8D0036ECB8 /* ModernDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */; };
 		9BF93D782A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */; };
@@ -153,6 +155,8 @@
 		91D049372A1B90DE00ADC02F /* DetailTableBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableBottomView.swift; sourceTree = "<group>"; };
 		91D049392A1BA26700ADC02F /* DetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableView.swift; sourceTree = "<group>"; };
 		91D0493B2A1BA35C00ADC02F /* DetailTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableViewCell.swift; sourceTree = "<group>"; };
+		91D0493D2A1BDEF000ADC02F /* DetailTableFirstSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableFirstSectionView.swift; sourceTree = "<group>"; };
+		91D0493F2A1BE68D00ADC02F /* DetailTableSecondSectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableSecondSectionView.swift; sourceTree = "<group>"; };
 		9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10CollectionViewCell.swift; sourceTree = "<group>"; };
 		9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernDataModel.swift; sourceTree = "<group>"; };
 		9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -518,6 +522,8 @@
 				91D049332A1B8A1500ADC02F /* DetailTableHeadView.swift */,
 				91D049372A1B90DE00ADC02F /* DetailTableBottomView.swift */,
 				91D0493B2A1BA35C00ADC02F /* DetailTableViewCell.swift */,
+				91D0493D2A1BDEF000ADC02F /* DetailTableFirstSectionView.swift */,
+				91D0493F2A1BE68D00ADC02F /* DetailTableSecondSectionView.swift */,
 			);
 			path = UIView;
 			sourceTree = "<group>";
@@ -669,6 +675,7 @@
 				69956BE22A179AEA0044F489 /* ScrapButton.swift in Sources */,
 				69871FE62A18D28D00261CBC /* ScrapPopUpView.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
+				91D049402A1BE68D00ADC02F /* DetailTableSecondSectionView.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,
 				9BF93D782A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift in Sources */,
@@ -693,6 +700,7 @@
 				094373FA2A14A9F7003C8AFD /* ReviewCollectionViewCell.swift in Sources */,
 				9BF93D822A12A8B900FE3B5B /* ModernCollectionViewCell.swift in Sources */,
 				91D0493C2A1BA35C00ADC02F /* DetailTableViewCell.swift in Sources */,
+				91D0493E2A1BDEF000ADC02F /* DetailTableFirstSectionView.swift in Sources */,
 				694D2FFA2A101A8200D84149 /* UIImage+.swift in Sources */,
 				0968C2112A11646400945F23 /* BestDataModel.swift in Sources */,
 				09DF36A12A121D1900C8BDA9 /* RecommendCollectionViewCell.swift in Sources */,

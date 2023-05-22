@@ -19,7 +19,7 @@ final class DetailTableBottomView: BaseView {
     
     let profileImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.image = ImageLiterals.User.userIcon
         return imageView
     }()
     
@@ -108,7 +108,7 @@ final class DetailTableBottomView: BaseView {
     
     let commentUserProfileImage: UIImageView = {
         let imageView = UIImageView()
-        imageView.backgroundColor = .red
+        imageView.image = ImageLiterals.User.userIcon
         return imageView
     }()
     
@@ -162,7 +162,7 @@ final class DetailTableBottomView: BaseView {
     
     let seeAllCommentLabel: UILabel = {
         let label = UILabel()
-        label.text = "7개의 댓글 전체보기"
+        label.text = "7개의 댓글 전체보기 >"
         label.textColor = .black
         label.font = .NotoMedium(size: 14)
         return label
@@ -199,6 +199,7 @@ final class DetailTableBottomView: BaseView {
     
     let writeCommentAddButton: UIButton = {
         let button = UIButton()
+        button.backgroundColor = .blue
         button.setTitle("등록", for: .normal)
         button.setTitleColor(.main, for: .normal)
         button.titleLabel?.font = .NotoBold(size: 12)
@@ -278,6 +279,8 @@ final class DetailTableBottomView: BaseView {
             seeAllCommentButton,
             lineView3,
             writeCommentView,
+            writeCommentLabel,
+            writeCommentAddButton,
             lineView4,
             recommendLabel,
             recommendTableView,
@@ -285,18 +288,14 @@ final class DetailTableBottomView: BaseView {
             similarToUserLabel,
             similarToUserView
         )
-        
-        writeCommentView.addSubviews(
-            writeCommentLabel,
-            writeCommentAddButton
-        )
     }
     
     override func setLayout() {
         lineView0.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         profileImage.snp.makeConstraints {
@@ -330,8 +329,9 @@ final class DetailTableBottomView: BaseView {
         
         lineView1.snp.makeConstraints {
             $0.top.equalTo(photoCollectionView.snp.bottom).offset(14)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         goodCountLabel.snp.makeConstraints {
@@ -356,8 +356,9 @@ final class DetailTableBottomView: BaseView {
         
         lineView2.snp.makeConstraints {
             $0.top.equalTo(goodCountLabel.snp.bottom).offset(24)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         commentDetailLabel.snp.makeConstraints {
@@ -403,42 +404,41 @@ final class DetailTableBottomView: BaseView {
         
         seeAllCommentLabel.snp.makeConstraints {
             $0.top.equalTo(commentDetailReport.snp.bottom).offset(30)
-            $0.centerX.equalToSuperview()
-        }
-        
-        seeAllCommentButton.snp.makeConstraints {
-            $0.leading.equalTo(seeAllCommentLabel.snp.trailing).offset(2)
-            $0.centerY.equalTo(seeAllCommentLabel)
-            $0.height.equalTo(10)
-            $0.width.equalTo(5)
+            $0.leading.equalToSuperview().offset(131)
         }
 
         lineView3.snp.makeConstraints {
             $0.top.equalTo(seeAllCommentLabel.snp.bottom).offset(25)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         writeCommentView.snp.makeConstraints {
             $0.top.equalTo(lineView3.snp.bottom).offset(15)
-            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.width.equalTo(360)
+            $0.leading.equalToSuperview().offset(15)
             $0.height.equalTo(43)
         }
         
         writeCommentLabel.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(lineView3.snp.bottom).offset(28)
             $0.leading.equalToSuperview().offset(21)
         }
         
         writeCommentAddButton.snp.makeConstraints {
-            $0.centerY.equalToSuperview()
+            $0.top.equalTo(lineView3.snp.bottom).offset(28)
             $0.trailing.equalToSuperview().inset(14)
+            $0.width.equalTo(23)
+            $0.height.equalTo(17)
         }
+        writeCommentAddButton.bringSubviewToFront(self)
         
         lineView4.snp.makeConstraints {
             $0.top.equalTo(writeCommentView.snp.bottom).offset(18)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         recommendLabel.snp.makeConstraints {
@@ -454,8 +454,9 @@ final class DetailTableBottomView: BaseView {
         
         lineView5.snp.makeConstraints {
             $0.top.equalTo(recommendTableView.snp.bottom).offset(32)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(2)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(390)
+            $0.height.equalTo(1)
         }
         
         similarToUserLabel.snp.makeConstraints {
@@ -465,7 +466,8 @@ final class DetailTableBottomView: BaseView {
         
         similarToUserView.snp.makeConstraints {
             $0.top.equalTo(similarToUserLabel.snp.bottom).offset(18)
-            $0.leading.trailing.equalToSuperview().inset(15)
+            $0.leading.equalToSuperview().inset(15)
+            $0.width.equalTo(351)
             $0.height.equalTo(560)
         }
     }
