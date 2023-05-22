@@ -59,8 +59,6 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
         super.prepareForReuse()
         sectionTitleLabel.text = nil
         sectionDescription.text = nil
-        
-        self.sectionDescription.text = ""
         self.ADImageView.isHidden = true
         self.moreLabel.isHidden = true
         self.moreLabel.text = "더보기"
@@ -90,7 +88,6 @@ extension SectionTitleCollectionReusableView {
             $0.top.equalToSuperview()
             $0.trailing.equalToSuperview()
         }
-        
     }
 
     func setSectionTitle(text: String?) {
@@ -98,7 +95,9 @@ extension SectionTitleCollectionReusableView {
         self.sectionTitleLabel.textColor = .black
         self.sectionTitleLabel.font = .NotoBold(size: 14)
     }
-    func setSectionDescription(text: String) {
+    
+    func setSectionDescription(text: String?) {
         self.sectionDescription.text = text
+        self.sectionDescription.isHidden = false
     }
 }
