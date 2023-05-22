@@ -27,13 +27,10 @@ class PagingView: UIView {
         self.collectionView.delegate = self
         self.collectionView.dataSource = self
         self.collectionView.register(PagingCollectionViewCell.self,
-                                             forCellWithReuseIdentifier: PagingCollectionViewCell.identifier)
+                                     forCellWithReuseIdentifier: PagingCollectionViewCell.identifier)
         let layout = UICollectionViewFlowLayout()
         layout.itemSize = .init(width: UIScreen.main.bounds.width,
                                 height: UIScreen.main.bounds.height)
-        layout.minimumInteritemSpacing = 0
-        layout.minimumLineSpacing = 0
-        layout.sectionInset = .init(top: 0, left: 0, bottom: 0, right: 0)
         layout.scrollDirection = .horizontal
         self.collectionView.setCollectionViewLayout(layout, animated: false)
     }

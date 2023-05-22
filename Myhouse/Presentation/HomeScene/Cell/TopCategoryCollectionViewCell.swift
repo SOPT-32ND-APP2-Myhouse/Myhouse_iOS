@@ -57,7 +57,6 @@ extension TopCategoryCollectionViewCell {
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(categoryImageView.snp.bottom).offset(8)
             $0.leading.trailing.equalToSuperview().inset(-5)
-            
         }
     }
     
