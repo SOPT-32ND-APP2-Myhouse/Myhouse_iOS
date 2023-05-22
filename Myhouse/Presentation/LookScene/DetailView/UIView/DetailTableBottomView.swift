@@ -422,17 +422,16 @@ final class DetailTableBottomView: BaseView {
         }
         
         writeCommentLabel.snp.makeConstraints {
-            $0.top.equalTo(lineView3.snp.bottom).offset(28)
+            $0.top.equalTo(lineView3.snp.bottom).offset(24)
             $0.leading.equalToSuperview().offset(21)
         }
         
         writeCommentAddButton.snp.makeConstraints {
             $0.top.equalTo(lineView3.snp.bottom).offset(28)
-            $0.trailing.equalToSuperview().inset(14)
+            $0.trailing.equalToSuperview().inset(50)
             $0.width.equalTo(23)
             $0.height.equalTo(17)
         }
-        writeCommentAddButton.bringSubviewToFront(self)
         
         lineView4.snp.makeConstraints {
             $0.top.equalTo(writeCommentView.snp.bottom).offset(18)
