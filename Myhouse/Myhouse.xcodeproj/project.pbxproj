@@ -78,6 +78,9 @@
 		9B16E1622A1A5086007AC1B5 /* BestSellerDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E1612A1A5086007AC1B5 /* BestSellerDataModel.swift */; };
 		9B16E1642A1A51B8007AC1B5 /* PagingTabBarCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E1632A1A51B8007AC1B5 /* PagingTabBarCell.swift */; };
 		9B16E1662A1A51E2007AC1B5 /* PagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B16E1652A1A51E2007AC1B5 /* PagingCollectionViewCell.swift */; };
+		9B1EA9A12A1A56EB000FCB14 /* TopCategoryCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EA9A02A1A56EB000FCB14 /* TopCategoryCollectionViewCell.swift */; };
+		9B1EA9A32A1A5719000FCB14 /* TopCategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EA9A22A1A5719000FCB14 /* TopCategoryDataModel.swift */; };
+		9B1EA9A52A1A60E0000FCB14 /* TodaysDealCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B1EA9A42A1A60E0000FCB14 /* TodaysDealCollectionViewCell.swift */; };
 		9B2A301C2A13C04A0036ECB8 /* Top10CollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */; };
 		9B2A301E2A13CC8D0036ECB8 /* ModernDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */; };
 		9BF93D782A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */; };
@@ -159,6 +162,9 @@
 		9B16E1612A1A5086007AC1B5 /* BestSellerDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BestSellerDataModel.swift; sourceTree = "<group>"; };
 		9B16E1632A1A51B8007AC1B5 /* PagingTabBarCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingTabBarCell.swift; sourceTree = "<group>"; };
 		9B16E1652A1A51E2007AC1B5 /* PagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PagingCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B1EA9A02A1A56EB000FCB14 /* TopCategoryCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoryCollectionViewCell.swift; sourceTree = "<group>"; };
+		9B1EA9A22A1A5719000FCB14 /* TopCategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TopCategoryDataModel.swift; sourceTree = "<group>"; };
+		9B1EA9A42A1A60E0000FCB14 /* TodaysDealCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodaysDealCollectionViewCell.swift; sourceTree = "<group>"; };
 		9B2A301B2A13C04A0036ECB8 /* Top10CollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Top10CollectionViewCell.swift; sourceTree = "<group>"; };
 		9B2A301D2A13CC8D0036ECB8 /* ModernDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModernDataModel.swift; sourceTree = "<group>"; };
 		9BF93D772A1241DC00FE3B5B /* SectionTitleCollectionReusableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SectionTitleCollectionReusableView.swift; sourceTree = "<group>"; };
@@ -315,6 +321,7 @@
 				698A502F2A18A22B006A7903 /* ColorLightDataModel.swift */,
 				698A50312A18A250006A7903 /* IdeaDataModel.swift */,
 				9B16E1612A1A5086007AC1B5 /* BestSellerDataModel.swift */,
+				9B1EA9A22A1A5719000FCB14 /* TopCategoryDataModel.swift */,
 			);
 			path = ViewModel;
 			sourceTree = "<group>";
@@ -337,6 +344,8 @@
 				9B16E15B2A1A4F80007AC1B5 /* ContentCell.swift */,
 				9B16E1632A1A51B8007AC1B5 /* PagingTabBarCell.swift */,
 				9B16E1652A1A51E2007AC1B5 /* PagingCollectionViewCell.swift */,
+				9B1EA9A02A1A56EB000FCB14 /* TopCategoryCollectionViewCell.swift */,
+				9B1EA9A42A1A60E0000FCB14 /* TodaysDealCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -630,6 +639,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				694D301C2A113A3D00D84149 /* ShoppingViewController.swift in Sources */,
+				9B1EA9A52A1A60E0000FCB14 /* TodaysDealCollectionViewCell.swift in Sources */,
 				699786012A1011BB005BC69E /* ImageLiterals.swift in Sources */,
 				69956BDE2A179A660044F489 /* FeedCollectionViewCell.swift in Sources */,
 				69956BB82A155F090044F489 /* FolderHeaderView.swift in Sources */,
@@ -662,6 +672,7 @@
 				09FD5D412A11676000976C02 /* HomeView.swift in Sources */,
 				69956BE22A179AEA0044F489 /* ScrapButton.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
+				9B1EA9A32A1A5719000FCB14 /* TopCategoryDataModel.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				9B16E15C2A1A4F80007AC1B5 /* ContentCell.swift in Sources */,
 				9B16E1602A1A5039007AC1B5 /* PagingView.swift in Sources */,
@@ -684,6 +695,7 @@
 				694D301A2A113A2B00D84149 /* LookViewController.swift in Sources */,
 				9BF93D7C2A12992D00FE3B5B /* TodaysProductCollectionViewCell.swift in Sources */,
 				09B7D3A62A12227E00B4B485 /* RecommendDataModel.swift in Sources */,
+				9B1EA9A12A1A56EB000FCB14 /* TopCategoryCollectionViewCell.swift in Sources */,
 				694D30022A10B8C300D84149 /* UIViewController+.swift in Sources */,
 				694D30102A10BCCB00D84149 /* UITableView+.swift in Sources */,
 				694D30182A113A1B00D84149 /* HomeViewController.swift in Sources */,
@@ -837,6 +849,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKFK367WP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
@@ -864,6 +877,7 @@
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = KKFK367WP8;
 				GENERATE_INFOPLIST_FILE = YES;
 				INFOPLIST_FILE = Global/Resources/Info.plist;
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
