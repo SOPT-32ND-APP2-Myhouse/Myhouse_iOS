@@ -29,7 +29,7 @@ final class LookPagingTabBarView: BaseView {
         
         layout.estimatedItemSize = CGSize(width: 100, height: 44)
         layout.sectionInset = UIEdgeInsets(top: 0, left: 8, bottom: 0, right: 8)
-        layout.minimumInteritemSpacing = 8
+        layout.minimumLineSpacing = 10
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .white
         collectionView.showsHorizontalScrollIndicator = false
@@ -44,6 +44,7 @@ final class LookPagingTabBarView: BaseView {
         
         registerCell()
         setDelegate()
+        setSelectedCell()
     }
     
     @available(*, unavailable)
@@ -51,16 +52,11 @@ final class LookPagingTabBarView: BaseView {
         fatalError("init(coder:) has not been implemented")
     }
     
-    override func setUI() {
-        let indexPath = IndexPath(item: 0, section: 0)
-        delegate?.didTapPagingTabBarCell(scrollTo: indexPath) // 이동 이벤트를 처리하기 위해 delegate 호출
-    }
-    
     override func setLayout() {
         self.addSubviews(tabBarcollectionView)
         
-        tabBarcollectionView.snp.makeConstraints { make in
-            make.edges.equalToSuperview()
+        tabBarcollectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
         }
     }
 }
@@ -70,15 +66,15 @@ final class LookPagingTabBarView: BaseView {
 extension LookPagingTabBarView {
     func registerCell() {
         LookPagingTabBarCollectionViewCell.register(target: tabBarcollectionView)
-        DispatchQueue.main.async {
-            let indexPath = IndexPath(item: 0, section: 0)
-            self.tabBarcollectionView.selectItem(at: indexPath, animated: false, scrollPosition: .centeredHorizontally)
-        }
     }
     
     func setDelegate() {
         tabBarcollectionView.delegate = self
         tabBarcollectionView.dataSource = self
+    }
+    
+    func setSelectedCell() {
+        tabBarcollectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
     }
 }
 
