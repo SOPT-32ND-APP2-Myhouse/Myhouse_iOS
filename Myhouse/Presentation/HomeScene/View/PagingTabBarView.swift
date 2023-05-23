@@ -14,8 +14,6 @@ protocol PagingDelegate: AnyObject {
 
 class PagingTabBarView: UIView {
     
-    var cellHeight: CGFloat { 20 }
-    
     private var categoryTitleList: [String]
     
     weak var delegate: PagingDelegate?
@@ -23,14 +21,11 @@ class PagingTabBarView: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1 * 2.0) / 5.0, height: cellHeight)
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1 * 2.0) / 5.0, height: 20)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
         collectionView.showsHorizontalScrollIndicator = false
-        collectionView.delegate = self
-        collectionView.dataSource = self
-        
         return collectionView
     }()
     
@@ -39,6 +34,7 @@ class PagingTabBarView: UIView {
         super.init(frame: .zero)
         setLayout()
         setRegister()
+        setDelegate()
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
     }
     
@@ -51,6 +47,12 @@ private extension PagingTabBarView {
     
     func setRegister() {
         PagingTabBarCell.register(target: collectionView)
+    }
+    
+    func setDelegate() {
+        
+        collectionView.delegate = self
+        collectionView.dataSource = self
     }
     
     func setLayout() {
@@ -85,8 +87,7 @@ extension PagingTabBarView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PagingTabBarCell.identifier, for: indexPath) as? PagingTabBarCell else { return UICollectionViewCell() }
-        
+        let cell = PagingTabBarCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
         cell.setupView(title: categoryTitleList[indexPath.row])
         
         return cell

@@ -31,9 +31,8 @@ class PagingView: UIView {
         self.categoryTitleList = categoryTitleList
         self.pagingTabBarView = pagingTabBarView
         super.init(frame: .zero)
-        setDataSource()
         setDelegate()
-        setRegister()
+        registerCell()
         setLayout()
     }
     
@@ -43,16 +42,13 @@ class PagingView: UIView {
 }
 
 private extension PagingView {
-    func setDataSource() {
-        collectionView.dataSource = self
-    }
-    
     func setDelegate() {
+        collectionView.dataSource = self
         collectionView.delegate = self
         pagingTabBarView.delegate = self
     }
     
-    func setRegister() {
+    func registerCell() {
         PagingCollectionViewCell.register(target: collectionView)
     }
     
@@ -91,7 +87,7 @@ extension PagingView: UICollectionViewDataSource {
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: PagingCollectionViewCell.identifier, for: indexPath) as? PagingCollectionViewCell else { return UICollectionViewCell() }
+        let cell = PagingCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
         cell.setupView(title: categoryTitleList[indexPath.row])
         return cell
     }

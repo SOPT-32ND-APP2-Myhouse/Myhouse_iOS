@@ -47,6 +47,11 @@ final class MoreButtonFooterView: UICollectionReusableView, UICollectionFooterVi
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
     }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        moreButton.setTitle("더보기 ", for: .normal)
+    }
 }
 
 // MARK: - Extensions

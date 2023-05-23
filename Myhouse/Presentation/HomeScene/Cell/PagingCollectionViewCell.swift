@@ -12,8 +12,6 @@ import SnapKit
 class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
-
-    static let identifier = "PagingCollectionViewCell"
     
     private let bestSellerDummy = BestSellerDataModel.dummy()
     
@@ -33,7 +31,6 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         super.init(frame: frame)
         registerCell()
         setDataSource()
-        
         setLayout()
     }
     

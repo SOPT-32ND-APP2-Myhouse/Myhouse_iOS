@@ -63,7 +63,7 @@ private extension BestSellerCollectionViewCell {
         pagingTabBarView.snp.makeConstraints {
             $0.top.equalTo(line.snp.bottom).offset(14)
             $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(pagingTabBarView.cellHeight)
+            $0.height.equalTo(20)
         }
         
         pagingView.snp.makeConstraints {

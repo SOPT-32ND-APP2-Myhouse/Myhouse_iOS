@@ -13,8 +13,6 @@ class PagingTabBarCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
-    static let identifier = "PagingTabBarCell"
-    
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
         label.font = .NotoBold(size: 14)

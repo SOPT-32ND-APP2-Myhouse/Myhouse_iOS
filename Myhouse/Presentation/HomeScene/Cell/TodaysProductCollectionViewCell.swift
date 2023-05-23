@@ -79,7 +79,8 @@ extension TodaysProductCollectionViewCell {
                                 storeLabel,
                                 titleLabel,
                                 saleLabel,
-                                priceLabel)
+                                priceLabel,
+                                bookmarkButton)
         
         todaysImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -105,6 +106,11 @@ extension TodaysProductCollectionViewCell {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(60)
             $0.leading.equalTo(saleLabel.snp.trailing).offset(3)
+        }
+        
+        bookmarkButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(todaysImageView).inset(5)
+            $0.size.equalTo(24)
         }
     }
     
