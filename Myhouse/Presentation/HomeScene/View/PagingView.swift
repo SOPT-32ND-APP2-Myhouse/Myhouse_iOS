@@ -93,7 +93,7 @@ extension PagingView: UICollectionViewDataSource {
     }
 }
 
-extension PagingView: PagingDelegate {
+extension PagingView: HomePagingDelegate {
     func didTapPagingTabBarCell(scrollTo indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
     }

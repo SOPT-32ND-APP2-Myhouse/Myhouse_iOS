@@ -8,7 +8,7 @@
 import UIKit
 import SnapKit
 
-protocol PagingDelegate: AnyObject {
+protocol HomePagingDelegate: AnyObject {
     func didTapPagingTabBarCell(scrollTo indexPath: IndexPath)
 }
 
@@ -16,7 +16,7 @@ class PagingTabBarView: UIView {
     
     private var categoryTitleList: [String]
     
-    weak var delegate: PagingDelegate?
+    weak var delegate: HomePagingDelegate?
     
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
