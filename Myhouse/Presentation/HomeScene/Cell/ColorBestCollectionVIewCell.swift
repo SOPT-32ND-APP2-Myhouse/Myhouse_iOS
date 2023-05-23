@@ -26,7 +26,7 @@ final class ColorBestCollectionViewCell: UICollectionViewCell, UICollectionViewR
     private let storeLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 10)
+        label.font = .NotoRegular(size: 10)
         label.textColor = .darkGray
         return label
     }()
@@ -94,11 +94,13 @@ extension ColorBestCollectionViewCell {
             $0.top.equalTo(storeLabel.snp.bottom)
             $0.leading.trailing.equalToSuperview()
         }
+        
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(27)
             $0.leading.equalToSuperview()
         }
+        
         priceLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(50)

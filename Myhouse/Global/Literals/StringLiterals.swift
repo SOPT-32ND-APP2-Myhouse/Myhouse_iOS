@@ -25,6 +25,8 @@ struct I18N {
         static let review = "서울특별시 동작구 주변 시공 리뷰"
         static let todaysIdeas = "오늘의 기획전"
         static let bestSellers = "베스트"
+        static let categoryTitleList = [ "전체", "가구", "패브릭", "가전 • 디지털", "주방용품", "식품"]
+        static let footer = "(주)버킷플레이스\n\n대표이사 이승재   사업자등록번호 119-86-91245\n통신판매사업신고번호 2018-서울서초-0580호 사업자정보확인\n서울 서초구 서초대로74길 4 삼성생명서초타워 27층\ncontact@bucketplace.net  |  1670-0876\n\n(주)버킷플레이스는 통신판매중개자로 거래 당사자가 아니므로, 판매자가 등록한 상품정보 및 거래 등에 대해 책임을 지지 않습니다. 단, (주)버킷플레이스가 판매자로 등록한 판매상품은 판매자로서 책임을 부담합니다.\n\n이용약관  개인정보처리방침"
     }
     
     struct Scrap {

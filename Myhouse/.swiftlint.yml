@@ -12,6 +12,8 @@ disabled_rules:
 - redundant_optional_initialization
 - unused_closure_parameter
 - discouraged_direct_init
+- file_length
+- cyclomatic_complexity
 
 excluded:
   - Myhouse/Application/AppDelegate.swift

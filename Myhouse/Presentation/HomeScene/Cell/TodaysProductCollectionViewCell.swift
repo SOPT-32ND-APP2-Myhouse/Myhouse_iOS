@@ -34,7 +34,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let titleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoRegular(size: 13)
+        label.font = .NotoRegular(size: 12)
         label.textColor = .black
         return label
     }()
@@ -42,7 +42,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let saleLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 15)
+        label.font = .NotoBold(size: 16)
         label.textColor = .main
         return label
     }()
@@ -50,7 +50,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
     private let priceLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoBold(size: 15)
+        label.font = .NotoBold(size: 16)
         label.textColor = .black
         return label
     }()
@@ -74,13 +74,13 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
 
 extension TodaysProductCollectionViewCell {
 
-    
     private func setLayout() {
         contentView.addSubviews(todaysImageView,
                                 storeLabel,
                                 titleLabel,
                                 saleLabel,
-                                priceLabel)
+                                priceLabel,
+                                bookmarkButton)
         
         todaysImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -106,6 +106,11 @@ extension TodaysProductCollectionViewCell {
             $0.top.equalTo(titleLabel.snp.bottom)
             $0.width.equalTo(60)
             $0.leading.equalTo(saleLabel.snp.trailing).offset(3)
+        }
+        
+        bookmarkButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(todaysImageView).inset(5)
+            $0.size.equalTo(24)
         }
     }
     

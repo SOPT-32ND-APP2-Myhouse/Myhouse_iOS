@@ -26,7 +26,6 @@ extension ModernDataModel {
                                 description: "뷰 맛집, 상큼하우스"),
                 ModernDataModel(image: ImageLiterals.Card.img_card09,
                                 title: "간결해진 삶에 행복을 더하는!",
-                                description: "뷰 맛집, 상큼하우스"),
-        ]
+                                description: "뷰 맛집, 상큼하우스")]
     }
 }

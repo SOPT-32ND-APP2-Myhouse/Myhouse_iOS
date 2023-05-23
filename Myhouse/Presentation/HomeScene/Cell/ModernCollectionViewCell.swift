@@ -26,12 +26,10 @@ final class ModernCollectionViewCell: UICollectionViewCell, UICollectionViewRegi
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 13)
+        label.font = .NotoMedium(size: 12)
         label.textColor = .black
         return label
     }()
-    
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
     
@@ -52,8 +50,7 @@ extension ModernCollectionViewCell {
 
     private func setLayout() {
         contentView.addSubviews(bestImageView,
-                                descriptionLabel,
-                                bookmarkButton)
+                                descriptionLabel)
         
         bestImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -63,11 +60,6 @@ extension ModernCollectionViewCell {
             $0.top.equalTo(bestImageView.snp.bottom).offset(12)
             $0.leading.trailing.equalToSuperview()
         }
-
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(bestImageView).inset(8)
-            $0.size.equalTo(24)
-        }
     }
     
     func configureCell(_ modernData: ModernDataModel) {
@@ -75,7 +67,6 @@ extension ModernCollectionViewCell {
         descriptionLabel.text = modernData.title
         descriptionLabel.text = (descriptionLabel.text ?? "") + " \(modernData.description)"
         
-        // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         let range = (fullText as NSString).range(of: "\(modernData.title)")
