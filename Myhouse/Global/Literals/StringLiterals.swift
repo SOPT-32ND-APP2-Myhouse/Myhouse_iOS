@@ -35,6 +35,7 @@ struct I18N {
     }
     
     struct Look {
+        static let tabBarTitleList = ["팔로잉", "사진", "집들이", "노하우", "전문가 집들이"]
         static let tagData = ["모던한", "화려한", "레트로감성", "우드", "화이트톤", "심플한"]
     }
 }

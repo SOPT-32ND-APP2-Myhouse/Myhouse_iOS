@@ -50,6 +50,11 @@
 		694D30362A115D3500D84149 /* ScarpViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30352A115D3500D84149 /* ScarpViewController.swift */; };
 		694D30382A115D5D00D84149 /* ScrapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D30372A115D5D00D84149 /* ScrapView.swift */; };
 		69871FE62A18D28D00261CBC /* ScrapPopUpView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FE52A18D28D00261CBC /* ScrapPopUpView.swift */; };
+		69871FEA2A1B051D00261CBC /* LookPagingTabBarCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FE92A1B051D00261CBC /* LookPagingTabBarCollectionViewCell.swift */; };
+		69871FEC2A1B0B7D00261CBC /* LookPagingTabBarView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FEB2A1B0B7D00261CBC /* LookPagingTabBarView.swift */; };
+		69871FEE2A1B0FCB00261CBC /* LookPagingCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FED2A1B0FCB00261CBC /* LookPagingCollectionViewCell.swift */; };
+		69871FF02A1B115200261CBC /* LookingPagingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FEF2A1B115200261CBC /* LookingPagingView.swift */; };
+		69871FF22A1B139D00261CBC /* LookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69871FF12A1B139D00261CBC /* LookView.swift */; };
 		698A502E2A18A200006A7903 /* CategoryDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A502D2A18A200006A7903 /* CategoryDataModel.swift */; };
 		698A50302A18A22B006A7903 /* ColorLightDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A502F2A18A22B006A7903 /* ColorLightDataModel.swift */; };
 		698A50322A18A250006A7903 /* IdeaDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 698A50312A18A250006A7903 /* IdeaDataModel.swift */; };
@@ -124,6 +129,11 @@
 		694D30352A115D3500D84149 /* ScarpViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScarpViewController.swift; sourceTree = "<group>"; };
 		694D30372A115D5D00D84149 /* ScrapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapView.swift; sourceTree = "<group>"; };
 		69871FE52A18D28D00261CBC /* ScrapPopUpView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapPopUpView.swift; sourceTree = "<group>"; };
+		69871FE92A1B051D00261CBC /* LookPagingTabBarCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookPagingTabBarCollectionViewCell.swift; sourceTree = "<group>"; };
+		69871FEB2A1B0B7D00261CBC /* LookPagingTabBarView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookPagingTabBarView.swift; sourceTree = "<group>"; };
+		69871FED2A1B0FCB00261CBC /* LookPagingCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookPagingCollectionViewCell.swift; sourceTree = "<group>"; };
+		69871FEF2A1B115200261CBC /* LookingPagingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookingPagingView.swift; sourceTree = "<group>"; };
+		69871FF12A1B139D00261CBC /* LookView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LookView.swift; sourceTree = "<group>"; };
 		698A502D2A18A200006A7903 /* CategoryDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryDataModel.swift; sourceTree = "<group>"; };
 		698A502F2A18A22B006A7903 /* ColorLightDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColorLightDataModel.swift; sourceTree = "<group>"; };
 		698A50312A18A250006A7903 /* IdeaDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IdeaDataModel.swift; sourceTree = "<group>"; };
@@ -450,6 +460,9 @@
 			isa = PBXGroup;
 			children = (
 				69956BDB2A179A3D0044F489 /* LookCollectionView.swift */,
+				69871FEB2A1B0B7D00261CBC /* LookPagingTabBarView.swift */,
+				69871FEF2A1B115200261CBC /* LookingPagingView.swift */,
+				69871FF12A1B139D00261CBC /* LookView.swift */,
 			);
 			path = View;
 			sourceTree = "<group>";
@@ -459,6 +472,8 @@
 			children = (
 				69956BDD2A179A660044F489 /* FeedCollectionViewCell.swift */,
 				69956BDF2A179A9D0044F489 /* TagCollectionViewCell.swift */,
+				69871FE92A1B051D00261CBC /* LookPagingTabBarCollectionViewCell.swift */,
+				69871FED2A1B0FCB00261CBC /* LookPagingCollectionViewCell.swift */,
 			);
 			path = Cell;
 			sourceTree = "<group>";
@@ -617,9 +632,12 @@
 				9BF93D7A2A12451500FE3B5B /* DivisionFooterView.swift in Sources */,
 				9BF93D8C2A12AF0600FE3B5B /* TodaysDataModel.swift in Sources */,
 				69A199732A154BB500D4574B /* FolderBottomSheetViewController.swift in Sources */,
+				69871FEA2A1B051D00261CBC /* LookPagingTabBarCollectionViewCell.swift in Sources */,
 				694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */,
 				094373FC2A14B0AA003C8AFD /* TodaysIdeasCollectionVIewCell.swift in Sources */,
+				69871FEC2A1B0B7D00261CBC /* LookPagingTabBarView.swift in Sources */,
 				694D30262A113ECA00D84149 /* BaseView.swift in Sources */,
+				69871FF02A1B115200261CBC /* LookingPagingView.swift in Sources */,
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				9B2A301E2A13CC8D0036ECB8 /* ModernDataModel.swift in Sources */,
 				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
@@ -650,6 +668,7 @@
 				69956BB62A155E110044F489 /* ScrapDataModel.swift in Sources */,
 				694D30002A10B89300D84149 /* UIButton+.swift in Sources */,
 				0951B69D2A135E6D00134B6A /* ColorLightCollectionViewCell.swift in Sources */,
+				69871FF22A1B139D00261CBC /* LookView.swift in Sources */,
 				694D300B2A10BA9C00D84149 /* UICollectionViewRegisterable.swift in Sources */,
 				698A502E2A18A200006A7903 /* CategoryDataModel.swift in Sources */,
 				694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */,
@@ -671,6 +690,7 @@
 				0951B69B2A13376A00134B6A /* CategoryCollectionViewCell.swift in Sources */,
 				69A199712A153DFD00D4574B /* FolderBottomSheetView.swift in Sources */,
 				699786052A101236005BC69E /* FontLiterals.swift in Sources */,
+				69871FEE2A1B0FCB00261CBC /* LookPagingCollectionViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
