@@ -10,6 +10,7 @@ import UIKit
 import SnapKit
 
 final class TopCategoryCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
+    
     static var isFromNib: Bool = false
     
     // MARK: - UI Components

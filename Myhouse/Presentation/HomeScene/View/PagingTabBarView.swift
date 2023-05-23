@@ -31,8 +31,6 @@ class PagingTabBarView: UIView {
         collectionView.delegate = self
         collectionView.dataSource = self
         
-        collectionView.register(PagingTabBarCell.self, forCellWithReuseIdentifier: PagingTabBarCell.identifier)
-        
         return collectionView
     }()
     
@@ -40,11 +38,27 @@ class PagingTabBarView: UIView {
         self.categoryTitleList = categoryTitleList
         super.init(frame: .zero)
         setLayout()
+        setRegister()
         collectionView.selectItem(at: IndexPath(row: 0, section: 0), animated: true, scrollPosition: [])
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension PagingTabBarView {
+    
+    func setRegister() {
+        PagingTabBarCell.register(target: collectionView)
+    }
+    
+    func setLayout() {
+        addSubview(collectionView)
+        
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
 
@@ -76,15 +90,5 @@ extension PagingTabBarView: UICollectionViewDataSource {
         cell.setupView(title: categoryTitleList[indexPath.row])
         
         return cell
-    }
-}
-
-private extension PagingTabBarView {
-    func setLayout() {
-        addSubview(collectionView)
-        
-        collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
 }

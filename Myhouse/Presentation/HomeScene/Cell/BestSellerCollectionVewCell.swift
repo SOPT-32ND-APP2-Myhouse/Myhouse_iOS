@@ -9,7 +9,7 @@ import UIKit
 
 import SnapKit
 
-class BestSellerCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
+final class BestSellerCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     static var isFromNib: Bool = false
     
@@ -27,7 +27,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
         return view
     }()
     
-    private let categoryTitleList = [ "전체", "가구", "패브릭", "가전 • 디지털", "주방용품", "식품" ]
+    private let categoryTitleList = I18N.Home.categoryTitleList
     
     private lazy var pagingTabBarView = PagingTabBarView(categoryTitleList: categoryTitleList)
     
@@ -46,12 +46,7 @@ class BestSellerCollectionViewCell: UICollectionViewCell, UICollectionViewRegist
 
 private extension BestSellerCollectionViewCell {
     func setLayout() {
-        contentView.addSubviews(line, line2)
-        
-        [
-            pagingTabBarView,
-            pagingView
-        ].forEach { contentView.addSubview($0) }
+        contentView.addSubviews(line, line2, pagingTabBarView, pagingView)
         
         line.snp.makeConstraints {
             $0.top.equalToSuperview()

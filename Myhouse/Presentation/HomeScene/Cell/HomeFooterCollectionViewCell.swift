@@ -45,10 +45,8 @@ final class HomeFooterCollectionViewCell: UICollectionViewCell, UICollectionView
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        setUI()
         setLayout()
-        backgroundColor = .gray_20
-        layer.borderWidth = 0.5
-        layer.borderColor = UIColor.gray.cgColor
     }
     
     required init?(coder: NSCoder) {
@@ -59,6 +57,12 @@ final class HomeFooterCollectionViewCell: UICollectionViewCell, UICollectionView
 // MARK: - Extensions
 
 extension HomeFooterCollectionViewCell {
+    
+    private func setUI() {
+        backgroundColor = .gray_20
+        layer.borderWidth = 0.5
+        layer.borderColor = UIColor.gray.cgColor
+    }
 
     private func setLayout() {
         contentView.addSubviews(imageView,

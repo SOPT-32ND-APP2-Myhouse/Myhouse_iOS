@@ -16,36 +16,51 @@ class PagingView: UIView {
     
     private lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
+        layout.itemSize = .init(width: UIScreen.main.bounds.width,
+                                height: UIScreen.main.bounds.height)
+        layout.scrollDirection = .horizontal
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.showsHorizontalScrollIndicator = false
         collectionView.isPagingEnabled = true
+        collectionView.setCollectionViewLayout(layout, animated: false)
         return collectionView
     }()
-    
-    private func setCollectionViewConfig() {
-        self.collectionView.delegate = self
-        self.collectionView.dataSource = self
-        self.collectionView.register(PagingCollectionViewCell.self,
-                                     forCellWithReuseIdentifier: PagingCollectionViewCell.identifier)
-        let layout = UICollectionViewFlowLayout()
-        layout.itemSize = .init(width: UIScreen.main.bounds.width,
-                                height: UIScreen.main.bounds.height)
-        layout.scrollDirection = .horizontal
-        self.collectionView.setCollectionViewLayout(layout, animated: false)
-    }
     
     init(categoryTitleList: [String], pagingTabBarView: PagingTabBarView) {
         self.categoryTitleList = categoryTitleList
         self.pagingTabBarView = pagingTabBarView
         super.init(frame: .zero)
+        setDataSource()
+        setDelegate()
+        setRegister()
         setLayout()
-        self.setCollectionViewConfig()
-        pagingTabBarView.delegate = self
     }
     
     required init?(coder: NSCoder) {
         fatalError("init(coder:) has not been implemented")
+    }
+}
+
+private extension PagingView {
+    func setDataSource() {
+        collectionView.dataSource = self
+    }
+    
+    func setDelegate() {
+        collectionView.delegate = self
+        pagingTabBarView.delegate = self
+    }
+    
+    func setRegister() {
+        PagingCollectionViewCell.register(target: collectionView)
+    }
+    
+    func setLayout() {
+        addSubview(collectionView)
+        collectionView.snp.makeConstraints {
+            $0.edges.equalToSuperview()
+        }
     }
 }
 
@@ -85,14 +100,5 @@ extension PagingView: UICollectionViewDataSource {
 extension PagingView: PagingDelegate {
     func didTapPagingTabBarCell(scrollTo indexPath: IndexPath) {
         collectionView.scrollToItem(at: indexPath, at: .centeredHorizontally, animated: false)
-    }
-}
-
-private extension PagingView {
-    func setLayout() {
-        addSubview(collectionView)
-        collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
-        }
     }
 }

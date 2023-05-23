@@ -9,18 +9,10 @@ import UIKit
 
 import SnapKit
 
-class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewDataSource {
+class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
+    
+    static var isFromNib: Bool = false
 
-    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return bestSellerDummy.count
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-            let cell = ContentCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(bestSellerDummy[indexPath.item])
-            return cell
-    }
-    
     static let identifier = "PagingCollectionViewCell"
     
     private let bestSellerDummy = BestSellerDataModel.dummy()
@@ -34,6 +26,8 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewDataSource
         view.contentInsetAdjustmentBehavior = .never
         return view
     }()
+    
+    private lazy var label = UILabel()
     
     override init(frame: CGRect) {
         super.init(frame: frame)
@@ -60,11 +54,22 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewDataSource
         }
     }
     
-    private lazy var label = UILabel()
-    
     func setupView(title: String) {
         
         label.text = title
+    }
+}
+
+extension PagingCollectionViewCell: UICollectionViewDataSource {
+    
+    func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
+            return bestSellerDummy.count
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
+            let cell = ContentCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
+            cell.configureCell(bestSellerDummy[indexPath.item])
+            return cell
     }
 }
 

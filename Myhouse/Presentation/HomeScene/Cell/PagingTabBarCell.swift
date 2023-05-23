@@ -6,15 +6,17 @@
 //
 
 import UIKit
+
 import SnapKit
 
-class PagingTabBarCell: UICollectionViewCell {
+class PagingTabBarCell: UICollectionViewCell, UICollectionViewRegisterable {
+    
+    static var isFromNib: Bool = false
     
     static let identifier = "PagingTabBarCell"
     
     private lazy var titleLabel: UILabel = {
         let label = UILabel()
-        
         label.font = .NotoBold(size: 14)
         label.textColor = .darkGray
         label.textAlignment = .center
@@ -25,7 +27,6 @@ class PagingTabBarCell: UICollectionViewCell {
     
     private lazy var underline: UIView = {
         let view = UIView()
-        
         view.backgroundColor = .main
         view.alpha = 0.0
         
@@ -47,10 +48,9 @@ class PagingTabBarCell: UICollectionViewCell {
 
 private extension PagingTabBarCell {
     func setupLayout() {
-        [
-            titleLabel,
-            underline
-        ].forEach { addSubview($0) }
+        
+        addSubviews(titleLabel, underline)
+        
         titleLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
             $0.centerX.equalToSuperview()
