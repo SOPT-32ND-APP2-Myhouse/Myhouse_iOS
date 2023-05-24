@@ -81,6 +81,16 @@ struct ImageLiterals {
         static var img_home03: UIImage { .load(name: "img_home03") }
         static var img_home04: UIImage { .load(name: "img_home04") }
         static var icn_rank: UIImage { .load(name: "icn_rank") }
+        static var banner: UIImage { .load(name: "img_banner") }
+        static var img_home05: UIImage { .load(name: "img_home05") }
+        static var img_home06: UIImage { .load(name: "img_home06") }
+        static var img_home07: UIImage { .load(name: "img_home07") }
+        static var img_home08: UIImage { .load(name: "img_home08") }
+        static var img_home09: UIImage { .load(name: "img_home09") }
+        static var img_home10: UIImage { .load(name: "img_home10") }
+        static var img_home11: UIImage { .load(name: "img_home11") }
+        static var img_star: UIImage { .load(name: "img_star") }
+        static var img_more: UIImage { .load(name: "img_more") }
     }
     
     struct User {

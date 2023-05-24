@@ -23,10 +23,10 @@ final class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewR
         return imageView
     }()
     
-    private let descriptionLabel: UILabel = {
+    public let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 13)
+        label.font = .NotoMedium(size: 12)
         label.textColor = .black
         label.sizeToFit()
         return label

@@ -34,13 +34,11 @@ final class ReviewCollectionViewCell: UICollectionViewCell, UICollectionViewRegi
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 3
-        label.font = .NotoMedium(size: 14)
+        label.font = .NotoRegular(size: 14)
         label.textColor = .black
         label.sizeToFit()
         return label
     }()
-    
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
     
     // MARK: - Life Cycles
     
@@ -62,8 +60,7 @@ extension ReviewCollectionViewCell {
     private func setLayout() {
         contentView.addSubviews(reviewImageView,
                                 titleLabel,
-                                descriptionLabel,
-                                bookmarkButton)
+                                descriptionLabel)
         
         reviewImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -77,11 +74,6 @@ extension ReviewCollectionViewCell {
         descriptionLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom).offset(6)
             $0.leading.trailing.equalToSuperview()
-        }
-        
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(reviewImageView).inset(8)
-            $0.size.equalTo(24)
         }
     }
     

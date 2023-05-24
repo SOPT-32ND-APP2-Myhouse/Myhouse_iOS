@@ -7,6 +7,9 @@
 
 import UIKit
 
+import Kingfisher
+import SnapKit
+
 final class FeedCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     // MARK: - Properties
@@ -84,9 +87,8 @@ extension FeedCollectionViewCell {
         }
     }
     
-    func configureCell(_ lookData: LookDataModel) {
-        lookImageView.image = lookData.image
+    func configureCell(_ lookData: AllPostResponseModel) {
+        lookImageView.kf.setImage(with: URL(string: lookData.imageURL))
         titleLabel.text = lookData.title
-        scrapButton.isTapped = lookData.isScrap
     }
 }

@@ -26,7 +26,7 @@ final class BestCollectionViewCell: UICollectionViewCell {
     private let descriptionLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 13)
+        label.font = .NotoMedium(size: 12)
         label.textColor = .black
         return label
     }()
@@ -40,7 +40,7 @@ final class BestCollectionViewCell: UICollectionViewCell {
     private let rankingLabel: UILabel = {
         let label = UILabel()
         label.numberOfLines = 0
-        label.font = .NotoMedium(size: 12)
+        label.font = .NotoBold(size: 12)
         label.textColor = .white
         label.textAlignment = .center
         label.backgroundColor = .main

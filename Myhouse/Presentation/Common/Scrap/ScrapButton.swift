@@ -9,16 +9,11 @@ import UIKit
 
 // MARK: - Protocols
 
-protocol ScrapCVCDelegate: AnyObject {
-    func scrapCVCButtonTapped()
-}
-
 final class ScrapButton: UIButton {
     
     // MARK: - Properties
     
     var handler: (() -> Void)?
-    weak var delegate: ScrapCVCDelegate?
     
     var isTapped: Bool = false {
         didSet {
@@ -55,8 +50,9 @@ extension ScrapButton {
     
     @objc func scrapButtonTapped() {
         if !(isTapped) {
-            delegate?.scrapCVCButtonTapped()
+            NotificationCenter.default.post(name: Notification.Name("ScrapButtonTappedNotification"), object: nil)
         }
+        self.isTapped.toggle()
         handler?()
     }
 }
