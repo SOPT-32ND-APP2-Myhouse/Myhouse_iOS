@@ -55,7 +55,7 @@ final class TodaysProductCollectionViewCell: UICollectionViewCell, UICollectionV
         return label
     }()
     
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
+    lazy var scrapButton = ScrapButton()
     
     // MARK: - Life Cycles
     
@@ -80,7 +80,7 @@ extension TodaysProductCollectionViewCell {
                                 titleLabel,
                                 saleLabel,
                                 priceLabel,
-                                bookmarkButton)
+                                scrapButton)
         
         todaysImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -108,8 +108,8 @@ extension TodaysProductCollectionViewCell {
             $0.leading.equalTo(saleLabel.snp.trailing).offset(3)
         }
         
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(todaysImageView).inset(5)
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(todaysImageView).inset(4)
             $0.size.equalTo(24)
         }
     }
@@ -120,5 +120,6 @@ extension TodaysProductCollectionViewCell {
         titleLabel.text = todaysDummy.title
         saleLabel.text = todaysDummy.sale
         priceLabel.text = todaysDummy.price
+        scrapButton.isTapped = todaysDummy.isScrap
     }
 }

@@ -32,7 +32,7 @@ final class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewR
         return label
     }()
     
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
+    lazy var scrapButton = ScrapButton()
     
     // MARK: - Life Cycles
     
@@ -54,7 +54,7 @@ extension RecommendCollectionViewCell {
     private func setLayout() {
         contentView.addSubviews(recommendImageView,
                                 descriptionLabel,
-                                bookmarkButton)
+                                scrapButton)
         
         recommendImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -65,8 +65,8 @@ extension RecommendCollectionViewCell {
             $0.leading.trailing.equalToSuperview()
         }
         
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(recommendImageView).inset(8)
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(recommendImageView).inset(4)
             $0.size.equalTo(24)
         }
     }
@@ -75,6 +75,7 @@ extension RecommendCollectionViewCell {
         recommendImageView.image = recommendData.image
         descriptionLabel.text = recommendData.highlight
         descriptionLabel.text = (descriptionLabel.text ?? "") + "\(recommendData.title)"
+        scrapButton.isTapped = recommendData.isScrap
         
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)

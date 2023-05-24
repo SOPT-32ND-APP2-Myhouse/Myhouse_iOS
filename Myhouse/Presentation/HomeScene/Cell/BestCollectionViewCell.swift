@@ -31,11 +31,7 @@ final class BestCollectionViewCell: UICollectionViewCell {
         return label
     }()
     
-    public lazy var bookmarkButton: UIButton = {
-        let imageView = UIButton()
-        imageView.setImage(ImageLiterals.Common.btn_bookMarkUnactived_small, for: .normal)
-        return imageView
-    }()
+    lazy var scrapButton = ScrapButton()
 
     private let rankingLabel: UILabel = {
         let label = UILabel()
@@ -71,7 +67,7 @@ extension BestCollectionViewCell {
         contentView.addSubviews(bestImageView,
                                 descriptionLabel,
                                 rankingLabel,
-                                bookmarkButton)
+                                scrapButton)
         
         bestImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -87,8 +83,8 @@ extension BestCollectionViewCell {
             $0.size.equalTo(20)
         }
         
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(bestImageView).inset(5)
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(bestImageView).inset(4)
             $0.size.equalTo(24)
         }
     }
@@ -98,6 +94,7 @@ extension BestCollectionViewCell {
         descriptionLabel.text = bestData.title
         descriptionLabel.text = "\(descriptionLabel.text!) " + "\(bestData.description)"
         rankingLabel.text = "\(bestData.rank)"
+        scrapButton.isTapped = bestData.isScrap
         
         // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""

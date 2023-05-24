@@ -12,6 +12,7 @@ struct BestDataModel {
     let rank: Int
     let title: String
     let description: String
+    var isScrap: Bool
 }
 
 extension BestDataModel {
@@ -19,19 +20,23 @@ extension BestDataModel {
         return [BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 1,
                               title: "간결해진 삶에 행복을 더하는!",
-                              description: "뷰 맛집, 상큼하우스"),
+                              description: "뷰 맛집, 상큼하우스",
+                              isScrap: false),
                 BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 2,
                               title: "간결해진 삶에 행복을 더하는!",
-                              description: "뷰 맛집, 상큼하우스"),
+                              description: "뷰 맛집, 상큼하우스",
+                              isScrap: false),
                 BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 3,
                               title: "간결해진 삶에 행복을 더하는!",
-                              description: "뷰 맛집, 상큼하우스"),
+                              description: "뷰 맛집, 상큼하우스",
+                              isScrap: false),
                 BestDataModel(image: ImageLiterals.Card.img_card09,
                               rank: 4,
                               title: "간결해진 삶에 행복을 더하는!",
-                              description: "뷰 맛집, 상큼하우스")
+                              description: "뷰 맛집, 상큼하우스",
+                              isScrap: false)
         ]
     }
 }
