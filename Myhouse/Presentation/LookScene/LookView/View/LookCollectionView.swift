@@ -16,6 +16,11 @@ final class LookCollectionView: BaseView {
             self.lookCollectionView.reloadData()
         }
     }
+    private var allPostData: [AllPostResponseModel] = [] {
+        didSet {
+            self.lookCollectionView.reloadData()
+        }
+    }
     
     private typealias SectionType = AboutSection
     
@@ -40,6 +45,7 @@ final class LookCollectionView: BaseView {
         super.init(frame: frame)
         
         registerCell()
+        fetchData()
     }
     
     @available(*, unavailable)
@@ -59,6 +65,10 @@ final class LookCollectionView: BaseView {
 // MARK: - Extensions
 
 extension LookCollectionView {
+    
+    func fetchData() {
+        getAllPost()
+    }
     
     func registerCell() {
         TagCollectionViewCell.register(target: lookCollectionView)
@@ -138,7 +148,7 @@ extension LookCollectionView: UICollectionViewDataSource {
         case .tag:
             return I18N.Look.tagData.count
         case .feed:
-            return lookData.count
+            return allPostData.count
         }
     }
     
@@ -151,12 +161,26 @@ extension LookCollectionView: UICollectionViewDataSource {
             return cell
         case .feed:
             let cell = FeedCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(lookData[indexPath.item])
-            cell.scrapButton.handler = { [weak self] in
-                guard let self else { return }
-                self.lookData[indexPath.item].isScrap.toggle()
-            }
+            cell.configureCell(allPostData[indexPath.item])
             return cell
+        }
+    }
+}
+
+private extension LookCollectionView {
+    
+    func getAllPost() {
+        PostService.shared.getAllPostAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<[AllPostResponseModel]> {
+                    if let allPostData = data.data {
+                        self.allPostData = allPostData
+                    }
+                }
+            default:
+                break
+            }
         }
     }
 }
