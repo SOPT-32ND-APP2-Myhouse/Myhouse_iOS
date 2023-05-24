@@ -34,7 +34,7 @@ class PagingTabBarCell: UICollectionViewCell, UICollectionViewRegisterable {
     override var isSelected: Bool {
         didSet {
             titleLabel.textColor = isSelected ? .main : .darkGray
-            underline.alpha = isSelected ? 1.0 : 0.0
+            underline.alpha = isSelected ? 2.0 : 0.0
         }
     }
     
@@ -58,7 +58,7 @@ private extension PagingTabBarCell {
             $0.height.equalTo(2.0)
             $0.width.equalTo(titleLabel).offset(14)
             $0.centerX.equalTo(titleLabel.snp.centerX)
-            $0.bottom.equalToSuperview()
+            $0.top.equalTo(titleLabel.snp.bottom).offset(10)
         }
     }
 }
