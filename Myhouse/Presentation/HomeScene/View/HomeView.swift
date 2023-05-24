@@ -91,8 +91,8 @@ final class HomeView: BaseView {
         self.addSubviews(homeCollectionView)
         
         homeCollectionView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
-            $0.top.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalTo(safeAreaInsets)
+//            $0.top.equalToSuperview()
         }
     }
 }

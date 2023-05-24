@@ -23,7 +23,12 @@ final class HomeViewController: BaseViewController {
         super.viewDidLoad()
         
         setNavigationUI()
+        navigationController?.isNavigationBarHidden = true
     }
+    
+//    override func viewWillAppear(_ animated: Bool) {
+//        navigationController?.navigationBar.backgroundColor = .white
+//    }
 }
 
 // MARK: - Extensions
