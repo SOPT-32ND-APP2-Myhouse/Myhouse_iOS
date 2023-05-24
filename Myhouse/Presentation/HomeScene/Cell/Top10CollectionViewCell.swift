@@ -99,10 +99,10 @@ extension Top10CollectionViewCell {
         }
     }
     
-    func configureCell(_ colorLightDummy: ColorLightDataModel) {
-        colorLightImageView.image = colorLightDummy.image
-        userLabel.text = colorLightDummy.user
-        rankLabel.text = "\(colorLightDummy.rank ?? 0)"
-        scrapButton.isTapped = colorLightDummy.isScrap
+    func configureCell(_ top10Data: ColorLightDataModel) {
+        colorLightImageView.image = top10Data.image
+        userLabel.text = top10Data.user
+        rankLabel.text = "\(top10Data.rank ?? 0)"
+        scrapButton.isTapped = top10Data.isScrap
     }
 }

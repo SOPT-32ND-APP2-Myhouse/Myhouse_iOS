@@ -29,7 +29,7 @@ final class HomeView: BaseView {
         }
     }
     
-    private var summerDummy = RecommendDataModel.dummy() {
+    private var summerDummy = RecommendDataModel.summer() {
         didSet {
             self.homeCollectionView.reloadData()
         }
@@ -41,7 +41,7 @@ final class HomeView: BaseView {
         }
     }
     
-    private var top10Dummy = ColorLightDataModel.dummy() {
+    private var top10Dummy = ColorLightDataModel.top10() {
         didSet {
             self.homeCollectionView.reloadData()
         }
