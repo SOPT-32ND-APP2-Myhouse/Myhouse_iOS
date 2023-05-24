@@ -52,6 +52,7 @@ extension ScrapButton {
         if !(isTapped) {
             NotificationCenter.default.post(name: Notification.Name("ScrapButtonTappedNotification"), object: nil)
         }
+        self.isTapped.toggle()
         handler?()
     }
 }
