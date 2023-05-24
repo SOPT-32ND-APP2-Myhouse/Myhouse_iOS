@@ -74,7 +74,7 @@ extension PagingTabBarView: UICollectionViewDelegateFlowLayout {
         
         let name = self.categoryTitleList[indexPath.row]
         
-        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+        let attributes = [NSAttributedString.Key.font: UIFont.NotoBold(size: 14)]
         
         let nameSize = (name as NSString).size(withAttributes: attributes as [NSAttributedString.Key: Any])
         return CGSize(width: nameSize.width + 18, height: 30)
