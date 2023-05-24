@@ -29,7 +29,7 @@ final class DetailTableView: UITableView {
         headerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 84)
         self.tableHeaderView = headerView
         let footerView = DetailTableBottomView()
-        footerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 1498)
+        footerView.frame = CGRect(x: 0, y: 0, width: screenWidth, height: 1600)
         self.tableFooterView = footerView
     }
 }

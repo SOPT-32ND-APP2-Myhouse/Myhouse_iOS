@@ -232,11 +232,7 @@ final class DetailTableBottomView: BaseView {
         return label
     }()
     
-    let similarToUserView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        return view
-    }()
+    let similarBestView = SimilarBestCollectionView()
     
     let contentsView: UIView = {
         let view = UIView()
@@ -278,7 +274,7 @@ final class DetailTableBottomView: BaseView {
             recommendCollectionView,
             lineView5,
             similarToUserLabel,
-            similarToUserView
+            similarBestView
         )
     }
     
@@ -307,7 +303,7 @@ final class DetailTableBottomView: BaseView {
         }
         
         followButton.snp.makeConstraints {
-            $0.top.equalTo(lineView0.snp.bottom).offset(30)
+            $0.centerY.equalTo(profileImage)
             $0.trailing.equalToSuperview().inset(10)
             $0.height.equalTo(32)
             $0.width.equalTo(80)
@@ -457,11 +453,11 @@ final class DetailTableBottomView: BaseView {
             $0.leading.equalToSuperview().offset(15)
         }
         
-        similarToUserView.snp.makeConstraints {
-            $0.top.equalTo(similarToUserLabel.snp.bottom).offset(18)
-            $0.leading.equalToSuperview().inset(15)
-            $0.width.equalTo(351)
-            $0.height.equalTo(560)
+        similarBestView.snp.makeConstraints {
+            $0.top.equalTo(similarToUserLabel.snp.bottom).offset(10)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.height.equalTo(770)
         }
     }
 }

@@ -75,6 +75,8 @@
 		918EB1A42A1E2D0E00D514EB /* PhotoCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB1A32A1E2D0E00D514EB /* PhotoCollectionView.swift */; };
 		918EB1A82A1E31AD00D514EB /* TodayRecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB1A72A1E31AD00D514EB /* TodayRecommendCollectionViewCell.swift */; };
 		918EB1AA2A1E374A00D514EB /* TodayRecommendCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB1A92A1E374A00D514EB /* TodayRecommendCollectionView.swift */; };
+		918EB1AE2A1E3D7800D514EB /* SimilarBestCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB1AD2A1E3D7800D514EB /* SimilarBestCollectionViewCell.swift */; };
+		918EB1B02A1E400D00D514EB /* SimilarBestCollectionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 918EB1AF2A1E400D00D514EB /* SimilarBestCollectionView.swift */; };
 		91D049342A1B8A1500ADC02F /* DetailTableHeadView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D049332A1B8A1500ADC02F /* DetailTableHeadView.swift */; };
 		91D049382A1B90DE00ADC02F /* DetailTableBottomView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D049372A1B90DE00ADC02F /* DetailTableBottomView.swift */; };
 		91D0493A2A1BA26700ADC02F /* DetailTableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 91D049392A1BA26700ADC02F /* DetailTableView.swift */; };
@@ -159,6 +161,8 @@
 		918EB1A32A1E2D0E00D514EB /* PhotoCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PhotoCollectionView.swift; sourceTree = "<group>"; };
 		918EB1A72A1E31AD00D514EB /* TodayRecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		918EB1A92A1E374A00D514EB /* TodayRecommendCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayRecommendCollectionView.swift; sourceTree = "<group>"; };
+		918EB1AD2A1E3D7800D514EB /* SimilarBestCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarBestCollectionViewCell.swift; sourceTree = "<group>"; };
+		918EB1AF2A1E400D00D514EB /* SimilarBestCollectionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SimilarBestCollectionView.swift; sourceTree = "<group>"; };
 		91D049332A1B8A1500ADC02F /* DetailTableHeadView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableHeadView.swift; sourceTree = "<group>"; };
 		91D049372A1B90DE00ADC02F /* DetailTableBottomView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableBottomView.swift; sourceTree = "<group>"; };
 		91D049392A1BA26700ADC02F /* DetailTableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailTableView.swift; sourceTree = "<group>"; };
@@ -554,9 +558,19 @@
 			path = DetailTableView;
 			sourceTree = "<group>";
 		};
+		918EB1AC2A1E3D5800D514EB /* SimilarBestCollectionView */ = {
+			isa = PBXGroup;
+			children = (
+				918EB1AF2A1E400D00D514EB /* SimilarBestCollectionView.swift */,
+				918EB1AD2A1E3D7800D514EB /* SimilarBestCollectionViewCell.swift */,
+			);
+			path = SimilarBestCollectionView;
+			sourceTree = "<group>";
+		};
 		91D049312A1B895000ADC02F /* UIView */ = {
 			isa = PBXGroup;
 			children = (
+				918EB1AC2A1E3D5800D514EB /* SimilarBestCollectionView */,
 				918EB1A62A1E319600D514EB /* TodayRecommendCollectionView */,
 				918EB1A52A1E310600D514EB /* PhotoCollectionView */,
 				918EB1AB2A1E3B3E00D514EB /* DetailTableView */,
@@ -694,6 +708,7 @@
 				0933C3F52A0F790100A4F163 /* DummyClass.swift in Sources */,
 				9B2A301E2A13CC8D0036ECB8 /* ModernDataModel.swift in Sources */,
 				694D30202A113A5200D84149 /* MyPageViewController.swift in Sources */,
+				918EB1AE2A1E3D7800D514EB /* SimilarBestCollectionViewCell.swift in Sources */,
 				0951B6A12A138AEF00134B6A /* ColorBestCollectionVIewCell.swift in Sources */,
 				0933C3DA2A0F716E00A4F163 /* AppDelegate.swift in Sources */,
 				694D30342A115BED00D84149 /* ScrapCollectionViewCell.swift in Sources */,
@@ -713,6 +728,7 @@
 				69871FE62A18D28D00261CBC /* ScrapPopUpView.swift in Sources */,
 				699785FF2A1011AE005BC69E /* StringLiterals.swift in Sources */,
 				91D049402A1BE68D00ADC02F /* DetailTableSecondSectionView.swift in Sources */,
+				918EB1B02A1E400D00D514EB /* SimilarBestCollectionView.swift in Sources */,
 				694D30042A10B8F600D84149 /* UIStackView+.swift in Sources */,
 				918EB1A42A1E2D0E00D514EB /* PhotoCollectionView.swift in Sources */,
 				694D30242A113EBB00D84149 /* BaseViewController.swift in Sources */,
