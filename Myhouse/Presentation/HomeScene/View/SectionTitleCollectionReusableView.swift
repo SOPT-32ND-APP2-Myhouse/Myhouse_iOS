@@ -22,7 +22,7 @@ class SectionTitleCollectionReusableView: UICollectionReusableView, UICollection
     let sectionDescription: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.font = .NotoRegular(size: 14)
+        label.font = .NotoRegular(size: 16)
         label.isHidden = true
         return label
     }()
@@ -95,7 +95,7 @@ extension SectionTitleCollectionReusableView {
     func setSectionTitle(text: String?) {
         self.sectionTitleLabel.text = text
         self.sectionTitleLabel.textColor = .black
-        self.sectionTitleLabel.font = .NotoBold(size: 14)
+        self.sectionTitleLabel.font = .NotoBold(size: 16)
     }
     
     func setSectionDescription(text: String?) {
