@@ -18,9 +18,8 @@ final class PostService: BaseService {
 
 extension PostService {
     
-    func getAllPostAPI(
-        completion: @escaping (NetworkResult<Any>) -> Void) {
-            let url = Config.getAllPostURL
+    func getAllPostAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
+        let url = Config.getAllPostURL
         let header: HTTPHeaders = NetworkConstant.noTokenHeader
         let dataRequest = AF.request(url,
                                      method: .get,
@@ -32,12 +31,13 @@ extension PostService {
             case .success:
                 guard let statusCode = response.response?.statusCode else { return }
                 guard let data = response.data else { return }
-                let networkResult = self.judgeStatus(by: statusCode, data, AllPostResponseModel.self)
+                let networkResult = self.judgeStatus(by: statusCode,
+                                                     data,
+                                                     [AllPostResponseModel].self)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
             }
         }
     }
-    
 }
