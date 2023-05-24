@@ -48,11 +48,7 @@ final class DetailTableBottomView: BaseView {
         return button
     }()
     
-    let photoCollectionView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        return view
-    }()
+    let photoCollectionView = PhotoCollectionView()
     
     let lineView1: UIView = {
         let view = UIView()
@@ -220,11 +216,7 @@ final class DetailTableBottomView: BaseView {
         return label
     }()
     
-    let recommendTableView: UIView = {
-        let view = UIView()
-        view.backgroundColor = .red
-        return view
-    }()
+    let recommendCollectionView = TodayRecommendCollectionView()
     
     let lineView5: UIView = {
         let view = UIView()
@@ -283,7 +275,7 @@ final class DetailTableBottomView: BaseView {
             writeCommentAddButton,
             lineView4,
             recommendLabel,
-            recommendTableView,
+            recommendCollectionView,
             lineView5,
             similarToUserLabel,
             similarToUserView
@@ -323,8 +315,9 @@ final class DetailTableBottomView: BaseView {
         
         photoCollectionView.snp.makeConstraints {
             $0.top.equalTo(profileImage.snp.bottom).offset(14)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(146)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.height.equalTo(160)
         }
         
         lineView1.snp.makeConstraints {
@@ -445,14 +438,15 @@ final class DetailTableBottomView: BaseView {
             $0.leading.equalToSuperview().offset(15)
         }
         
-        recommendTableView.snp.makeConstraints {
+        recommendCollectionView.snp.makeConstraints {
             $0.top.equalTo(recommendLabel.snp.bottom).offset(16)
-            $0.leading.trailing.equalToSuperview()
-            $0.height.equalTo(212)
+            $0.leading.equalToSuperview()
+            $0.width.equalTo(UIScreen.main.bounds.width)
+            $0.height.equalTo(260)
         }
         
         lineView5.snp.makeConstraints {
-            $0.top.equalTo(recommendTableView.snp.bottom).offset(32)
+            $0.top.equalTo(recommendCollectionView.snp.bottom).offset(32)
             $0.leading.equalToSuperview()
             $0.width.equalTo(390)
             $0.height.equalTo(1)

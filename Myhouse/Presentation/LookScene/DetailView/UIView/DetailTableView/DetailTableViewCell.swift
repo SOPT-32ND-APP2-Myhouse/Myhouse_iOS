@@ -21,6 +21,12 @@ final class DetailTableViewCell: UITableViewCell {
         return imageView
     }()
     
+    let subscribeButton: UIButton = {
+        let button = UIButton()
+        button.setImage(ImageLiterals.Common.btn_bookMarkUnactived_big, for: .normal)
+        return button
+    }()
+    
     override init(style: UITableViewCell.CellStyle, reuseIdentifier: String?) {
         super.init(style: style, reuseIdentifier: reuseIdentifier)
         render()
@@ -32,9 +38,13 @@ final class DetailTableViewCell: UITableViewCell {
     
     private func render() {
         self.addSubview(imgView)
-        
+        imgView.addSubview(subscribeButton)
         imgView.snp.makeConstraints {
             $0.edges.equalToSuperview()
+        }
+        subscribeButton.snp.makeConstraints {
+            $0.width.height.equalTo(60)
+            $0.trailing.bottom.equalToSuperview()
         }
     }
 }

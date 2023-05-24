@@ -86,4 +86,8 @@ struct ImageLiterals {
     struct User {
         static var userIcon: UIImage { .load(name: "userIcon") }
     }
+    
+    struct Detail {
+        static var subscribeImage: UIImage { .load(name: "SubscribeButton") }
+    }
 }
