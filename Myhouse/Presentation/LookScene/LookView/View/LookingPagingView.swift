@@ -56,7 +56,7 @@ extension LookingPagingView {
     }
     
     func setDelegate() {
-//        contentCollectionView.delegate = self
+        contentCollectionView.delegate = self
         contentCollectionView.dataSource = self
         pagingTabBar.delegate = self
     }
