@@ -12,7 +12,7 @@ final class LookView: BaseView {
     // MARK: - UI Components
     
     private lazy var lookPagingTabBarView = LookPagingTabBarView()
-    private lazy var lookPagingView = LookingPagingView()
+    lazy var lookPagingView = LookingPagingView()
     private let lineView: UIView = {
         let view = UIView()
         view.backgroundColor = .lightGray

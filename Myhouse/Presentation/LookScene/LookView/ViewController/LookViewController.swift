@@ -23,6 +23,11 @@ final class LookViewController: BaseViewController {
         super.viewDidLoad()
         
         setNavigationUI()
+//        setDelegate()
+    }
+
+    private func setDelegate() {
+        lookView.lookPagingView.contentCollectionView.delegate = self
     }
 }
 
@@ -53,5 +58,12 @@ extension LookViewController {
     @objc func scrapNaviItemTapped() {
         let scrapViewController = ScarpViewController()
         self.navigationController?.pushViewController(scrapViewController, animated: false)
+    }
+}
+
+extension LookViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

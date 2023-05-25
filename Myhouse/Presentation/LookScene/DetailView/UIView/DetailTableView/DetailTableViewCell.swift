@@ -13,9 +13,9 @@ final class DetailTableViewCell: UITableViewCell {
     
     static let identifier = "DetailTableViewCell"
     
+    var imgId: Int = Int()
     let imgView: UIImageView = {
         let imageView = UIImageView()
-        imageView.image = ImageLiterals.Card.img_card03
         imageView.contentMode = .scaleAspectFit
         imageView.clipsToBounds = true
         return imageView
