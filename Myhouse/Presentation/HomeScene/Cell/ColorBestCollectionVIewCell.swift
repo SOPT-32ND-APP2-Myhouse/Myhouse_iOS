@@ -55,8 +55,6 @@ final class ColorBestCollectionViewCell: UICollectionViewCell, UICollectionViewR
         return label
     }()
     
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
-    
     // MARK: - Life Cycles
     
     override init(frame: CGRect) {

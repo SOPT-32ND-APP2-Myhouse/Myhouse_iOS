@@ -45,7 +45,7 @@ final class Top10CollectionViewCell: UICollectionViewCell, UICollectionViewRegis
         return label
     }()
     
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
+    lazy var scrapButton = ScrapButton()
     
     // MARK: - Life Cycles
     
@@ -67,7 +67,7 @@ extension Top10CollectionViewCell {
     private func setLayout() {
         contentView.addSubviews(colorLightImageView,
                                 userLabel,
-                                bookmarkButton,
+                                scrapButton,
                                 rankView,
                                 rankLabel)
         
@@ -80,8 +80,8 @@ extension Top10CollectionViewCell {
             $0.bottom.equalTo(colorLightImageView.snp.bottom).inset(10)
         }
 
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(colorLightImageView).inset(8)
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(colorLightImageView).inset(4)
             $0.size.equalTo(24)
         }
         
@@ -99,10 +99,10 @@ extension Top10CollectionViewCell {
         }
     }
     
-    func configureCell(_ colorLightDummy: ColorLightDataModel) {
-        colorLightImageView.image = colorLightDummy.image
-        userLabel.text = colorLightDummy.user
-        rankLabel.text = "\(colorLightDummy.rank ?? 0)"
-        
+    func configureCell(_ top10Data: ColorLightDataModel) {
+        colorLightImageView.image = top10Data.image
+        userLabel.text = top10Data.user
+        rankLabel.text = "\(top10Data.rank ?? 0)"
+        scrapButton.isTapped = top10Data.isScrap
     }
 }

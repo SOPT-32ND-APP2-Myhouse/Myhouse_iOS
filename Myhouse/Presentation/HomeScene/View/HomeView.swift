@@ -11,27 +11,55 @@ import SnapKit
 
 final class HomeView: BaseView {
     
+    private var bestDummy = BestDataModel.dummy() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var recommendDummy = RecommendDataModel.dummy() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var todaysDummy = TodaysDataModel.dummy() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var summerDummy = RecommendDataModel.summer() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var colorDummy = ColorLightDataModel.dummy() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var top10Dummy = ColorLightDataModel.top10() {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+
+    private let topCategoryDummy = TopCategoryDataModel.dummy()
+    private let modernDummy = ModernDataModel.dummy()
+    private let categoryDummy = CategoryDataModel.dummy()
+    private let colorBestDummy = TodaysDataModel.colorBest()
+    private let reviewDumy = RecommendDataModel.review()
+    private let ideasDummy = IdeaDataModel.dummy()
+    
     private typealias SectionType = AboutSection
     
     @frozen
     private enum AboutSection: CaseIterable {
         case banner, topCategory, best, recommend, todays, modern, category, todaysDeal, summer, color, colorBest, top10, review, ideas, bestSeller
     }
-    
-    // MARK: - UI Components
-    
-    private let topCategoryDummy = TopCategoryDataModel.dummy()
-    private let bestDummy = BestDataModel.dummy()
-    private let recommendDummy = RecommendDataModel.dummy()
-    private let todaysDummy = TodaysDataModel.dummy()
-    private let modernDummy = ModernDataModel.dummy()
-    private let categoryDummy = CategoryDataModel.dummy()
-    private let summerDummy = RecommendDataModel.summer()
-    private let colorDummy = ColorLightDataModel.dummy()
-    private let colorBestDummy = TodaysDataModel.colorBest()
-    private let top10Dummy = ColorLightDataModel.top10()
-    private let reviewDumy = RecommendDataModel.review()
-    private let ideasDummy = IdeaDataModel.dummy()
     
     private lazy var homeCollectionView: UICollectionView = {
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
@@ -63,8 +91,8 @@ final class HomeView: BaseView {
         self.addSubviews(homeCollectionView)
         
         homeCollectionView.snp.makeConstraints {
-            $0.leading.trailing.bottom.equalToSuperview()
-            $0.top.equalToSuperview()
+            $0.top.leading.trailing.bottom.equalTo(safeAreaInsets)
+//            $0.top.equalToSuperview()
         }
     }
 }
@@ -153,7 +181,7 @@ extension HomeView {
         
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .continuous
-        section.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 16, bottom: 26, trailing: 16)
+        section.contentInsets = NSDirectionalEdgeInsets(top: 19, leading: 16, bottom: 26, trailing: 16)
         section.interGroupSpacing = 8
         return section
     }
@@ -165,7 +193,7 @@ extension HomeView {
         )
         
         let item = NSCollectionLayoutItem(layoutSize: itemSize)
-        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 40, trailing: 0)
+        item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 30, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.15),
@@ -207,7 +235,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.4),
-            heightDimension: .fractionalHeight(0.28)
+            heightDimension: .fractionalHeight(0.3)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -257,7 +285,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.32)
+            heightDimension: .fractionalHeight(0.34)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -308,7 +336,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.35),
-            heightDimension: .fractionalHeight(0.32)
+            heightDimension: .fractionalHeight(0.35)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -357,7 +385,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.44),
-            heightDimension: .fractionalHeight(0.23)
+            heightDimension: .fractionalHeight(0.25)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -505,7 +533,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1),
-            heightDimension: .fractionalHeight(0.3)
+            heightDimension: .fractionalHeight(0.35)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -556,7 +584,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.35),
-            heightDimension: .fractionalHeight(0.25)
+            heightDimension: .fractionalHeight(0.28)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -594,7 +622,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.28),
-            heightDimension: .fractionalHeight(0.24)
+            heightDimension: .fractionalHeight(0.26)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -644,7 +672,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.34),
-            heightDimension: .fractionalHeight(0.24)
+            heightDimension: .fractionalHeight(0.26)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -693,7 +721,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(0.42),
-            heightDimension: .fractionalHeight(0.34)
+            heightDimension: .fractionalHeight(0.39)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -741,7 +769,7 @@ extension HomeView {
         item.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 0, bottom: 0, trailing: 0)
         
         let groupSize = NSCollectionLayoutSize(
-            widthDimension: .fractionalWidth(0.35),
+            widthDimension: .fractionalWidth(0.3),
             heightDimension: .fractionalHeight(0.105)
         )
         
@@ -792,7 +820,7 @@ extension HomeView {
         
         let groupSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-            heightDimension: .fractionalHeight(0.37)
+            heightDimension: .fractionalHeight(0.43)
         )
         
         let group = NSCollectionLayoutGroup.horizontal(
@@ -885,14 +913,26 @@ extension HomeView: UICollectionViewDataSource {
         case .best:
             let cell = BestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(bestDummy[indexPath.item])
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.bestDummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .recommend:
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(recommendDummy[indexPath.item])
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.recommendDummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .todays:
             let cell = TodaysProductCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(todaysDummy[indexPath.item])
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.todaysDummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .modern:
             let cell = ModernCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -909,10 +949,18 @@ extension HomeView: UICollectionViewDataSource {
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(summerDummy[indexPath.item])
             cell.descriptionLabel.font = .NotoBold(size: 12)
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.summerDummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .color:
             let cell = ColorLightCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(colorDummy[indexPath.item])
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.colorDummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .colorBest:
             let cell = ColorBestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -921,6 +969,10 @@ extension HomeView: UICollectionViewDataSource {
         case .top10:
             let cell = Top10CollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(top10Dummy[indexPath.item])
+            cell.scrapButton.handler = { [weak self] in
+                guard let self else { return }
+                self.top10Dummy[indexPath.item].isScrap.toggle()
+            }
             return cell
         case .review:
             let cell = ReviewCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)

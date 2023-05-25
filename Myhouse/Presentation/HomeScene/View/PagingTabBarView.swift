@@ -21,7 +21,7 @@ class PagingTabBarView: UIView {
     lazy var collectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
-        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1 * 2.0) / 5.0, height: 20)
+        layout.itemSize = CGSize(width: (UIScreen.main.bounds.width - 1 * 2.0) / 5.0, height: 34)
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
         collectionView.backgroundColor = .systemBackground
@@ -59,7 +59,9 @@ private extension PagingTabBarView {
         addSubview(collectionView)
         
         collectionView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+//            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.height.equalTo(34)
         }
     }
 }
@@ -74,7 +76,7 @@ extension PagingTabBarView: UICollectionViewDelegateFlowLayout {
         
         let name = self.categoryTitleList[indexPath.row]
         
-        let attributes = [NSAttributedString.Key.font: UIFont.systemFont(ofSize: 14)]
+        let attributes = [NSAttributedString.Key.font: UIFont.NotoBold(size: 14)]
         
         let nameSize = (name as NSString).size(withAttributes: attributes as [NSAttributedString.Key: Any])
         return CGSize(width: nameSize.width + 18, height: 30)

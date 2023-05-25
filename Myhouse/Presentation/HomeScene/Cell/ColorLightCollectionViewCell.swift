@@ -31,7 +31,7 @@ final class ColorLightCollectionViewCell: UICollectionViewCell, UICollectionView
         return label
     }()
 
-    private let bookmarkButton = BestCollectionViewCell().bookmarkButton
+    lazy var scrapButton = ScrapButton()
     
     // MARK: - Life Cycles
     
@@ -53,7 +53,7 @@ extension ColorLightCollectionViewCell {
     private func setLayout() {
         contentView.addSubviews(colorLightImageView,
                                 userLabel,
-                                bookmarkButton)
+                                scrapButton)
         
         colorLightImageView.snp.makeConstraints {
             $0.edges.equalToSuperview()
@@ -65,8 +65,8 @@ extension ColorLightCollectionViewCell {
             $0.width.equalTo(colorLightImageView.snp.width)
         }
 
-        bookmarkButton.snp.makeConstraints {
-            $0.bottom.trailing.equalTo(colorLightImageView).inset(8)
+        scrapButton.snp.makeConstraints {
+            $0.bottom.trailing.equalTo(colorLightImageView).inset(4)
             $0.size.equalTo(24)
         }
     }
@@ -74,5 +74,6 @@ extension ColorLightCollectionViewCell {
     func configureCell(_ colorLightDummy: ColorLightDataModel) {
         colorLightImageView.image = colorLightDummy.image
         userLabel.text = colorLightDummy.user
+        scrapButton.isTapped = colorLightDummy.isScrap
     }
 }
