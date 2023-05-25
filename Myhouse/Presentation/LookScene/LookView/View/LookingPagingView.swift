@@ -15,7 +15,7 @@ final class LookingPagingView: BaseView {
     
     lazy var pagingTabBar = LookPagingTabBarView()
     
-    private lazy var contentCollectionView: UICollectionView = {
+    lazy var contentCollectionView: UICollectionView = {
         let layout = UICollectionViewFlowLayout()
         layout.scrollDirection = .horizontal
         
@@ -56,7 +56,7 @@ extension LookingPagingView {
     }
     
     func setDelegate() {
-        contentCollectionView.delegate = self
+//        contentCollectionView.delegate = self
         contentCollectionView.dataSource = self
         pagingTabBar.delegate = self
     }
