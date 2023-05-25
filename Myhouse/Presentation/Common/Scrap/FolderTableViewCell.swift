@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 
 final class FolderTableViewCell: UITableViewCell, UITableViewRegisterable {
@@ -62,8 +63,8 @@ extension FolderTableViewCell {
         }
     }
     
-    func configureCell(_ scrapData: ScrapDataModel) {
-        folderImageView.image = scrapData.image[0]
-        folderTitleLabel.text = scrapData.title
+    func configureCell(_ scrapData: ScrapFolder) {
+        folderImageView.kf.setImage(with: URL(string: scrapData.scraps[0].imageURL))
+        folderTitleLabel.text = scrapData.folderTitle
     }
 }

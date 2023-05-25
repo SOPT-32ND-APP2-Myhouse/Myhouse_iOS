@@ -13,7 +13,11 @@ final class ScarpView: BaseView {
     
     // MARK: - Properties
     
-    private var ScarpDummy = ScrapDataModel.dummy()
+    private var allScrapData: AllScrapResponseModel = AllScrapResponseModel(scrapFolders: [ScrapFolder]()) {
+        didSet {
+            self.scarpCollectionView.reloadData()
+        }
+    }
     
     // MARK: - UI Components
     
@@ -75,6 +79,7 @@ final class ScarpView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        fetchData()
         setDelegate()
         registerCell()
     }
@@ -131,6 +136,10 @@ final class ScarpView: BaseView {
 // MARK: - Extensions
 
 private extension ScarpView {
+    func fetchData() {
+        getAllScrap()
+    }
+    
     func setDelegate() {
         scarpCollectionView.delegate = self
         scarpCollectionView.dataSource = self
@@ -147,13 +156,33 @@ extension ScarpView: UICollectionViewDelegate {
 
 extension ScarpView: UICollectionViewDataSource {
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-        return ScarpDummy.count
+        return allScrapData.scrapFolders.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        
         let cell = ScrapCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-        cell.configureCell(ScarpDummy[indexPath.item])
+        let scrapFolder = allScrapData.scrapFolders[indexPath.item]
+        cell.configureCell(scrapFolder)
+//        cell.configureCell(allScrapData.scrapFolders[indexPath.item])
         return cell
+    }
+}
+
+extension ScarpView {
+    
+    func getAllScrap() {
+        ScrapService.shared.getAllScrapAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<AllScrapResponseModel> {
+                    if let allScrapData = data.data {
+                        dump(allScrapData)
+                        self.allScrapData = allScrapData
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
 }
