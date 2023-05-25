@@ -10,10 +10,17 @@ import UIKit
 final class DetailViewController: BaseViewController {
     
     let tableView = DetailTableView()
+    private var serverData: GetDetailPostResponse?
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getAllDetail()
     }
     
     override func setLayout() {
@@ -68,4 +75,19 @@ extension DetailViewController: UITableViewDelegate {
     }
 }
 
-
+private extension DetailViewController {
+    func getAllDetail() {
+        ScrapService.shared.getAllDetailAPI { [weak self] networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<GetDetailPostResponse> {
+                    if let allPostData = data.data {
+                        self?.serverData = allPostData
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
+}

@@ -42,7 +42,7 @@ extension ScrapService {
     }
     
     func getAllDetailAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
-        let url = Config.getAllPostURL + "/"
+        let url = Config.getAllPostURL + "/1"
         let header: HTTPHeaders = NetworkConstant.noTokenHeader
         let dataRequest = AF.request(url,
                                      method: .get,
