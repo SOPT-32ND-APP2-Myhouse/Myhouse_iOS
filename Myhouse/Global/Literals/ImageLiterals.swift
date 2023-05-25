@@ -92,4 +92,12 @@ struct ImageLiterals {
         static var img_star: UIImage { .load(name: "img_star") }
         static var img_more: UIImage { .load(name: "img_more") }
     }
+    
+    struct User {
+        static var userIcon: UIImage { .load(name: "userIcon") }
+    }
+    
+    struct Detail {
+        static var subscribeImage: UIImage { .load(name: "SubscribeButton") }
+    }
 }
