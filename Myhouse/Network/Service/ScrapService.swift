@@ -18,7 +18,9 @@ final class ScrapService: BaseService {
 
 extension ScrapService {
     
-    func getAllScrapAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getAllScrapAPI(
+        completion: @escaping (NetworkResult<Any>) -> Void
+    ) {
         let url = Config.getAllScrapURL
         let header: HTTPHeaders = NetworkConstant.noTokenHeader
         let dataRequest = AF.request(url,
@@ -41,7 +43,9 @@ extension ScrapService {
         }
     }
     
-    func getAllDetailAPI(completion: @escaping (NetworkResult<Any>) -> Void) {
+    func getAllDetailAPI(
+        completion: @escaping (NetworkResult<Any>) -> Void
+    ) {
         let url = Config.getAllPostURL + "/1"
         let header: HTTPHeaders = NetworkConstant.noTokenHeader
         let dataRequest = AF.request(url,
