@@ -160,16 +160,16 @@ extension ScrapCollectionViewCell {
     
     func configureCell(_ scrapData: ScrapFolder) {
         if scrapData.scraps.count >= 1 {
-            imageView1.kf.setImage(with: URL(string: scrapData.scraps[0].imageURL))
+            imageView1.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 1].imageURL ?? ""))
         }
         if scrapData.scraps.count >= 2 {
-            imageView2.kf.setImage(with: URL(string: scrapData.scraps[1].imageURL))
+            imageView2.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 2].imageURL ?? ""))
         }
         if scrapData.scraps.count >= 3 {
-            imageView3.kf.setImage(with: URL(string: scrapData.scraps[2].imageURL))
+            imageView3.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 3].imageURL ?? ""))
         }
         if scrapData.scraps.count >= 4 {
-            imageView4.kf.setImage(with: URL(string: scrapData.scraps[3].imageURL))
+            imageView4.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 4].imageURL ?? ""))
         }
         folderNameLabel.text = scrapData.folderTitle
     }

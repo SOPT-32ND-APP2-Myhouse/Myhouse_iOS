@@ -64,7 +64,7 @@ extension FolderTableViewCell {
     }
     
     func configureCell(_ scrapData: ScrapFolder) {
-        folderImageView.kf.setImage(with: URL(string: scrapData.scraps[0].imageURL))
+        folderImageView.kf.setImage(with: URL(string: scrapData.scraps[0].imageURL ?? ""))
         folderTitleLabel.text = scrapData.folderTitle
     }
 }
