@@ -3,7 +3,7 @@
 ## 🧑‍💻 Developers
 
 | 홍준혁 | 최영린 | 김민주 |
-| --- | --- | --- |
+| :---: | :---: | :---: |
 | <img src = "https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_iOS/assets/89457040/1d7c427f-8d2a-4675-b6cb-7b9ef2e44917" width ="250"> | <img src = "https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_iOS/assets/89457040/d43be88f-f532-4e86-a27a-0882eb764d7c" width ="250"> |  <img src = "https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_iOS/assets/89457040/fb6863cf-4594-4c23-ba45-c7e585351134" width ="250">  |
 | [hongjunehuke](https://github.com/hongjunehuke) | [joeuni01](https://github.com/joeuni01) | [frohsch](https://github.com/frohsch) |
 | 조장 | 리드 | 귀요미 |
