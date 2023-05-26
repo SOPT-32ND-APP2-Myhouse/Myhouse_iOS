@@ -70,7 +70,8 @@ extension BestCollectionViewCell {
                                 scrapButton)
         
         bestImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(60)
         }
         
         descriptionLabel.snp.makeConstraints {
@@ -95,7 +96,6 @@ extension BestCollectionViewCell {
         descriptionLabel.text = "\(bestData.subtitle)" + "\(descriptionLabel.text!) " 
         rankingLabel.text = "\(bestData.rate)"
         
-        // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         let range = (fullText as NSString).range(of: "\(bestData.subtitle)")

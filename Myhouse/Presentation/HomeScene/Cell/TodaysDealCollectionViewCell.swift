@@ -19,6 +19,7 @@ final class TodaysDealCollectionViewCell: UICollectionViewCell, UICollectionView
         let imageView = UIImageView()
         imageView.image = ImageLiterals.Home.img_home11
         imageView.contentMode = .scaleAspectFill
+        
         return imageView
     }()
     
@@ -112,7 +113,7 @@ extension TodaysDealCollectionViewCell {
                                 moreLabel)
         
         imageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.bottom.leading.equalToSuperview()
         }
         
         oneDayLabel.snp.makeConstraints {
@@ -123,20 +124,20 @@ extension TodaysDealCollectionViewCell {
         
         timerLabel.snp.makeConstraints {
             $0.top.equalToSuperview()
-            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.leading.equalTo(imageView.snp.trailing).offset(20)
             $0.width.equalTo(88)
             $0.height.equalTo(21)
         }
         
         titleLabel.snp.makeConstraints {
             $0.top.equalTo(timerLabel.snp.bottom).offset(10)
-            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.leading.equalTo(timerLabel.snp.leading)
             $0.width.equalTo(UIScreen.main.bounds.size.width * 0.4)
         }
         
         saleLabel.snp.makeConstraints {
             $0.top.equalTo(titleLabel.snp.bottom)
-            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.leading.equalTo(timerLabel.snp.leading)
         }
         
         percentLabel.snp.makeConstraints {
@@ -146,7 +147,7 @@ extension TodaysDealCollectionViewCell {
         
         moreLabel.snp.makeConstraints {
             $0.top.equalTo(saleLabel.snp.bottom).offset(0)
-            $0.leading.equalTo(imageView.snp.trailing).offset(10)
+            $0.leading.equalTo(timerLabel.snp.leading)
         }
     }
 }
