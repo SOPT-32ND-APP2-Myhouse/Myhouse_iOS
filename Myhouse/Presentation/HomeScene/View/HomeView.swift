@@ -927,18 +927,10 @@ extension HomeView: UICollectionViewDataSource {
         case .best:
             let cell = BestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureCell(allPopularData[indexPath.item])
-//            cell.scrapButton.handler = { [weak self] in
-//                guard let self else { return }
-//                self.bestDummy[indexPath.item].isScrap.toggle()
-//            }
             return cell
         case .recommend:
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
             cell.configureServerCell(allRecommendData)
-//            cell.scrapButton.handler = { [weak self] in
-//                guard let self else { return }
-//                self.recommendDummy[indexPath.item].isScrap.toggle()
-//            }
             return cell
         case .todays:
             let cell = TodaysProductCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
