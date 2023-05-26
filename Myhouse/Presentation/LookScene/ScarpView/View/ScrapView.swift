@@ -53,7 +53,7 @@ final class ScarpView: BaseView {
         return stackView
     }()
     
-    private let editButton: UIButton = {
+    let editButton: UIButton = {
         let button = UIButton()
         button.setTitle("편집", for: .normal)
         button.setTitleColor(.main, for: .normal)

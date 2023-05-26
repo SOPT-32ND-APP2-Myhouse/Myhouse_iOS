@@ -130,6 +130,15 @@ private extension FolderBottomSheetView {
 }
 
 extension FolderBottomSheetView: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        let cell = FolderTableViewCell.dequeueReusableCell(tableView: tableView, indexPath: indexPath)
+        if indexPath.row != 0 {
+            self.postScrapFolder(imagUrl: "", folderId: "1")
+        }
+        print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
+    }
+    
     func numberOfSections(in tableView: UITableView) -> Int {
         return 1
     }
@@ -151,10 +160,6 @@ extension FolderBottomSheetView: UITableViewDataSource {
         let newFolderView = FolderHeaderView.dequeueReusableHeaderFooterView(tableView: tableView)
         return newFolderView
     }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
-    }
 }
 
 extension FolderBottomSheetView {
@@ -172,5 +177,20 @@ extension FolderBottomSheetView {
                 break
             }
         }
+    }
+    
+    func postScrapFolder(imagUrl: String, folderId: String) {
+        ScrapService.shared.postScrapFolderAPI(
+            imageUrl: imagUrl,
+            folderId: folderId
+        ) { networkResult in
+                switch networkResult {
+                case .success(_):
+                    print("success")
+                default:
+                    break
+                }
+                
+            }
     }
 }

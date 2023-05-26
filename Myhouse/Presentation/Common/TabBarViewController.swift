@@ -119,6 +119,7 @@ private extension TabBarController {
     }
     
     @objc func scrapButtonTapped() {
+        self.postScrapAPI(imageURL: "https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_Server/assets/77230391/48d9a287-e9de-4943-8a3f-028c5fa193ae")
         self.scrapPopUpView.snp.updateConstraints { $0.bottom.equalToSuperview() }
         UIView.animate(withDuration: 0.3) {
             self.view.layoutIfNeeded()
@@ -147,3 +148,19 @@ extension TabBarController: ScrapPopUpDelegate {
         self.present(folderViewController, animated: true)
     }
 }
+
+// MARK: - API
+
+extension TabBarController {
+    func postScrapAPI(imageURL: String) {
+        ScrapService.shared.postScrapAPI(image_url: imageURL) { networkResult in
+            switch networkResult {
+            case .success(_):
+                print("성공적으로 스크랩했습니다.")
+            default:
+                break
+            }
+        }
+    }
+}
+

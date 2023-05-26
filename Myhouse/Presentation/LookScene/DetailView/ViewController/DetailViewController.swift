@@ -7,6 +7,7 @@
 
 import UIKit
 
+import SnapKit
 import Kingfisher
 
 final class DetailViewController: BaseViewController {
@@ -31,6 +32,7 @@ final class DetailViewController: BaseViewController {
         super.viewWillAppear(animated)
         
         getAllDetail()
+        showToast(message: "‘인테리어 꿀팁 모음'폴더로 이동했습니다")
     }
     
     override func setLayout() {
@@ -110,6 +112,34 @@ extension DetailViewController: UITableViewDelegate {
 
     @objc func moreButtonTapped() {
         print("More Button Tapped")
+    }
+    
+    private func showToast(message : String, font: UIFont = UIFont.systemFont(ofSize: 12.0)) {
+        let toastLabel = UILabel(frame: CGRect(x: 25, y: self.view.frame.size.height-50, width: 346, height: 39))
+        toastLabel.backgroundColor = UIColor.black
+        toastLabel.textColor = UIColor.white
+        toastLabel.font = font
+        toastLabel.textAlignment = .left
+        toastLabel.text = message
+        toastLabel.alpha = 1.0
+        toastLabel.layer.cornerRadius = 4
+        toastLabel.clipsToBounds  =  true
+        
+        let button = UIButton(frame: CGRect(x: 250, y: self.view.frame.size.height-40, width: 100, height: 17))
+        button.setTitle("스크랩북 보기", for: .normal)
+        button.setTitleColor(UIColor.main, for: .normal)
+        
+        self.view.addSubviews(
+            toastLabel,
+            button
+        )
+        
+        UIView.animate(withDuration: 10.0, delay: 0.1, options: .curveEaseOut, animations: {
+            toastLabel.alpha = 0.0
+            button.alpha = 0.0
+        }, completion: {(isCompleted) in
+            toastLabel.removeFromSuperview()
+        })
     }
 }
 
