@@ -96,7 +96,6 @@ extension BestCollectionViewCell {
         descriptionLabel.text = "\(bestData.subtitle)" + "\(descriptionLabel.text!) " 
         rankingLabel.text = "\(bestData.rate)"
         
-        // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         let range = (fullText as NSString).range(of: "\(bestData.subtitle)")
