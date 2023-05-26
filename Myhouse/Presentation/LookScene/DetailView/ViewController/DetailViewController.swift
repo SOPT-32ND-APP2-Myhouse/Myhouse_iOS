@@ -7,14 +7,30 @@
 
 import UIKit
 
+import Kingfisher
+
 final class DetailViewController: BaseViewController {
     
     let tableView = DetailTableView()
+    let detailTableFristSectionView = DetailTableFirstSectionView()
+    let detailTableSecondSectionView = DetailTableSecondSectionView()
+    private var serverData: GetDetailPostResponse? {
+        didSet {
+            tableView.reloadData()
+            setData()
+        }
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
         setNavigationUI()
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        getAllDetail()
     }
     
     override func setLayout() {
@@ -25,11 +41,22 @@ final class DetailViewController: BaseViewController {
         tableView.dataSource = self
         tableView.delegate = self
     }
+    
+    private func setData() {
+        tableView.headerView.userNameLabel.text = serverData?.user_name
+        tableView.headerView.dateLabel.text = serverData?.created_date
+        tableView.footerView.goodCountLabel.text = "좋아요 \(String(describing: serverData!.like_count))"
+        tableView.footerView.scrapCountLabel.text = "스크랩 \(String(describing: serverData!.scrap_count))"
+        tableView.footerView.commentCountLabel.text = "댓글 \(String(describing: serverData!.comment_count))"
+        tableView.footerView.watchedCountLabel.text = "조회수 \(String(describing: serverData!.view_count))"
+        detailTableFristSectionView.introSizeTextLabel.text = serverData?.option_tag
+        detailTableSecondSectionView.introSizeTextLabel.text = serverData?.images[0].content
+    }
 }
 
 extension DetailViewController: UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
-        return 3
+        return serverData?.images.count ?? Int()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -38,6 +65,10 @@ extension DetailViewController: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: DetailTableViewCell.identifier, for: indexPath) as? DetailTableViewCell ?? DetailTableViewCell()
+        let index = indexPath.row
+        guard let url = URL(string: serverData?.images[index].image_url ?? String()) else { return cell }
+        cell.imgView.kf.setImage(with: url)
+        cell.imgId = serverData?.images[index].image_id ?? Int()
         cell.selectionStyle = .none
         return cell
     }
@@ -50,9 +81,9 @@ extension DetailViewController: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         if section == 0 {
-            return DetailTableFirstSectionView()
+            return detailTableFristSectionView
         } else if section == 1 {
-            return DetailTableSecondSectionView()
+            return detailTableSecondSectionView
         } else {
             return nil
         }
@@ -79,5 +110,22 @@ extension DetailViewController: UITableViewDelegate {
 
     @objc func moreButtonTapped() {
         print("More Button Tapped")
+    }
+}
+
+private extension DetailViewController {
+    func getAllDetail() {
+        ScrapService.shared.getAllDetailAPI { [weak self] networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<GetDetailPostResponse> {
+                    if let allPostData = data.data {
+                        self?.serverData = allPostData
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
 }

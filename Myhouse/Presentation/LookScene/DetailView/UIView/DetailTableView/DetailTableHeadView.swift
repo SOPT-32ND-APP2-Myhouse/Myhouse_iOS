@@ -20,14 +20,12 @@ final class DetailTableHeadView: BaseView {
     let userNameLabel: UILabel = {
         let label = UILabel()
         label.textColor = .black
-        label.text = "haomme"
         label.font = .NotoBold(size: 14)
         return label
     }()
     
     let dateLabel: UILabel = {
         let label = UILabel()
-        label.text = "01-31"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 12)
         return label

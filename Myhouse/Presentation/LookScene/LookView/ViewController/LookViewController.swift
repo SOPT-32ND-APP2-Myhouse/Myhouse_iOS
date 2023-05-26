@@ -68,3 +68,10 @@ extension LookViewController {
         self.navigationController?.pushViewController(DetailViewController(), animated: true)
     }
 }
+
+extension LookViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
+    }
+}

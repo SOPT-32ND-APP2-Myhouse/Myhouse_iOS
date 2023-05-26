@@ -58,7 +58,6 @@ final class DetailTableBottomView: BaseView {
     
     let goodCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "좋아여 90"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 12)
         return label
@@ -66,7 +65,6 @@ final class DetailTableBottomView: BaseView {
     
     let scrapCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "스크랩 598"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 12)
         return label
@@ -74,7 +72,6 @@ final class DetailTableBottomView: BaseView {
     
     let commentCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "댓글 7"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 12)
         return label
@@ -82,7 +79,6 @@ final class DetailTableBottomView: BaseView {
     
     let watchedCountLabel: UILabel = {
         let label = UILabel()
-        label.text = "조회수 27,764"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 12)
         return label
@@ -96,7 +92,6 @@ final class DetailTableBottomView: BaseView {
     
     let commentDetailLabel: UILabel = {
         let label = UILabel()
-        label.text = "총 7개의 댓글 중 최신 5개"
         label.textColor = .darkGray
         label.font = .NotoMedium(size: 10)
         return label
