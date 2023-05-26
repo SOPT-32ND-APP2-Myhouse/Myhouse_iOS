@@ -112,7 +112,6 @@ private extension HomeFooterView {
         
         let groupSize1 = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .absolute(170)
             heightDimension: .fractionalHeight(170/272)
         )
         
@@ -124,7 +123,6 @@ private extension HomeFooterView {
         
         let groupSize2 = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
-//            heightDimension: .absolute(102)
             heightDimension: .fractionalHeight(102/272)
         )
         

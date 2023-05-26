@@ -114,6 +114,7 @@ extension TodaysDealCollectionViewCell {
         
         imageView.snp.makeConstraints {
             $0.top.bottom.leading.equalToSuperview()
+            $0.width.equalTo(imageView.snp.height)
         }
         
         oneDayLabel.snp.makeConstraints {
