@@ -11,6 +11,18 @@ import SnapKit
 
 final class HomeView: BaseView {
     
+    private var allRecommendData: RecommendResponseModel = RecommendResponseModel(post: Post(tag: "", userName: "", postID: 0, imageURL: "", title: "")) {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
+    private var allPopularData: [PopularResponseModel] = [] {
+        didSet {
+            self.homeCollectionView.reloadData()
+        }
+    }
+    
     private var bestDummy = BestDataModel.dummy() {
         didSet {
             self.homeCollectionView.reloadData()
@@ -46,7 +58,7 @@ final class HomeView: BaseView {
             self.homeCollectionView.reloadData()
         }
     }
-
+    
     private let topCategoryDummy = TopCategoryDataModel.dummy()
     private let modernDummy = ModernDataModel.dummy()
     private let categoryDummy = CategoryDataModel.dummy()
@@ -76,6 +88,8 @@ final class HomeView: BaseView {
         
         registerCell()
         setDataSource()
+        getRecommendAPI()
+        getPopularAPI()
     }
     
     @available(*, unavailable)
@@ -92,7 +106,7 @@ final class HomeView: BaseView {
         
         homeCollectionView.snp.makeConstraints {
             $0.top.leading.trailing.bottom.equalTo(safeAreaInsets)
-//            $0.top.equalToSuperview()
+            //            $0.top.equalToSuperview()
         }
     }
 }
@@ -306,7 +320,7 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-
+        
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(30)
@@ -317,7 +331,7 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionFooter,
             alignment: .bottom
         )
-
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header, footer]
@@ -554,7 +568,7 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionHeader,
             alignment: .top
         )
-
+        
         let footerSize = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
             heightDimension: .absolute(80)
@@ -565,7 +579,7 @@ extension HomeView {
             elementKind: UICollectionView.elementKindSectionFooter,
             alignment: .bottom
         )
-
+        
         let section = NSCollectionLayoutSection(group: group)
         section.orthogonalScrollingBehavior = .none
         section.boundarySupplementaryItems = [header, footer]
@@ -872,9 +886,9 @@ extension HomeView: UICollectionViewDataSource {
         case .topCategory:
             return topCategoryDummy.count
         case .best:
-            return bestDummy.count
+            return allPopularData.count
         case .recommend:
-            return recommendDummy.count
+            return 4
         case .todays:
             return todaysDummy.count
         case .modern:
@@ -912,19 +926,19 @@ extension HomeView: UICollectionViewDataSource {
             return cell
         case .best:
             let cell = BestCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(bestDummy[indexPath.item])
-            cell.scrapButton.handler = { [weak self] in
-                guard let self else { return }
-                self.bestDummy[indexPath.item].isScrap.toggle()
-            }
+            cell.configureCell(allPopularData[indexPath.item])
+//            cell.scrapButton.handler = { [weak self] in
+//                guard let self else { return }
+//                self.bestDummy[indexPath.item].isScrap.toggle()
+//            }
             return cell
         case .recommend:
             let cell = RecommendCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(recommendDummy[indexPath.item])
-            cell.scrapButton.handler = { [weak self] in
-                guard let self else { return }
-                self.recommendDummy[indexPath.item].isScrap.toggle()
-            }
+            cell.configureServerCell(allRecommendData)
+//            cell.scrapButton.handler = { [weak self] in
+//                guard let self else { return }
+//                self.recommendDummy[indexPath.item].isScrap.toggle()
+//            }
             return cell
         case .todays:
             let cell = TodaysProductCollectionViewCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
@@ -998,7 +1012,7 @@ extension HomeView: UICollectionViewDataSource {
             case .best:
                 headerView.setSectionTitle(text: I18N.Home.best)
             case .recommend:
-                headerView.setSectionTitle(text: I18N.Home.recommend)
+                headerView.setRecommendSectionTitle(allRecommendData)
             case .todays:
                 headerView.setSectionTitle(text: I18N.Home.todays)
                 headerView.ADImageView.isHidden = false
@@ -1064,5 +1078,40 @@ extension HomeView: UICollectionViewDataSource {
             }
         }
         return UICollectionReusableView()
+    }
+}
+
+private extension HomeView {
+    func getRecommendAPI() {
+        HomeService.shared.getRecommendAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<RecommendResponseModel> {
+                    dump(data)
+                    if let allRecommendData = data.data {
+                        self.allRecommendData = allRecommendData
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
+    
+    func getPopularAPI() {
+        HomeService.shared.getPopularAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                dump(data)
+                if let data = data as? GenericResponse<[PopularResponseModel]> {
+                    
+                    if let allPopularData = data.data {
+                        self.allPopularData = allPopularData
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
 }

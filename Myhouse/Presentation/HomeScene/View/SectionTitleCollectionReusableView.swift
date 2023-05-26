@@ -102,4 +102,10 @@ extension SectionTitleCollectionReusableView {
         self.sectionDescription.text = text
         self.sectionDescription.isHidden = false
     }
+    
+    func setRecommendSectionTitle(_ recommendData: RecommendResponseModel) {
+        self.sectionTitleLabel.text = "\(recommendData.post.userName)님을 위한 \(recommendData.post.tag)"
+        self.sectionTitleLabel.textColor = .black
+        self.sectionTitleLabel.font = .NotoBold(size: 14)
+    }
 }

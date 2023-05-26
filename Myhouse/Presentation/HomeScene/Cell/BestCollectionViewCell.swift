@@ -89,17 +89,16 @@ extension BestCollectionViewCell {
         }
     }
     
-    func configureCell(_ bestData: BestDataModel) {
-        bestImageView.image = bestData.image
+    func configureCell(_ bestData: PopularResponseModel) {
+        bestImageView.kf.setImage(with: URL(string: bestData.image))
         descriptionLabel.text = bestData.title
-        descriptionLabel.text = "\(descriptionLabel.text!) " + "\(bestData.description)"
-        rankingLabel.text = "\(bestData.rank)"
-        scrapButton.isTapped = bestData.isScrap
+        descriptionLabel.text = "\(bestData.subtitle)" + "\(descriptionLabel.text!) " 
+        rankingLabel.text = "\(bestData.rate)"
         
         // 특정 글씨만 main colour로 변경
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
-        let range = (fullText as NSString).range(of: "\(bestData.title)")
+        let range = (fullText as NSString).range(of: "\(bestData.subtitle)")
         attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
         descriptionLabel.attributedText = attribtuedString
     }

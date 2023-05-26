@@ -36,6 +36,14 @@ extension Config {
     
     // MARK: Home URL
     
+    static let getHomeURL = baseURL + "/home"
+    
+    static let getProductURL = getHomeURL + "/product"
+    
+    static let getBestContentsURL = getHomeURL + "/post/popular"
+    
+    static let getRecommendURL = getHomeURL + "/post/recommend"
+    
     // MARK: Post URL
     
     static let getAllPostURL = baseURL + "/posts"

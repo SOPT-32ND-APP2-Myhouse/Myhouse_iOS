@@ -15,6 +15,12 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
     
     private let bestSellerDummy = BestSellerDataModel.dummy()
     
+    private var allProductData: [ProductResponseModel] = [] {
+        didSet {
+            self.collectionView.reloadData()
+        }
+    }
+    
     private lazy var collectionView: UICollectionView = {
         let view = UICollectionView(frame: .zero, collectionViewLayout: self.getLayout())
         
@@ -32,6 +38,8 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
         registerCell()
         setDataSource()
         setLayout()
+        
+        getProductAPI()
     }
     
     @available(*, unavailable)
@@ -60,12 +68,12 @@ class PagingCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterab
 extension PagingCollectionViewCell: UICollectionViewDataSource {
     
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-            return bestSellerDummy.count
+            return allProductData.count
     }
     
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
             let cell = ContentCell.dequeueReusableCell(collectionView: collectionView, indexPath: indexPath)
-            cell.configureCell(bestSellerDummy[indexPath.item])
+            cell.configureCell(allProductData[indexPath.item])
             return cell
     }
 }
@@ -107,4 +115,23 @@ extension PagingCollectionViewCell {
         return section
     }
     
+}
+
+private extension PagingCollectionViewCell {
+    func getProductAPI() {
+        HomeService.shared.getProductAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                dump(data)
+                if let data = data as? GenericResponse<[ProductResponseModel]> {
+                    
+                    if let allProductData = data.data {
+                        self.allProductData = allProductData
+                    }
+                }
+            default:
+                break
+            }
+        }
+    }
 }
