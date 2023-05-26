@@ -7,6 +7,7 @@
 
 import UIKit
 
+import Kingfisher
 import SnapKit
 
 final class RecommendCollectionViewCell: UICollectionViewCell, UICollectionViewRegisterable {
@@ -76,7 +77,7 @@ extension RecommendCollectionViewCell {
         descriptionLabel.text = recommendData.highlight
         descriptionLabel.text = (descriptionLabel.text ?? "") + "\(recommendData.title)"
         scrapButton.isTapped = recommendData.isScrap
-        
+
         let fullText = descriptionLabel.text ?? ""
         let attribtuedString = NSMutableAttributedString(string: fullText)
         guard let highlightText = recommendData.highlight else { return }
@@ -85,5 +86,10 @@ extension RecommendCollectionViewCell {
             attribtuedString.addAttribute(.foregroundColor, value: UIColor.main, range: range)
             descriptionLabel.attributedText = attribtuedString
         }
+    }
+    
+    func configureServerCell(_ recommendData: RecommendResponseModel) {
+        recommendImageView.kf.setImage(with: URL(string: recommendData.post.imageURL))
+        descriptionLabel.text = recommendData.post.title
     }
 }

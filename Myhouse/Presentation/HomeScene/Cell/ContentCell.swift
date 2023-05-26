@@ -25,7 +25,7 @@ final class ContentCell: UICollectionViewCell, UICollectionViewRegisterable {
     
     private let titleLabel: UILabel = {
         let label = UILabel()
-        label.numberOfLines = 2
+        label.numberOfLines = 0
         label.font = .NotoRegular(size: 10)
         label.textColor = .black
         return label
@@ -150,14 +150,14 @@ extension ContentCell {
         }
     }
     
-    func configureCell(_ bestSellerData: BestSellerDataModel) {
-        bestSellerImageView.image = bestSellerData.image
+    func configureCell(_ bestSellerData: ProductResponseModel) {
+        bestSellerImageView.kf.setImage(with: URL(string: bestSellerData.imageURL))
         rankLabel.text = "\(bestSellerData.rank)"
-        titleLabel.text = bestSellerData.title
-        saleLabel.text = bestSellerData.sale
-        priceLabel.text = bestSellerData.price
-        starLabel.text = bestSellerData.star
-        reviewLabel.text = "리뷰 \(bestSellerData.review)"
+        titleLabel.text = bestSellerData.postTitle
+        saleLabel.text = "\(bestSellerData.discount)%"
+        priceLabel.text = "\(bestSellerData.price)"
+        starLabel.text = "\(bestSellerData.rate).0"
+        reviewLabel.text = "리뷰 \(bestSellerData.reviewsCount)"
         
     }
 }
