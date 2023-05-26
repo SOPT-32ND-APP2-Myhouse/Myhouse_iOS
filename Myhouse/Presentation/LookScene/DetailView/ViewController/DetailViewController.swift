@@ -14,6 +14,7 @@ final class DetailViewController: BaseViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         setDelegate()
+        setNavigationUI()
     }
     
     override func setLayout() {
@@ -65,5 +66,18 @@ extension DetailViewController: UITableViewDelegate {
         } else {
             return 0
         }
+    }
+    
+    func setNavigationUI() {
+        navigationItem.leftBarButtonItem = UIBarButtonItem(image: ImageLiterals.Common.btn_back, style: .plain, target: self, action: #selector(backButtonTapped))
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: ImageLiterals.Common.btn_more, style: .plain, target: self, action: #selector(moreButtonTapped))
+    }
+
+    @objc func backButtonTapped() {
+        self.navigationController?.popViewController(animated: false)
+    }
+
+    @objc func moreButtonTapped() {
+        print("More Button Tapped")
     }
 }
