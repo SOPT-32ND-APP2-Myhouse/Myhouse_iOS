@@ -19,6 +19,7 @@ final class ScrapCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
     
     private let imageView1: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = ImageLiterals.Card.img_card_default
         imageView.layer.cornerRadius = 6
         imageView.layer.maskedCorners = [.layerMinXMinYCorner]
         imageView.layer.masksToBounds = true
@@ -27,6 +28,7 @@ final class ScrapCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
     
     private let imageView2: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = ImageLiterals.Card.img_card_default
         imageView.layer.cornerRadius = 6
         imageView.layer.maskedCorners = [.layerMaxXMinYCorner]
         imageView.layer.masksToBounds = true
@@ -35,6 +37,7 @@ final class ScrapCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
     
     private let imageView3: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = ImageLiterals.Card.img_card_default
         imageView.layer.cornerRadius = 6
         imageView.layer.maskedCorners = [.layerMinXMaxYCorner]
         imageView.layer.masksToBounds = true
@@ -43,6 +46,7 @@ final class ScrapCollectionViewCell: UICollectionViewCell, UICollectionViewRegis
     
     private let imageView4: UIImageView = {
         let imageView = UIImageView()
+        imageView.image = ImageLiterals.Card.img_card_default
         imageView.layer.cornerRadius = 6
         imageView.layer.maskedCorners = [.layerMaxXMaxYCorner]
         imageView.layer.masksToBounds = true
@@ -154,11 +158,19 @@ extension ScrapCollectionViewCell {
         }
     }
     
-    func configureCell(_ scrapData: ScrapDataModel) {
-        imageView1.image = scrapData.image[0]
-        imageView2.image = scrapData.image[1]
-        imageView3.image = scrapData.image[2]
-        imageView4.image = scrapData.image[3]
-        folderNameLabel.text = scrapData.title
+    func configureCell(_ scrapData: ScrapFolder) {
+        if scrapData.scraps.count >= 1 {
+            imageView1.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 1].imageURL ?? ""))
+        }
+        if scrapData.scraps.count >= 2 {
+            imageView2.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 2].imageURL ?? ""))
+        }
+        if scrapData.scraps.count >= 3 {
+            imageView3.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 3].imageURL ?? ""))
+        }
+        if scrapData.scraps.count >= 4 {
+            imageView4.kf.setImage(with: URL(string: scrapData.scraps[scrapData.scraps.count - 4].imageURL ?? ""))
+        }
+        folderNameLabel.text = scrapData.folderTitle
     }
 }

@@ -66,6 +66,7 @@ struct ImageLiterals {
         static var img_card17: UIImage { .load(name: "img_card17") }
         static var img_card18: UIImage { .load(name: "img_card18") }
         static var img_card19: UIImage { .load(name: "img_card19") }
+        static var img_card_default: UIImage { .load(name: "img_card_default") }
     }
     
     struct Home {
@@ -91,5 +92,13 @@ struct ImageLiterals {
         static var img_home11: UIImage { .load(name: "img_home11") }
         static var img_star: UIImage { .load(name: "img_star") }
         static var img_more: UIImage { .load(name: "img_more") }
+    }
+    
+    struct User {
+        static var userIcon: UIImage { .load(name: "userIcon") }
+    }
+    
+    struct Detail {
+        static var subscribeImage: UIImage { .load(name: "SubscribeButton") }
     }
 }

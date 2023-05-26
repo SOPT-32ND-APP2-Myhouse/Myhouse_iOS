@@ -23,12 +23,21 @@ final class LookViewController: BaseViewController {
         super.viewDidLoad()
         
         setNavigationUI()
+        setNotificationCenter()
+    }
+    
+    deinit {
+        NotificationCenter.default.removeObserver(self)
     }
 }
 
 // MARK: - Extensions
 
 extension LookViewController {
+    
+    func setNotificationCenter() {
+        NotificationCenter.default.addObserver(self, selector: #selector(CellTapped(_:)), name: Notification.Name("CellTappedNotification"), object: nil)
+    }
     
     func setNavigationUI() {
         let scrapButton = UIButton()
@@ -52,6 +61,17 @@ extension LookViewController {
 
     @objc func scrapNaviItemTapped() {
         let scrapViewController = ScarpViewController()
-        self.navigationController?.pushViewController(scrapViewController, animated: false)
+        self.navigationController?.pushViewController(scrapViewController, animated: true)
+    }
+    
+    @objc func CellTapped(_ notification: Notification) {
+        self.navigationController?.pushViewController(DetailViewController(), animated: true)
+    }
+}
+
+extension LookViewController: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let detailViewController = DetailViewController()
+        self.navigationController?.pushViewController(detailViewController, animated: true)
     }
 }

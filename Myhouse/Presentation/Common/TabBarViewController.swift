@@ -137,13 +137,13 @@ extension TabBarController: ScrapPopUpDelegate {
     func scrapBookButtonTapped() {
         let scrapViewController = ScarpViewController()
         self.navigationController?.isNavigationBarHidden = false
-        self.navigationController?.pushViewController(scrapViewController, animated: false)
+        self.navigationController?.pushViewController(scrapViewController, animated: true)
     }
     
     func folderButtonTapped() {
         let folderViewController = FolderBottomSheetViewController()
         folderViewController.modalTransitionStyle = .coverVertical
         folderViewController.modalPresentationStyle = .overFullScreen
-        self.present(folderViewController, animated: false)
+        self.present(folderViewController, animated: true)
     }
 }

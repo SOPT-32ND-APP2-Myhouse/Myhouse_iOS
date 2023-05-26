@@ -18,7 +18,12 @@ final class FolderBottomSheetView: BaseView {
     // MARK: - Properties
     
     weak var delegate: FolderDelegate?
-    private var ScarpDummy = ScrapDataModel.dummy()
+    
+    private var allFolderData: AllScrapResponseModel = AllScrapResponseModel(scrapFolders: [ScrapFolder]()) {
+        didSet {
+            self.folderTableView.reloadData()
+        }
+    }
     
     // MARK: - UI Components
     
@@ -62,6 +67,7 @@ final class FolderBottomSheetView: BaseView {
     override init(frame: CGRect) {
         super.init(frame: frame)
         
+        fetchData()
         registerCell()
         setDelegate()
     }
@@ -103,6 +109,11 @@ final class FolderBottomSheetView: BaseView {
 // MARK: - Extensions
 
 private extension FolderBottomSheetView {
+    
+    func fetchData() {
+        getAllScrap()
+    }
+    
     func registerCell() {
         FolderTableViewCell.register(target: folderTableView)
         FolderHeaderView.register(target: folderTableView)
@@ -126,12 +137,12 @@ extension FolderBottomSheetView: UITableViewDelegate {
 
 extension FolderBottomSheetView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return ScarpDummy.count - 1
+        return allFolderData.scrapFolders.count - 1
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = FolderTableViewCell.dequeueReusableCell(tableView: tableView, indexPath: indexPath)
-        cell.configureCell(ScarpDummy[indexPath.item + 1])
+        cell.configureCell(allFolderData.scrapFolders[indexPath.item + 1])
         cell.selectionStyle = .none
         return cell
     }
@@ -142,6 +153,24 @@ extension FolderBottomSheetView: UITableViewDataSource {
     }
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("'\(ScarpDummy[indexPath.row + 1].title)' 폴더로 이동했습니다")
+        print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
+    }
+}
+
+extension FolderBottomSheetView {
+    func getAllScrap() {
+        ScrapService.shared.getAllScrapAPI { networkResult in
+            switch networkResult {
+            case .success(let data):
+                if let data = data as? GenericResponse<AllScrapResponseModel> {
+                    if let allFolderData = data.data {
+                        dump(allFolderData)
+                        self.allFolderData = allFolderData
+                    }
+                }
+            default:
+                break
+            }
+        }
     }
 }

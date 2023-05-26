@@ -54,4 +54,6 @@ extension Config {
     
     // MARK: Scrap URL
     
+    static let getAllScrapURL = baseURL + "/scrap/all"
+    
 }
