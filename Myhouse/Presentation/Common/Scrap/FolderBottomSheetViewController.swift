@@ -12,7 +12,7 @@ final class FolderBottomSheetViewController: BaseViewController {
     // MARK: - UI Components
     
     private let folderBottomSheetView = FolderBottomSheetView()
-    
+
     // MARK: - Life Cycles
     
     override func viewDidLoad() {
@@ -26,7 +26,7 @@ final class FolderBottomSheetViewController: BaseViewController {
         
         showBottomSheetWithAnimation()
     }
-    
+
     override func setUI() {
         self.view.backgroundColor = .clear
     }
@@ -37,7 +37,6 @@ final class FolderBottomSheetViewController: BaseViewController {
             $0.bottom.equalToSuperview().inset(-(SizeLiterals.Screen.screenHeight / 2))
             $0.leading.trailing.equalToSuperview()
             $0.height.equalTo(SizeLiterals.Screen.screenHeight / 2)
-            
         }
     }
 }

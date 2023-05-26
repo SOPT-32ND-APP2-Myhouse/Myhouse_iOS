@@ -24,7 +24,6 @@ final class HomeViewController: BaseViewController {
         
         setNavigationUI()
     }
-
 }
 
 // MARK: - Extensions

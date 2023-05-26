@@ -134,8 +134,9 @@ extension FolderBottomSheetView: UITableViewDelegate {
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let cell = FolderTableViewCell.dequeueReusableCell(tableView: tableView, indexPath: indexPath)
         if indexPath.row != 0 {
-            self.postScrapFolder(imagUrl: "", folderId: 1)
+            self.postScrapFolder(imagUrl: "", folderId: "1")
         }
+        print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
     }
     
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -158,10 +159,6 @@ extension FolderBottomSheetView: UITableViewDataSource {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let newFolderView = FolderHeaderView.dequeueReusableHeaderFooterView(tableView: tableView)
         return newFolderView
-    }
-    
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
     }
 }
 
