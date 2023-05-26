@@ -35,6 +35,7 @@ final class LookCollectionView: BaseView {
         let layout = self.getLayout()
         
         let collectionView = UICollectionView(frame: .zero, collectionViewLayout: layout)
+        collectionView.delegate = self
         collectionView.dataSource = self
         return collectionView
     }()
@@ -134,6 +135,15 @@ extension LookCollectionView {
         let section = NSCollectionLayoutSection(group: group)
         
         return section
+    }
+}
+
+extension LookCollectionView: UICollectionViewDelegate {
+    func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        let userInfo = ["indexPath": indexPath]
+        NotificationCenter.default.post(name: NSNotification.Name("CellTappedNotification"),
+                                        object: nil,
+                                        userInfo: userInfo)
     }
 }
 

@@ -31,7 +31,7 @@ struct ScrapFolder: Codable {
 // MARK: - Scrap
 struct Scrap: Codable {
     let scrapID: Int
-    let imageURL: String
+    let imageURL: String?
 
     enum CodingKeys: String, CodingKey {
         case scrapID = "scrap_id"
