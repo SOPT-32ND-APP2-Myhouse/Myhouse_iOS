@@ -27,7 +27,7 @@ final class ScarpViewController: BaseViewController {
     }
 
     @objc func backButtonTapped() {
-        self.navigationController?.popViewController(animated: false)
+        self.navigationController?.popViewController(animated: true)
     }
 
     @objc func shareButtonTapped() {
