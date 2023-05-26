@@ -16,7 +16,7 @@
 <img width="300" alt="Screenshot 2023-05-27 at 12 31 18 AM" src="https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_iOS/assets/89457040/7fbc00b3-4d20-4f17-af6b-e35458088ad8">
 
 
-## 노션 페이지
+## 📚 노션 페이지
 🐳 [아요(iOS)고(GO) 해야돼;;](https://snapdragon-desk-8fd.notion.site/GO-4f265a13e92e44698dd3eca0cff99516)   
 
 [UI 설계](https://snapdragon-desk-8fd.notion.site/66be0908950a491b9bfddc7552693306?v=015f4e04914f4228aebee243f60ea816)   
