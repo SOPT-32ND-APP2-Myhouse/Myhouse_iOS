@@ -73,7 +73,6 @@ extension HomeFooterCollectionViewCell {
             $0.centerX.equalToSuperview()
             $0.top.equalToSuperview().offset(30)
             $0.height.equalTo(35)
-            $0.bottom.equalToSuperview().inset(103)
         }
         
         titleLabel.snp.makeConstraints {
@@ -87,6 +86,7 @@ extension HomeFooterCollectionViewCell {
             $0.top.equalTo(titleLabel.snp.bottom).offset(7)
             $0.centerX.equalToSuperview()
             $0.leading.trailing.equalToSuperview().inset(28)
+            $0.bottom.equalToSuperview().inset(16)
         }
     }
     

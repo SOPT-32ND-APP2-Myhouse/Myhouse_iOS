@@ -83,7 +83,8 @@ extension TodaysProductCollectionViewCell {
                                 scrapButton)
         
         todaysImageView.snp.makeConstraints {
-            $0.edges.equalToSuperview()
+            $0.top.leading.trailing.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(100)
         }
         
         storeLabel.snp.makeConstraints {

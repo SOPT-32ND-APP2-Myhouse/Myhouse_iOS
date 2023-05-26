@@ -51,12 +51,13 @@ extension CategoryCollectionViewCell {
         contentView.addSubviews(categoryImageView, titleLabel)
         
         categoryImageView.snp.makeConstraints {
-            $0.top.bottom.equalToSuperview()
+            $0.top.equalToSuperview()
+            $0.bottom.equalToSuperview().inset(30)
             $0.centerX.equalToSuperview()
         }
         
         titleLabel.snp.makeConstraints {
-            $0.top.equalTo(categoryImageView.snp.bottom).offset(8)
+            $0.top.equalTo(categoryImageView.snp.bottom).offset(15)
             $0.leading.trailing.equalToSuperview()
         }
     }

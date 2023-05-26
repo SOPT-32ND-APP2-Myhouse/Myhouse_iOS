@@ -112,6 +112,7 @@ private extension HomeFooterView {
         
         let groupSize1 = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
+//            heightDimension: .absolute(170)
             heightDimension: .fractionalHeight(170/272)
         )
         
@@ -123,6 +124,7 @@ private extension HomeFooterView {
         
         let groupSize2 = NSCollectionLayoutSize(
             widthDimension: .fractionalWidth(1.0),
+//            heightDimension: .absolute(102)
             heightDimension: .fractionalHeight(102/272)
         )
         
@@ -165,7 +167,6 @@ private extension HomeFooterView {
         footerCollectionView.snp.makeConstraints {
             $0.top.equalTo(moreButton.snp.bottom).offset(48)
             $0.leading.trailing.equalToSuperview().inset(-16)
-            $0.height.equalTo(272)
         }
         
         footerView.snp.makeConstraints {
@@ -191,7 +192,7 @@ extension HomeFooterView: UICollectionViewDataSource {
         cell.configureCell(footerDummy[indexPath.item])
         if cell.imageView.image == nil {
             cell.imageView.isHidden = true
-            cell.titleLabel.snp.makeConstraints {
+            cell.titleLabel.snp.remakeConstraints {
                 $0.top.equalToSuperview().offset(23)
                 $0.centerX.equalToSuperview()
             }
