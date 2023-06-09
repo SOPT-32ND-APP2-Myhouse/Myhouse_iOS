@@ -26,6 +26,7 @@
 		09B7D3A62A12227E00B4B485 /* RecommendDataModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09B7D3A52A12227E00B4B485 /* RecommendDataModel.swift */; };
 		09DF36A12A121D1900C8BDA9 /* RecommendCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */; };
 		09FD5D412A11676000976C02 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 09FD5D402A11676000976C02 /* HomeView.swift */; };
+		694B80312A332DF100F74D45 /* ScrapResonseModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694B80302A332DF100F74D45 /* ScrapResonseModel.swift */; };
 		694D2FFA2A101A8200D84149 /* UIImage+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2FF92A101A8200D84149 /* UIImage+.swift */; };
 		694D2FFC2A10B81B00D84149 /* UIVIew+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2FFB2A10B81B00D84149 /* UIVIew+.swift */; };
 		694D2FFE2A10B85700D84149 /* UITextField+.swift in Sources */ = {isa = PBXBuildFile; fileRef = 694D2FFD2A10B85700D84149 /* UITextField+.swift */; };
@@ -144,6 +145,7 @@
 		09B7D3A52A12227E00B4B485 /* RecommendDataModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendDataModel.swift; sourceTree = "<group>"; };
 		09DF36A02A121D1900C8BDA9 /* RecommendCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecommendCollectionViewCell.swift; sourceTree = "<group>"; };
 		09FD5D402A11676000976C02 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
+		694B80302A332DF100F74D45 /* ScrapResonseModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScrapResonseModel.swift; sourceTree = "<group>"; };
 		694D2FF92A101A8200D84149 /* UIImage+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+.swift"; sourceTree = "<group>"; };
 		694D2FFB2A10B81B00D84149 /* UIVIew+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIVIew+.swift"; sourceTree = "<group>"; };
 		694D2FFD2A10B85700D84149 /* UITextField+.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UITextField+.swift"; sourceTree = "<group>"; };
@@ -598,6 +600,7 @@
 			isa = PBXGroup;
 			children = (
 				6975E83A2A1D02D600410B24 /* AllScrapResponseModel.swift */,
+				694B80302A332DF100F74D45 /* ScrapResonseModel.swift */,
 			);
 			path = Scrap;
 			sourceTree = "<group>";
@@ -935,6 +938,7 @@
 				694D30022A10B8C300D84149 /* UIViewController+.swift in Sources */,
 				694D30102A10BCCB00D84149 /* UITableView+.swift in Sources */,
 				694D30182A113A1B00D84149 /* HomeViewController.swift in Sources */,
+				694B80312A332DF100F74D45 /* ScrapResonseModel.swift in Sources */,
 				094373FA2A14A9F7003C8AFD /* ReviewCollectionViewCell.swift in Sources */,
 				9BF93D822A12A8B900FE3B5B /* ModernCollectionViewCell.swift in Sources */,
 				91D0493C2A1BA35C00ADC02F /* DetailTableViewCell.swift in Sources */,

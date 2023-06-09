@@ -100,10 +100,10 @@ extension ScrapService {
     
     func postScrapFolderAPI(
         imageUrl: String,
-        folderId: String,
+        folderId: Int,
         completion: @escaping (NetworkResult<Any>) -> Void
     ) {
-        let url = "/scrap/\(folderId)"
+        let url = Config.postFolderScrapURL + "\(folderId)"
         let header: HTTPHeaders = NetworkConstant.noTokenHeader
         let body: Parameters = [
             "image_url": imageUrl
@@ -121,7 +121,7 @@ extension ScrapService {
                 guard let data = response.data else { return }
                 let networkResult = self.judgeStatus(by: statusCode,
                                                      data,
-                                                     ScrapFolder.self)
+                                                     ScrapResponseModel.self)
                 completion(networkResult)
             case .failure:
                 completion(.networkFail)
