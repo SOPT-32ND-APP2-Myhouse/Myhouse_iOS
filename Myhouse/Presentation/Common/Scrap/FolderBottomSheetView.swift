@@ -11,6 +11,7 @@ import SnapKit
 
 protocol FolderDelegate: AnyObject {
     func cancelTapped()
+    func folderTapped()
 }
 
 final class FolderBottomSheetView: BaseView {
@@ -132,10 +133,8 @@ private extension FolderBottomSheetView {
 extension FolderBottomSheetView: UITableViewDelegate {
     
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-        let cell = FolderTableViewCell.dequeueReusableCell(tableView: tableView, indexPath: indexPath)
-        if indexPath.row != 0 {
-            self.postScrapFolder(imagUrl: "", folderId: "1")
-        }
+        self.postScrapFolder(imagUrl: "https://github.com/SOPT-32ND-APP2-Myhouse/Myhouse_Server/assets/77230391/48d9a287-e9de-4943-8a3f-028c5fa193ae", folderId: allFolderData.scrapFolders[indexPath.row + 1].folderID)
+        delegate?.folderTapped()
         print("'\(allFolderData.scrapFolders[indexPath.row + 1].folderTitle)' 폴더로 이동했습니다")
     }
     
@@ -179,18 +178,18 @@ extension FolderBottomSheetView {
         }
     }
     
-    func postScrapFolder(imagUrl: String, folderId: String) {
+    func postScrapFolder(imagUrl: String, folderId: Int) {
         ScrapService.shared.postScrapFolderAPI(
             imageUrl: imagUrl,
             folderId: folderId
         ) { networkResult in
-                switch networkResult {
-                case .success(_):
-                    print("success")
-                default:
-                    break
-                }
-                
+            switch networkResult {
+            case .success:
+                print("success")
+            default:
+                break
             }
+            
+        }
     }
 }

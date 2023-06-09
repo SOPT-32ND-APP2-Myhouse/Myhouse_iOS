@@ -79,4 +79,8 @@ extension FolderBottomSheetViewController: FolderDelegate {
     func cancelTapped() {
         hideBottomSheetWithAnimation()
     }
+    
+    func folderTapped() {
+        self.dismiss(animated: false)
+    }
 }
