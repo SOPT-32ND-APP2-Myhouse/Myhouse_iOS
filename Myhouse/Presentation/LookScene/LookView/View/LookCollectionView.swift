@@ -140,10 +140,16 @@ extension LookCollectionView {
 
 extension LookCollectionView: UICollectionViewDelegate {
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-        let userInfo = ["indexPath": indexPath]
-        NotificationCenter.default.post(name: NSNotification.Name("CellTappedNotification"),
-                                        object: nil,
-                                        userInfo: userInfo)
+        let sectionType = SectionType.allCases[indexPath.section]
+        switch sectionType {
+        case .tag:
+            break
+        case .feed:
+            let userInfo = ["indexPath": indexPath]
+            NotificationCenter.default.post(name: NSNotification.Name("CellTappedNotification"),
+                                            object: nil,
+                                            userInfo: userInfo)
+        }
     }
 }
 

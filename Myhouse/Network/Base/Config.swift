@@ -56,4 +56,6 @@ extension Config {
     
     static let getAllScrapURL = baseURL + "/scrap/all"
     
+    static let postFolderScrapURL = baseURL + "/scrap/"
+    
 }
